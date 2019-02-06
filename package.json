@@ -1,7 +1,7 @@
 {
   "name": "feathers-mongoose-casl",
   "description": "Easily Integrate Casl&mongoose your to Feathersjs add.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/doronnahum/feathers-mongoose-casl.git",
   "main": "lib/",
   "keywords": [
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://feathersjs-mongoose.gitbook.io/feathers-mongoose-casl.git"
+    "url": "git+https://github.com/doronnahum/feathers-mongoose-casl.git"
   },
   "author": {
     "name": "Doron nahum",
