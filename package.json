@@ -1,7 +1,7 @@
 {
   "name": "feathers-mongoose-casl",
   "description": "Easily Integrate Casl&mongoose your to Feathersjs add.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/doronnahum/feathers-mongoose-casl.git",
   "main": "lib/",
   "keywords": [
@@ -71,6 +71,7 @@
     "feathers-logger": "^0.3.2",
     "feathers-mailer": "^3.0.1",
     "feathers-mongoose": "^7.3.0",
+    "feathers-mongoose-casl": "^1.0.6",
     "feathers-swagger": "^0.7.2",
     "feathers-twilio": "^0.2.0",
     "fs-blob-store": "^5.2.1",
@@ -82,6 +83,10 @@
     "joigoose": "^4.0.4",
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.pick": "^4.4.0",
+    "lodash.pickby": "^4.6.0",
+    "moment": "^2.24.0",
     "mongodb-core": "^3.1.9",
     "mongoose": "^5.4.2",
     "mongoose-timestamp": "^0.6.0",
@@ -95,14 +100,9 @@
     "passport-google-oauth20": "^1.0.0",
     "pug": "^2.0.3",
     "s3-blob-store": "^3.2.0",
+    "serve-favicon": "^2.5.0",
     "sift": "^7.0.1",
     "validate.js": "^0.12.0",
-    "feathers-mongoose-casl": "^1.0.6",
-    "lodash.omit": "^4.5.0",
-    "lodash.pick": "^4.4.0",
-    "lodash.pickby": "^4.6.0",
-    "moment": "^2.24.0",
-    "serve-favicon": "^2.5.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
