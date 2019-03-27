@@ -6,6 +6,7 @@
   <script>
     var url = new URL(window.location.href);
     var token = url.searchParams.get("token");
+    var next = url.searchParams.get("next");
     var obj = {
       action: 'verifySignupLong',
       value: token
@@ -13,10 +14,35 @@
     console.log(JSON.stringify(obj))
     console.log(obj)
     var xhttp = new XMLHttpRequest();
+    var redirect = function (url) {
+      var ua        = navigator.userAgent.toLowerCase(),
+          isIE      = ua.indexOf('msie') !== -1,
+          version   = parseInt(ua.substr(4, 2), 10);
+
+      // Internet Explorer 8 and lower
+      if (isIE && version < 9) {
+          var link = document.createElement('a');
+          link.href = url;
+          document.body.appendChild(link);
+          link.click();
+      }
+
+      // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
+      else { 
+          window.location.href = url; 
+      }
+    }
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 201) {
            // Typical action to be performed when the document is ready:
            document.getElementById("info").innerHTML = 'Verification Successful';
+           setTimeout(function(){
+            document.getElementById("info").innerHTML = 'Please wait...';
+           },1500)
+           setTimeout(function(){
+            if(next && next.length) redirect(next)
+           },1500)
+
         } else {
           document.getElementById("info").innerHTML = xhttp.response
         }
