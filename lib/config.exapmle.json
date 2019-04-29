@@ -1,171 +1,170 @@
 {
-    "host": "localhost",
-    "serverUrl": "http://localhost:3030",
-    "port": 3030,
-    "protocol": "http",
-    "verifyEmail": {
-      "enabled": true,
-      "fromEmail": "MyCompany@MyCompany.com",
-      "helpEmail": "help@MyCompany.com"
-    },
-    "clientUrl" : "http://localhost:8080",
-    "clientSigninUrl" : "http://localhost:8080/signin",
-    "changePasswordClientUrl": "http://localhost:8080/change-password",
-    "src": "../src/",
-    "public": "../public/",
-    "dashboard": "../src/utils/out/",
-    "paginate": {
-      "default": 10,
-      "max": 50
-    },
-    "mongodb": "mongodb+srv://dbuser:hjdf7843tw98892g@cluster0-mdb8u.gcp.mongodb.net/test?retryWrites=true",
-    "authentication": {
-      "secret": "fsdsdw3423sd4963fe855296bdff3527e4cfea4a1bfadec7137352227033c438dab7323fa279e5bab1d605cd9abd495f1d94d627f64469b81b253a0f78fa47ca62f2d07e3de6eaabb84889a242fd3774cab2205b0895680c0a2aa29b1bfe75872d81af9535fb993b3bd353d79cd331af2b94cbeed4f0943489fb8392c1631c0dd0685f94253ab346bb402abe5cc703d07374ed670fba669dff40f0bd8f66bcfc0abd0df96c0b4c69ba7d911b75dd3003b6a2d9c2efaa03f2d6e6148fda5646dfb7175be5ed08cf3ebb11d69b05e4a799eaf8c94d985c642240cad62318b96b3619dc16ea3140ae639e8b6b30af209087ab2a8626634def24f5b737a7ff728c07bbb0ddda370",
-      "strategies": ["jwt", "local"],
-      "path": "/authentication",
-      "service": "users",
-      "jwt": {
-        "header": {
-          "typ": "access"
-        },
-        "audience": "https://yourdomain.com",
-        "subject": "anonymous",
-        "issuer": "feathers",
-        "algorithm": "HS256",
-        "expiresIn": "1d"
+  "host": "localhost",
+  "serverUrl": "http://localhost:3030",
+  "port": 3030,
+  "protocol": "http",
+  "verifyEmail": {
+    "enabled": true,
+    "fromEmail": "MyCompany@MyCompany.com",
+    "helpEmail": "help@MyCompany.com"
+  },
+  "clientUrl" : "http://localhost:8080",
+  "clientSigninUrl" : "http://localhost:8080/signin",
+  "src": "../src/",
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "mongodb+srv.....",
+  "authentication": {
+    "secret": "Replace me......you can copy from https://mkjwk.org/",
+    "strategies": ["jwt", "local"],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
       },
-      "local": {
-        "entity": "user",
-        "usernameField": "email",
-        "passwordField": "password"
-      },
-      "auth0": {
-        "clientID": "your auth0 client id",
-        "clientSecret": "your auth0 client secret",
-        "successRedirect": "/",
-        "domain": "mydomain.auth0.com",
-        "scopes": ["profile"]
-      },
-      "google": {
-        "clientID": "your google client id",
-        "clientSecret": "your google client secret",
-        "successRedirect": "/",
-        "scope": ["profile openid email"]
-      },
-      "facebook": {
-        "clientID": "your facebook client id",
-        "clientSecret": "your facebook client secret",
-        "successRedirect": "/",
-        "scope": ["public_profile", "email"],
-        "profileFields": [
-          "id",
-          "displayName",
-          "first_name",
-          "last_name",
-          "email",
-          "gender",
-          "profileUrl",
-          "birthday",
-          "picture",
-          "permissions"
-        ]
-      },
-      "github": {
-        "clientID": "your github client id",
-        "clientSecret": "your github client secret",
-        "successRedirect": "/"
-      },
-      "cookie": {
-        "enabled": true,
-        "name": "feathers-jwt",
-        "httpOnly": false,
-        "secure": false
-      }
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
     },
-    "rules-cache": {
-      "enabled": true,
-      "local-catch": true,
-      "local-config": {
-        "max": 400,
-        "maxAge": 3600000
-      }
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
     },
-    "users-cache": {
-      "enabled": true,
-      "local-catch": true,
-      "local-config": {
-        "max": 100,
-        "maxAge": 3600000
-      }
+    "auth0": {
+      "clientID": "your auth0 client id",
+      "clientSecret": "your auth0 client secret",
+      "successRedirect": "/",
+      "domain": "mydomain.auth0.com",
+      "scopes": ["profile"]
     },
-      "private-files-cache": {
-      "enabled": true,
-      "local-catch": true,
-      "local-config": {
-        "max": 100,
-        "maxAge": 3600000
-      }
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": ["profile openid email"]
     },
-    "s3": {
-      "bucket": "feathers-mongoose-casl",
-      "accessKeyId": "AKIAIEX4D6XXNCYCVMQQ",
-      "secretAccessKey": "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",
-      "signedUrlExpires" : 900
-    },
-    "google-cloud": {
-      "projectId": "agora-real",
-      "bucket": "MyCompany-dev",
-      "keyFilename": "../src/secret-files/google-key.json",
-      "signedUrlExpires" : 900
-    },
-    "mailgun": {
-      "apiKey": "0b0c87e5137980a9534f9b4e3cbd1d40-de7062c6-e4a1f634",
-      "domain": "mg.MyCompany.com"
-    },
-    "sendgrid": {
-      "apiKey": "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"
-    },
-    "twilio": {
-      "sid": "XXXXXXXX",
-      "token": "XXXXXXXX",
-      "number": "XXXXXXXX"
-    },
-    "feathers-mongoose-casl": {
-      "pickMeReadFields": ["-roles","-verifyExpires","-resetExpires","-verifyToken","-isVerified","-resetToken","-verifyChanges","-password"],
-      "pickMeUpdateFields": ["userClickOnImAccredited","userClickOnImNotAccredited", "firstName","lastName","country","residenceCountry","streetName","state","city","address","zipCode","streetNo","phone","birthday","idNumber","gender","electedOfficial","declinedInThePast","usResidence","countryOfBirth","fundsOrigin","tnc","news","investorType","investorStatus","terms","newsletter","receiveEmailNotifications","getNewOfferings"],
-      "mailer": {
-        "service": "sendgrid",
-        "sendgrid-authentication-emails-templates": {
-          "reset-password": "d-e3565301c97748e199cf07987cfac6bd",
-          "Identity-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
-          "password-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
-          "verify-email": "d-2b7c56d513cc4401adfd6475cbc9352e",
-          "password-was-reset": "d-e89c652f1b6a41b4b65ffd8f81a89506",
-          "email-verified": "d-67c7921e8bcc4447a7ae593878a6f0ab"
-        }
-      },
-      "defaultRules": [
-        {
-          "userContext": {"email": "doron.nahum+d@gmail.com"},
-          "actions": ["manage"],
-          "subject": ["dashboard","users"]
-        },
-        {
-          "name": "allow-admin-dashboard",
-          "description": "allowed admin users access dashboard, and manage rules and users",
-          "actions": ["manage"],
-          "subject": ["dashboard","users","get-file"],
-          "roles": ["admin"]
-        },
-        {
-          "name": "allow-sys-admin-rules",
-          "description": "allowed admin users access dashboard, and manage rules and users",
-          "actions": ["manage"],
-          "subject": ["rules","user-abilities"],
-          "roles": ["sys-admin"]
-        }
+    "facebook": {
+      "clientID": "your facebook client id",
+      "clientSecret": "your facebook client secret",
+      "successRedirect": "/",
+      "scope": ["public_profile", "email"],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
       ]
     },
-    "siteEmail": "MyCompany@MyCompany.com",
-    "adminEmails": ["doron@committed.co.il"]
-  }
+    "github": {
+      "clientID": "your github client id",
+      "clientSecret": "your github client secret",
+      "successRedirect": "/"
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "rules-cache": {
+    "enabled": true,
+    "local-catch": true,
+    "local-config": {
+      "max": 400,
+      "maxAge": 3600000
+    }
+  },
+  "users-cache": {
+    "enabled": true,
+    "local-catch": true,
+    "local-config": {
+      "max": 100,
+      "maxAge": 3600000
+    }
+  },
+    "private-files-cache": {
+    "enabled": true,
+    "local-catch": true,
+    "local-config": {
+      "max": 100,
+      "maxAge": 3600000
+    }
+  },
+  "s3": {
+    "bucket": "bucket....",
+    "accessKeyId": "accessKeyId....",
+    "secretAccessKey": "secretAccessKey....",
+    "signedUrlExpires" : 900
+  },
+  "google-cloud": {
+    "projectId": "agora-real",
+    "bucket": "MyCompany-dev",
+    "keyFilename": "../src/secret-files/google-key.json",
+    "signedUrlExpires" : 900
+  },
+  "mailgun": {
+    "apiKey": "apiKey",
+    "domain": "mg.MyCompany.com"
+  },
+  "sendgrid": {
+    "apiKey": "apiKey"
+  },
+  "twilio": {
+    "sid": "XXXXXXXX",
+    "token": "XXXXXXXX",
+    "number": "XXXXXXXX"
+  },
+  "feathers-mongoose-casl": {
+    "pickMeReadFields": ["-roles","-verifyExpires","-resetExpires","-verifyToken","-isVerified","-resetToken","-verifyChanges","-password"],
+    "pickMeUpdateFields": ["firstName","lastName"],
+    "mailer": {
+      "service": "sendgrid",
+      "sendgrid-authentication-emails-templates": {
+        "reset-password": "d-e3565301c97748e199cf07987cfac6bd",
+        "Identity-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
+        "password-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
+        "verify-email": "d-2b7c56d513cc4401adfd6475cbc9352e",
+        "password-was-reset": "d-e89c652f1b6a41b4b65ffd8f81a89506",
+        "email-verified": "d-67c7921e8bcc4447a7ae593878a6f0ab"
+      }
+    },
+    "defaultRules": [
+      {
+        "userContext": {"email": "YOUR_FIRST_USER_EMAIL@gmail.com"},
+        "actions": ["manage"],
+        "subject": ["dashboard","users","user-abilities","rules","files"]
+      },
+      {
+        "name": "allow-admin-dashboard",
+        "description": "allowed admin users access dashboard, and manage rules and users",
+        "actions": ["manage"],
+        "subject": ["dashboard","users","get-file"],
+        "roles": ["admin"]
+      },
+      {
+        "name": "allow-sys-admin-rules",
+        "description": "allowed admin users access dashboard, and manage rules and users",
+        "actions": ["manage"],
+        "subject": ["rules","user-abilities"],
+        "roles": ["sys-admin"]
+      }
+    ]
+  },
+  "siteEmail": "MyCompany@MyCompany.com",
+  "adminEmails": ["doron@committed.co.il"],
+  "defaultFileService": "static"
+}
