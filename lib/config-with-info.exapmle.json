@@ -80,7 +80,7 @@
   "google-cloud": {
     "projectId": "agora-real",
     "bucket": "MyCompany-dev",
-    "keyFilename": "../src/secret-files/google-key.json",
+    "keyFilename": "../src/secret-files/google-key.json", /* The place you save your google json file*/
     "signedUrlExpires" : 900
   },
   "mailgun": {
@@ -96,11 +96,11 @@
     "number": "XXXXXXXX"
   },
   "feathers-mongoose-casl": {
-    "pickMeReadFields": ["-roles","-verifyExpires","-resetExpires","-verifyToken","-isVerified","-resetToken","-verifyChanges","-password"],
-    "pickMeUpdateFields": ["firstName","lastName"],
+    "pickMeReadFields": [], /* Array of field that user can see ['email'] or can't see ['-verifyEmail']*/
+    "pickMeUpdateFields": [] /* Array of field that user can update ['email'] or can't update ['-verifyEmail']*/,
     "mailer": {
-      "service": "mailgun",
-      "sendgrid-authentication-emails-templates": {
+      "service": "", /* The service through which he was sent was emails, can be 'sendgrid' or 'mailgun'*/
+      "sendgrid-authentication-emails-templates": {  /* Relevant only to send grid, set templates id's */
         "reset-password": null,
         "Identity-change": null,
         "password-change": null,
@@ -109,7 +109,7 @@
         "email-verified": null
       }
     },
-    "defaultRules": [
+    "defaultRules": [ /* Array of default rules to your app */
       {
         "userContext": {"email": "doron.nahum+2@gmail.com"},
         "actions": ["manage"],
@@ -131,28 +131,28 @@
       }
     ],
     "uploads": {
-      "services": {
-        "s3": 0,
-        "local-private": 1,
-        "local-public": 1,
-        "google-cloud": 0
+      "services": { /* Uploads services to allow */
+        "s3": false,
+        "local-private": true,
+        "local-public": true,
+        "google-cloud": false
       },
-      "defaultFileService": "local-private",
-      "blockDeleteDocumentWhenDeleteFileFailed": false,
-      "blockUpdateDocumentWhenReplaceFileFailed": false
+      "defaultFileService": "local-private", /* The service to use in the built in File service*/
+      "blockDeleteDocumentWhenDeleteFileFailed": false, /* Set true if you want to block DB document delete if assign file deleting is failed */
+      "blockUpdateDocumentWhenReplaceFileFailed": false /* Set true if you want to block DB document updating if assign file deleting is failed */
     },
     "verifyEmail": {
-      "enabled": true,
+      "enabled": true, /* Set to false if you want to let the user login withot validate is emails */
       "fromEmail": "info@MyCompany.com",
       "helpEmail": "help@MyCompany.com"
     },
     "clientUrl" : "http://localhost:8080",
     "changePasswordClientUrl": null,
-    "clientSigninUrl" : "http://localhost:8080/signin",
+    "clientSigninUrl" : "http://localhost:8080/signin", /* The url to redirect after email is verified*/
     "srcFolder": "../src/",
-    "privateFolder": "../private-files",
+    "privateFolder": "../private-files", /* The place to save private-files when you use upload local-private*/
     "rulesCache": {
-      "enabled": true,
+      "enabled": true, /* true is recommended, we save rules in the cache and we refresh the cache when DB rules are updating */
       "local-catch": true,
       "local-config": {
         "max": 400,
@@ -160,7 +160,7 @@
       }
     },
     "usersCache": {
-      "enabled": true,
+      "enabled": true, /* true is recommended, we save users in the cache and we refresh the cache when DB users are updating */
       "local-catch": true,
       "local-config": {
         "max": 100,
@@ -168,7 +168,7 @@
       }
     },
     "privateFilesAbilityCache": {
-    "enabled": true,
+    "enabled": true,  /* true is recommended, we save user abilities to see the private file in the cache */
     "local-catch": true,
     "local-config": {
       "max": 100,
