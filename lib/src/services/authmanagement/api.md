@@ -10,7 +10,7 @@ body: {
 url: "http://localhost:3030/checkUnique"
 method: post,
 body: {
-   "action": "resendVerifySignup",
+   "action": "checkUnique",
    "value": {"email": "userEaail@gmail.com"}
 }
 return 200 only if is Unique email
