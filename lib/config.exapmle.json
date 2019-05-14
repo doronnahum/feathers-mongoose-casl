@@ -153,14 +153,6 @@
         "maxAge": 3600000
       }
     },
-    "usersCache": {
-      "enabled": true,
-      "local-catch": true,
-      "local-config": {
-        "max": 100,
-        "maxAge": 3600000
-      }
-    },
     "privateFilesAbilityCache": {
     "enabled": true,
     "local-catch": true,

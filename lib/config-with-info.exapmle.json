@@ -153,14 +153,6 @@
         "maxAge": 3600000
       }
     },
-    "usersCache": {
-      "enabled": true, /* true is recommended, we save users in the cache and we refresh the cache when DB users are updating */
-      "local-catch": true,
-      "local-config": {
-        "max": 100,
-        "maxAge": 3600000
-      }
-    },
     "privateFilesAbilityCache": {
     "enabled": true,  /* true is recommended, we save user abilities to see the private file in the cache */
     "local-catch": true,
