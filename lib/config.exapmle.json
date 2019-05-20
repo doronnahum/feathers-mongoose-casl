@@ -147,7 +147,6 @@
     "privateFolder": "../private-files",
     "rulesCache": {
       "enabled": true,
-      "local-catch": true,
       "local-config": {
         "max": 400,
         "maxAge": 3600000
@@ -155,7 +154,6 @@
     },
     "privateFilesAbilityCache": {
     "enabled": true,
-    "local-catch": true,
     "local-config": {
       "max": 100,
       "maxAge": 3600000
