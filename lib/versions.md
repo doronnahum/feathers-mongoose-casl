@@ -1,10 +1,1 @@
-## changes
-"version": "1.8.0"
-disabled cookie and remove getTokenFromCookie.
-
-
-
-
-
-# TODO:
-1) Need to support swagger with token
+// remove cookie support  getTokenFromCookie for docs ang get file
