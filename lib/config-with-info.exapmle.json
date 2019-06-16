@@ -1,7 +1,7 @@
 {
   // Add this to your config file
   "authentication": {
-    "secret": Run in the command line feathers generate secret and past here the new key,
+    "secret": Run "feathers generate secret" in the command line and past here the result,
     "strategies": ["jwt", "local"],
     "path": "/authentication",
     "service": "users",
@@ -57,7 +57,7 @@
       "successRedirect": "/"
     },
     "cookie": {
-      "enabled": true,
+      "enabled": false, // before you enable- https://github.com/feathersjs/docs/blob/master/SECURITY.md
       "name": "feathers-jwt",
       "httpOnly": false,
       "secure": false
@@ -65,23 +65,23 @@
   },
   "serverUrl": "http://localhost:3030",
   "public": "../public/",
-  "s3": {
+  "s3": { // Optional - only if you want to use s3
     "bucket": "bucket....",
     "accessKeyId": "accessKeyId....",
     "secretAccessKey": "secretAccessKey....",
     "signedUrlExpires" : 900
   },
-  "google-cloud": {
+  "google-cloud": { // Optional - only if you want to use google-cloud
     "projectId": "agora-real",
     "bucket": "MyCompany-dev",
     "keyFilename": "../src/secret-files/google-key.json", /* The place you save your google json file*/
     "signedUrlExpires" : 900
   },
-  "mailgun": {
+  "mailgun": { // Optional - only if you want to use gmailgun
     "apiKey": "apiKey",
     "domain": "mg.MyCompany.com"
   },
-  "sendgrid": {
+  "sendgrid": { // Optional - only if you want to use sendgrid
     "apiKey": "apiKey"
   },
   "twilio": {

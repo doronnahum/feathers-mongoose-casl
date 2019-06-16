@@ -1,7 +1,7 @@
 {
   // Add this to your config file,
   "authentication": {
-    "secret": Run in the command line feathers generate secret and past here the new key,
+    "secret": Run "feathers generate secret" in the command line and past here the result,
     "strategies": ["jwt", "local"],
     "path": "/authentication",
     "service": "users",
@@ -57,7 +57,7 @@
       "successRedirect": "/"
     },
     "cookie": {
-      "enabled": true,
+      "enabled": false,
       "name": "feathers-jwt",
       "httpOnly": false,
       "secure": false
