@@ -1,1 +1,0 @@
-// remove cookie support  getTokenFromCookie for docs ang get file
