@@ -1,3 +1,6 @@
+
+### "versions": "1.8.4"
+fix issue "Cannot read property 'USER_PROTECTED_FIELDS' of undefined"
 ### "version": "1.8.3"
 --------------------------------------------------------------------------
 1. add to config 2 new keys:
