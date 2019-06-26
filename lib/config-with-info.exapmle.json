@@ -92,6 +92,8 @@
   "feathers-mongoose-casl": {
     "pickMeReadFields": [], /* Array of field that user can see ['email'] or can't see ['-verifyEmail']*/
     "pickMeUpdateFields": [] /* Array of field that user can update ['email'] or can't update ['-verifyEmail']*/,
+    "fetchMeOnLogin": false, // by default we send user on login from params.user, set true to fetch data from me service
+    "usersServiceOptions": null, //optional, to allow {whitelist: '$populate'} for example
     "mailer": {
       "service": "", /* The service through which he was sent was emails, can be 'sendgrid' or 'mailgun'*/
       "sendgrid-authentication-emails-templates": {  /* Relevant only to send grid, set templates id's */

@@ -92,6 +92,8 @@
   "feathers-mongoose-casl": {
     "pickMeReadFields": ["-roles","-verifyExpires","-resetExpires","-verifyToken","-isVerified","-resetToken","-verifyChanges","-password"],
     "pickMeUpdateFields": ["firstName","lastName"],
+    "fetchMeOnLogin": false,
+    "usersServiceOptions": null,
     "mailer": {
       "service": "mailgun",
       "sendgrid-authentication-emails-templates": {

@@ -1,3 +1,12 @@
+### "version": "1.8.3"
+--------------------------------------------------------------------------
+1. add to config 2 new keys:
+   1. "fetchMeOnLogin": [boolean] [default-false] - set true if you want to fetch user from '/me' and not from params.user, helpful when you do something special on '/me' like populate
+   2. "usersServiceOptions": [object] [default-null] - pass object to add options to users.options- like {whitelist: '$populate'}
+
+2. removed the me hook and filter the fields on the me class
+3. clean code and fix issue 'abilityFields is not iterable'
+
 ### "version": "1.8.2"
 --------------------------------------------------------------------------
 1. uploadMiddleware - is now support fileFilter, just add mimetypes[array] when using uploadMiddleware
