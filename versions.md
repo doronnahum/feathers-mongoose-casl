@@ -1,4 +1,6 @@
 
+### "versions": "1.8.7"
+fix audit and remove Unused dependencies
 ### "versions": "1.8.6"
 fix issue with '$select'
 ### "versions": "1.8.5"
