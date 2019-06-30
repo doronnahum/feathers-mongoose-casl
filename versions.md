@@ -1,5 +1,7 @@
 
-### "versions": "1.8.4"
+### "versions": "1.8.6"
+fix issue with '$select'
+### "versions": "1.8.5"
 callingParamsPersistUser is now get params at the first attribute and not hook object
 in this way we can persist the user from other-service.class.js 
 ### "versions": "1.8.4"
