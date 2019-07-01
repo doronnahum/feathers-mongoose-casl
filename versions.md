@@ -1,6 +1,60 @@
+### "versions": "1.9.0"
+allow to controlled deep populate from rule.populateWhitelist
+rule example:
+```jsx
+  const options = {
+    Model,
+    paginate,
+    whitelist: '$populate',
+    serviceRules: [
+      // rule example that allow the user to populate posts and post tags
+      {
+        actions: ['read'],
+        populateWhitelist: ['post', 'post.tags']
+      },
+      // rule example that the user to populate and post tags but select only the tag name
+      {
+        actions: ['read'],
+        populateWhitelist: ['post', {path: 'post.tags', select: ['name']}]
+      },
+    ],
+  };
+```
+
+'$populate' examples:
+```jsx
+$populate: ['post','tag'];
+$populate: [{path: 'post', select: 'name', populate: 'tag'}];
+$populate: [{path: 'post', select: 'name', populate: {path: 'tag', select: 'name'}];
+```
+request example:
+```jsx
+const {callingParamsPersistUser} = require('feathers-mongoose-casl');
+
+// We use callingParamsPersistUser to persist user abilities when the request call from the server
+
+// in this user get response with the populate post, and each tag inside the post will be populate but he
+// will get only the name fields
+// user will not be populate , it is now allowed by the populateWhitelist
+const res = await context.app.service('some-service').find(callingParamsPersistUser(context.params, {
+  query: {
+    '$populate':
+    [{
+      path: 'post',
+      'populate': {
+        path: 'tags',
+        select: 'name, rating'
+      }
+    },
+    'user'
+    ]
+  }
+}));
+
+```
 
 ### "versions": "1.8.7"
-fix audit and remove Unused dependencies
+fix npm audit and remove all unused dependencies
 ### "versions": "1.8.6"
 fix issue with '$select'
 ### "versions": "1.8.5"
