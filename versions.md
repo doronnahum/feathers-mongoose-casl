@@ -1,3 +1,10 @@
+### "versions": "1.9.1"
+Add google-libphonenumber validtor to joi
+example of use:
+```js
+  const {Joi} = require('feathers-mongoose-casl')
+  Joi.string().phoneNumber()
+```
 ### "versions": "1.9.0"
 allow to controlled deep populate from rule.populateWhitelist
 rule example:

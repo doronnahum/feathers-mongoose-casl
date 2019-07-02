@@ -90,9 +90,10 @@
     "pug": "^2.0.3",
     "s3-blob-store": "^3.2.0",
     "sift": "^8.5.0",
-    "uuid": "^3.3.2"
+    "google-libphonenumber": "^3.2.3"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "semistandard": "*"
   }
 }
