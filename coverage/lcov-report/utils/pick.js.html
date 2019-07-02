@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for utils/pick.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">utils/</a> pick.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>47/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.52% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>25/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.97% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>46/59</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const sift = require('sift').default;
+const cloneDeep = require('lodash.clonedeep');
+const _pick = require('lodash.pick');
+const _omit = require('lodash.omit');
+&nbsp;
+/**
+ * pick.js
+ * ------------------------------------------------------------------
+ * Use pick.js to pick some fields from object
+ * ------------------------------------------------------------------
+ *
+ *
+ */
+&nbsp;
+/**
+ * @function can
+ * @description check field conditions with [sift], sift is like mongoose query
+ * @param {object} data
+ * @param {object} conditions
+ * @example
+ * can({id: '123', type: 'BIG'}, {'id': {$in: ['124']}}) === false
+ * can({id: '123', type: 'BIG'}, {'type': 'BIG'}) === true
+ *
+ *
+ */
+const can = <span class="fstat-no" title="function not covered" >function (data, conditions) {</span>
+<span class="cstat-no" title="statement not covered" >  const _sift = sift(conditions); </span>// Create sift
+<span class="cstat-no" title="statement not covered" >  return _sift(data); </span>// Make the query
+};
+&nbsp;
+const parseFields = function ({ data, defaultFields, fields }) {
+  const negative = [];
+  const positive = [...defaultFields];
+  const pathSelect = [];
+  const pathSelectFromArr = [];
+  let allField = false;
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (fields) {
+    fields.forEach(field =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (field === '*') {
+<span class="cstat-no" title="statement not covered" >        allField = true;</span>
+      }
+      const isNegative = field[0] === '-';
+      if (isNegative) {
+        const fieldName = field.substr(1);
+        negative.push(fieldName);
+        return;
+      }
+      if (field.path &amp;&amp; !field.when) {
+        const selectInPath = { path: field.path, select: field.select };
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (field.type === 'array') {
+          pathSelectFromArr.push(selectInPath);
+        } else {
+<span class="cstat-no" title="statement not covered" >          pathSelect.push(selectInPath);</span>
+        }
+        return;
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (field.when) {
+<span class="cstat-no" title="statement not covered" >        const whenResult = can(data, field.when);</span>
+<span class="cstat-no" title="statement not covered" >        const selectInPath = { path: field.path, select: whenResult ? field.then : field.otherwise };</span>
+<span class="cstat-no" title="statement not covered" >        if (field.type === 'array') {</span>
+<span class="cstat-no" title="statement not covered" >          pathSelectFromArr.push(selectInPath);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          pathSelect.push(selectInPath);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+      positive.push(field);
+    });
+  }
+  return {
+    negative,
+    positive,
+    pathSelect,
+    pathSelectFromArr,
+    allField
+  };
+};
+&nbsp;
+// pick.js
+// This function help us to pick specific fields from object
+// the function get object and fields array
+// the array can be negative ['-name','-price'] and the result will be all fields except price and name
+// of positive, ['name','price'] and the result will be only name and price
+// you can't mixed positive and negative
+// each field can be an object to include conditions [{name: id: 1}] - return name only if is equals to one
+// we use sift to check your conditions, sift filter base the mongodb query, see https://docs.mongodb.com/manual/reference/operator/query/**
+// the field name can be deep, like that ['product.price']- in this example we will return only the price from the product object
+// if product is not an object then we will return the product value, this is useful for reference field that sometimes you populate them and sometimes you not
+// depp to arr field ['comments._id'] - if comments is array of object then in this example we will return array with object with comment _id
+&nbsp;
+/**
+ * @function pick
+ * @param {object} _data Pass nested object {}
+ * @param {array} fields ['_id',{'user': {userId: 'A22'}}]
+ * @private {string[]} defaultFields fields to include always ['_id']
+ * @example
+ * const data = {
+ *  '_id': 4,
+ *  'user': {name: 'Dan', age: 30},
+ *  'title': 'theTitle',
+ *  'comments': [{title: 'A'},{title: 'B'},{title: 'C'}],
+ *  'colors': ['red','green', 'grey']
+ * }
+ * pick(data, ['title']) // object wil title
+ * pick(data, ['-title']) // object with all fields except the title
+ * pick(data, [{path: 'comments', select: ['text'], type: 'array'}])
+ */
+const pick = function (_data, fields, defaultFields = ['_id', 'updatedAt', 'createdAt']) {
+  const data = cloneDeep(_data);
+  let values = {};
+  const {
+    negative,
+    positive,
+    pathSelect,
+    pathSelectFromArr,
+    allField
+  } = parseFields({ data, defaultFields, fields });
+&nbsp;
+  const pickFromPositive = !allField &amp;&amp; positive.length !== defaultFields.length;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (allField) {
+<span class="cstat-no" title="statement not covered" >    values = data;</span>
+  }
+  if (pickFromPositive) {
+    values = _pick(data, positive);
+  }
+  if (negative.length) {
+    let _data = pickFromPositive ? <span class="branch-0 cbranch-no" title="branch not covered" >values </span>: data;
+    values = _omit(_data, negative);
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (pathSelect.length) {
+<span class="cstat-no" title="statement not covered" >    pathSelect.forEach(({ path, select }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      values[path] = (data[path] &amp;&amp; typeof data[path] === 'object') ? pick(data[path], select) : data[path];</span>
+    });
+  }
+  if (pathSelectFromArr.length) {
+    pathSelectFromArr.forEach(({ path, select }) =&gt; {
+      const _data = data[path];
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (Array.isArray(_data)) {
+        values[path] = _data.map(item =&gt; (item &amp;&amp; typeof item === 'object') ? pick(item, select) : <span class="branch-1 cbranch-no" title="branch not covered" >item)</span>;
+      }
+    });
+  }
+&nbsp;
+  return values;
+};
+&nbsp;
+module.exports = pick;
+&nbsp;
+// const comments = [
+//   {
+//     'postId': 1,
+//     'id': 1,
+//     'text': 'theText',
+//   },
+//   {
+//     'postId': 1,
+//     'id': 2,
+//     'text': 'theText',
+//   }
+// ];
+// const user = {
+//   'id': 'theId',
+//   'name': 'theName',
+//   'username': 'theUserName',
+//   'address': {
+//     'street': 'Kulas Light',
+//     'suite': 'Apt. 556',
+//   }
+// };
+// const FAKE_DATA = {
+//   '_id': 4,
+//   'userId':'aak',
+//   'user': user,
+//   'title': 'theTitle',
+//   'body': 'theBody',
+//   'comments': comments,
+//   'images': ['11','22', '333']
+// };
+&nbsp;
+// Simple positive
+// console.log(pick(FAKE_DATA, ['_id', 'title']));
+// Simple Negative
+// console.log(pick(FAKE_DATA, ['-body','-title']));
+// with
+// console.log(pick(FAKE_DATA, [{path: 'user', when: {'user.id': 'theId'}, then: ['name'], otherwise: ['id']}]));
+// path
+// console.log(pick(FAKE_DATA, [{path: 'user', select: ['name']}]));
+// path
+// console.log(pick(FAKE_DATA, [{path: 'comments', select: ['text'], type: 'array'}]));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 02 2019 23:53:40 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

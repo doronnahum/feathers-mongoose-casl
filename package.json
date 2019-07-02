@@ -93,6 +93,7 @@
     "google-libphonenumber": "^3.2.3"
   },
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "mocha": "^6.1.4",
     "semistandard": "*"
   }
