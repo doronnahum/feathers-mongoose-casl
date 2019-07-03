@@ -1,1 +1,2 @@
---recursive lib/test/
+lib/test/
+--recursive

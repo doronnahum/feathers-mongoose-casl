@@ -1,5 +1,5 @@
 const posts = require('./posts/posts.service.js');
-const {services} = require('../../../lib/index'); //require('feathers-mongoose-casl');
+const { services } = require('../../../lib/index'); // require('feathers-mongoose-casl');
 
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {

@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/src/utils/joi2json.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">lib/src/utils/</a> joi2json.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/127</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/126</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+// We Copy this from https://github.com/yolopunk/joi2json
+// to Convert Joi schema to JSON schema;
+// We added schema.properties[property.key].meta = property.schema._meta
+// to keep the meth that includes ref data
+const assert = require('assert');
+&nbsp;
+// Converter helpers for Joi types.
+&nbsp;
+let TYPES = {
+&nbsp;
+  alternatives: (schema, joi) =&gt; {
+<span class="cstat-no" title="statement not covered" >    var result = schema.oneOf = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    joi._inner.matches.forEach(<span class="fstat-no" title="function not covered" >function (match) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (match.schema) {</span>
+<span class="cstat-no" title="statement not covered" >        return result.push(convert(match.schema));</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!match.is) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('joi.when requires an "is"');</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (!(match.then || match.otherwise)) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('joi.when requires one or both of "then" and "otherwise"');</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (match.then) {</span>
+<span class="cstat-no" title="statement not covered" >        result.push(convert(match.then));</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (match.otherwise) {</span>
+<span class="cstat-no" title="statement not covered" >        result.push(convert(match.otherwise));</span>
+      }
+    });
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  date: (schema, joi) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (joi._flags.timestamp) {</span>
+<span class="cstat-no" title="statement not covered" >      schema.type = 'integer';</span>
+<span class="cstat-no" title="statement not covered" >      return schema;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    schema.type = 'string';</span>
+<span class="cstat-no" title="statement not covered" >    schema.format = 'date-time';</span>
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  any: (schema) =&gt; {
+<span class="cstat-no" title="statement not covered" >    schema.type = [</span>
+      'array',
+      'boolean',
+      'number',
+      'object',
+      'string',
+      'null'
+    ];
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  array: (schema, joi) =&gt; {
+<span class="cstat-no" title="statement not covered" >    schema.type = 'array';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    joi._tests.forEach((test) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      switch (test.name) {</span>
+        case 'unique':
+<span class="cstat-no" title="statement not covered" >          schema.uniqueItems = true;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'length':
+<span class="cstat-no" title="statement not covered" >          schema.minItems = schema.maxItems = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'min':
+<span class="cstat-no" title="statement not covered" >          schema.minItems = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'max':
+<span class="cstat-no" title="statement not covered" >          schema.maxItems = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+      }
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (joi._inner) {</span>
+<span class="cstat-no" title="statement not covered" >      if (joi._inner.ordereds.length) {</span>
+<span class="cstat-no" title="statement not covered" >        schema.ordered = joi._inner.ordereds.map((item) =&gt; <span class="cstat-no" title="statement not covered" >convert(item))</span>;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      let list;</span>
+<span class="cstat-no" title="statement not covered" >      if (joi._inner.inclusions.length) {</span>
+<span class="cstat-no" title="statement not covered" >        list = joi._inner.inclusions;</span>
+      } else <span class="cstat-no" title="statement not covered" >if (joi._inner.requireds.length) {</span>
+<span class="cstat-no" title="statement not covered" >        list = joi._inner.requireds;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (list) {</span>
+<span class="cstat-no" title="statement not covered" >        schema.items = convert(list[0]);</span>
+<span class="cstat-no" title="statement not covered" >        schema.items.meta = list[0]._meta;</span>
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  boolean: (schema) =&gt; {
+<span class="cstat-no" title="statement not covered" >    schema.type = 'boolean';</span>
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  number: (schema, joi) =&gt; {
+<span class="cstat-no" title="statement not covered" >    schema.type = 'number';</span>
+<span class="cstat-no" title="statement not covered" >    joi._tests.forEach((test) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      switch (test.name) {</span>
+        case 'integer':
+<span class="cstat-no" title="statement not covered" >          schema.type = 'integer';</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'less':
+<span class="cstat-no" title="statement not covered" >          schema.exclusiveMaximum = true;</span>
+<span class="cstat-no" title="statement not covered" >          schema.maximum = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'greater':
+<span class="cstat-no" title="statement not covered" >          schema.exclusiveMinimum = true;</span>
+<span class="cstat-no" title="statement not covered" >          schema.minimum = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'min':
+<span class="cstat-no" title="statement not covered" >          schema.minimum = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'max':
+<span class="cstat-no" title="statement not covered" >          schema.maximum = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+      }
+    });
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  string: (schema, joi) =&gt; {
+<span class="cstat-no" title="statement not covered" >    schema.type = 'string';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    joi._tests.forEach((test) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      switch (test.name) {</span>
+        case 'email':
+<span class="cstat-no" title="statement not covered" >          schema.format = 'email';</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'regex':
+        // for backward compatibility
+        // eslint-disable-next-line no-case-declarations
+<span class="cstat-no" title="statement not covered" >          const arg = test.arg;</span>
+&nbsp;
+          // This is required for backward compatibility
+          // Location "pattern" had changed since Joi v9.0.0
+          //
+          // For example:
+          //
+          // before Joi v9: test.arg
+          // since Joi v9: test.arg.pattern
+&nbsp;
+          // eslint-disable-next-line no-case-declarations
+<span class="cstat-no" title="statement not covered" >          const pattern = arg &amp;&amp; arg.pattern ? arg.pattern : arg;</span>
+<span class="cstat-no" title="statement not covered" >          schema.pattern = String(pattern).replace(/^\//, '').replace(/\/$/, '');</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'min':
+<span class="cstat-no" title="statement not covered" >          schema.minLength = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'max':
+<span class="cstat-no" title="statement not covered" >          schema.maxLength = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'length':
+<span class="cstat-no" title="statement not covered" >          schema.minLength = schema.maxLength = test.arg;</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case 'uri':
+<span class="cstat-no" title="statement not covered" >          schema.format = 'uri';</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+      }
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  },
+&nbsp;
+  object: (schema, joi) =&gt; {
+<span class="cstat-no" title="statement not covered" >    schema.type = 'object';</span>
+<span class="cstat-no" title="statement not covered" >    schema.properties = {};</span>
+<span class="cstat-no" title="statement not covered" >    schema.additionalProperties = Boolean(joi._flags.allowUnknown);</span>
+<span class="cstat-no" title="statement not covered" >    schema.patterns = joi._inner.patterns.map((pattern) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return { regex: pattern.regex, rule: convert(pattern.rule) };</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!joi._inner.children) {</span>
+<span class="cstat-no" title="statement not covered" >      return schema;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    joi._inner.children.forEach((property) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (property.schema._flags.presence !== 'forbidden') {</span>
+<span class="cstat-no" title="statement not covered" >        schema.properties[property.key] = convert(property.schema);</span>
+<span class="cstat-no" title="statement not covered" >        schema.properties[property.key].meta = property.schema._meta;</span>
+<span class="cstat-no" title="statement not covered" >        if (property.schema._flags.presence === 'required') {</span>
+<span class="cstat-no" title="statement not covered" >          schema.required = schema.required || [];</span>
+<span class="cstat-no" title="statement not covered" >          schema.required.push(property.key);</span>
+        }
+      }
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return schema;</span>
+  }
+};
+&nbsp;
+/**
+ * Converts the supplied joi validation object into a JSON schema object,
+ * optionally applying a transformation.
+ *
+ * @param {JoiValidation} joi
+ * @param {TransformFunction} [transformer=null]
+ * @returns {JSONSchema}
+ */
+<span class="fstat-no" title="function not covered" >function convert (joi, transformer = null) {</span>
+<span class="cstat-no" title="statement not covered" >  assert(typeof joi === 'object' &amp;&amp; joi.isJoi === true, 'requires a joi schema object');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  assert(joi._type, 'joi schema object must have a type');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!TYPES[joi._type]) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error(`sorry, do not know how to convert unknown joi type: "${joi._type}"`);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (transformer) {</span>
+<span class="cstat-no" title="statement not covered" >    assert(typeof transformer === 'function', 'transformer must be a function');</span>
+  }
+&nbsp;
+  // JSON Schema root for this type.
+<span class="cstat-no" title="statement not covered" >  let schema = {};</span>
+&nbsp;
+  // Copy over the details that all schemas may have...
+<span class="cstat-no" title="statement not covered" >  if (joi._description) {</span>
+<span class="cstat-no" title="statement not covered" >    schema.description = joi._description;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (joi._examples &amp;&amp; joi._examples.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    schema.examples = joi._examples;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (joi._examples &amp;&amp; joi._examples.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >    schema.example = joi._examples[0];</span>
+  }
+&nbsp;
+  // Add the label as a title if it exists
+<span class="cstat-no" title="statement not covered" >  if (joi._settings &amp;&amp; joi._settings.language &amp;&amp; joi._settings.language.label) {</span>
+<span class="cstat-no" title="statement not covered" >    schema.title = joi._settings.language.label;</span>
+  } else <span class="cstat-no" title="statement not covered" >if (joi._flags &amp;&amp; joi._flags.label) {</span>
+<span class="cstat-no" title="statement not covered" >    schema.title = joi._flags.label;</span>
+  }
+&nbsp;
+  // Checking for undefined and null explicitly to allow false and 0 values
+<span class="cstat-no" title="statement not covered" >  if (joi._flags &amp;&amp; joi._flags.default !== undefined &amp;&amp; joi._flags.default !== null) {</span>
+<span class="cstat-no" title="statement not covered" >    schema['default'] = joi._flags.default;</span>
+  }
+<span class="cstat-no" title="statement not covered" >  if (joi._valids &amp;&amp; joi._valids._set &amp;&amp; joi._valids._set.size &amp;&amp; joi._flags.allowOnly) {</span>
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(joi._inner.children)) {</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        '------oneOf': [
+          {
+            'type': joi._type,
+            'enum': joi._valids._set
+          },
+          TYPES[joi._type](schema, joi)
+        ]
+      };
+    }
+<span class="cstat-no" title="statement not covered" >    schema['enum'] = Array.from(joi._valids._set);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  let result = TYPES[joi._type](schema, joi);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (transformer) {</span>
+<span class="cstat-no" title="statement not covered" >    result = transformer(result);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return result;</span>
+}
+&nbsp;
+module.exports = convert;
+&nbsp;
+/**
+ * Joi Validation Object
+ * @typedef {object} JoiValidation
+ */
+&nbsp;
+/**
+ * Transformation Function - applied just before `convert()` returns and called as `function(object):object`
+ * @typedef {function} TransformFunction
+ */
+&nbsp;
+/**
+ * JSON Schema Object
+ * @typedef {object} JSONSchema
+ */
+&nbsp;
+// const Joi = require('joi');
+&nbsp;
+// const p = convert(
+//   Joi.object(
+//     {
+//   name: Joi.object({
+//     user:  Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'email' }),
+//     rules:  Joi.array().items(Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'name'})),
+//     blockAll: Joi.boolean()
+//   })
+//   }
+// ))
+// console.log({p: p.properties.name.properties})
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 03 2019 13:56:16 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

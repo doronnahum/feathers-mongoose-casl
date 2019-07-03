@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">lib/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+const services = {
+  userAbilities: require('./src/services/user-abilities/user-abilities.service'), // Get user abilities with userId and ServiceName - this service help dashboard to return relevant data
+  dashboard: require('./src/services/dashboard/dashboard.service'), // Return array of object, is object is service with json schema.
+  authManagement: require('./src/services/authmanagement/authmanagement.service'), // feathers-authentication-management
+  users: require('./src/services/users/users.service'), // manage users (mongoose service)
+  me: require('./src/services/me/me.service'), // allow the user to get and patch itself *must come after users
+  rules: require('./src/services/rules/rules.service'), // manage rules (mongoose service)
+  files: require('./src/services/files/files.service'), // allow user to upload files and record them on DB (mongoose service)
+  uploads: require('./src/services/uploads/uploads.service'), // Upload files to s3/static folder (private service)
+  sms: require('./src/services/sms/sms.service'), // feathers-twilio (private service)
+  mailer: require('./src/services/mailer/mailer.service'), // feathers-mailer (private service)
+  notifier: require('./src/services/authmanagement/notifier'), // Send email to client on rest password (private service)
+  authentication: require('./src/authentication'), // '@feathersjs/authentication
+  configureServices: <span class="fstat-no" title="function not covered" >function (app) {</span>
+<span class="cstat-no" title="statement not covered" >    app.configure(services.users); </span>// mongoose service to manage users collection
+<span class="cstat-no" title="statement not covered" >    app.configure(services.me); </span>// / allow the user to get and patch itself *must come after users
+<span class="cstat-no" title="statement not covered" >    app.configure(services.authManagement); </span>// handle user verify password, reset and more
+<span class="cstat-no" title="statement not covered" >    app.configure(services.rules); </span>// mongoose service to manage rules collection
+<span class="cstat-no" title="statement not covered" >    app.configure(services.mailer); </span>// used by notifier to send emails (Not exposed to the client)
+<span class="cstat-no" title="statement not covered" >    app.configure(services.notifier); </span>// used by authManagement service to send the right email to the user to verify password, changed password message.(Not exposed to the client)
+<span class="cstat-no" title="statement not covered" >    app.configure(services.uploads); </span>// uploads file to aws/google or to local folder.(Not exposed to the client)
+<span class="cstat-no" title="statement not covered" >    app.configure(services.files); </span>// mongoose service to manage files collection, uploads files with upload service
+<span class="cstat-no" title="statement not covered" >    app.configure(services.dashboard); </span>// A dashboard for managing your app
+<span class="cstat-no" title="statement not covered" >    app.configure(services.userAbilities); </span>// Provides user permissions information
+  }
+};
+module.exports = {
+  // Hooks
+  hooks: {
+    validateAbilities: require('./src/hooks/abilities'), // Check for token, get rules and check abilities with casl
+    sanitizedData: require('./src/hooks/sanitizedData'), // Filter fields from user request and from db response base abilities
+    validateSchema: require('./src/hooks/validateSchema'), // Validate user request with joi
+    rulesCache: require('./src/hooks/cache/rulesCache'), // Save rules in cache with @feathers-plus/cache, reset cache when rules changed
+    parseRules: require('./src/hooks/parseRules'), //
+    returnUserOnLogin: require('./src/hooks/authenticate/returnUserOnLogin'), // When user login/sign in return user data with token
+    getUserFromParams: require('./src/hooks/getUserFromParams'), // Find user in params, helpful to
+    authenticate: require('./src/hooks/authenticate'), // authenticate check
+    uploadsHooks: require('./src/hooks/uploads/uploadsHooks'), // uploadsHooks handle protectFile
+    errorHandler: require('./src/hooks/errorHandler/errorHandler') // errorHandler to make sure that errors get cleaned up before they go back to the client
+&nbsp;
+  },
+  // Services
+  services,
+  createService: require('./src/utils/createService'), // feathers-mongoose wrapper  - create mongoose service
+  swaggerServiceConfiguration: require('./src/utils/swaggerServiceConfiguration'), // Add more info about your service to swagger docs
+  createModelFromJoi: require('./src/utils/createModelFromJoi'), // joigoose wrapper - convert joi to mongoose schema
+  modelToSwagger: require('./src/utils/modelToSwagger'), // mongoose-to-swagger wrapper- convert mongoose to swagger
+  joi2json: require('./src/utils/joi2json'), // joi2json wrapper - convert joi to jon schema
+  Joi: require('./src/utils/joi.js'), // joi wrapper
+  enums: require('./src/enums'),
+  uploadMiddleware: require('./src/utils/uploadMiddleware'),
+  // helpers
+  pick: require('./src/utils/pick'), // Pick fields from array with lodash.pick and with mongodb queries
+  deletePropertyPath: require('./src/utils/helpers').deletePropertyPath, // Remove Property from object with deep support
+  asyncForEach: require('./src/utils/helpers').asyncForEach, // map over array with async support
+  setJoiInstance: require('./src/utils/helpers').setJoiInstance, // Set joi schema to let validateSchema useful to your customs service
+  getJoiInstance: require('./src/utils/helpers').getJoiInstance, // validateSchema use this to find your joi schema
+  addAuthenticationExampleToSwaggerDocs: require('./src/utils/helpers').addAuthenticationExampleToSwaggerDocs,
+  joiCustomRules: require('./src/utils/helpers').joiCustomRules,
+  callingParamsPersistUser: require('./src/utils/helpers').callingParamsPersistUser, //  When you call service method from hook and you want to persist user
+  getSendgridEmailTemplateMail: require('./src/utils/helpers').getSendgridEmailTemplateMail,
+  STORAGE_TYPES: require('./src/enums').STORAGE_TYPES,
+  swaggerSchemaExamples: require('./src/utils/swaggerSchemaExamples')
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 03 2019 13:56:16 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

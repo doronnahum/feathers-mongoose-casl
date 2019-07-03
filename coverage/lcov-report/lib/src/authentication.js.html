@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/src/authentication.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">lib/src/</a> authentication.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const authentication = require('@feathersjs/authentication');
+const jwt = require('@feathersjs/authentication-jwt');
+const local = require('@feathersjs/authentication-local');
+const oauth2 = require('@feathersjs/authentication-oauth2');
+const Auth0Strategy = require('passport-auth0');
+const GoogleStrategy = require('passport-google-oauth20');
+const FacebookStrategy = require('passport-facebook');
+const GithubStrategy = require('passport-github');
+const verifyHooks = require('feathers-authentication-management').hooks;
+// feathers-mongoose-casl
+const returnUserOnLogin = require('./hooks/authenticate/returnUserOnLogin');
+const { addAuthenticationExampleToSwaggerDocs } = require('./utils/helpers');
+// //un comment to copy to your src folder
+// const { verifyHooks, returnUserOnLogin } = require('feathers-authentication-management').hooks;
+// const {addAuthenticationExampleToSwaggerDocs} = require('feathers-mongoose-casl');
+&nbsp;
+module.exports = <span class="fstat-no" title="function not covered" >function (app) {</span>
+<span class="cstat-no" title="statement not covered" >  const config = app.get('authentication');</span>
+<span class="cstat-no" title="statement not covered" >  const verifyEmailConfig = app.get('feathers-mongoose-casl').verifyEmail;</span>
+<span class="cstat-no" title="statement not covered" >  const applyIsVerifiedEmail = verifyEmailConfig &amp;&amp; verifyEmailConfig.enabled;</span>
+&nbsp;
+  // Set up authentication with the secret
+<span class="cstat-no" title="statement not covered" >  app.configure(authentication(config));</span>
+&nbsp;
+  // Swagger docs
+<span class="cstat-no" title="statement not covered" >  addAuthenticationExampleToSwaggerDocs(app);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  app.configure(jwt());</span>
+<span class="cstat-no" title="statement not covered" >  app.configure(local());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (config.auth0) {</span>
+<span class="cstat-no" title="statement not covered" >    app.configure(oauth2(Object.assign({</span>
+      name: 'auth0',
+      Strategy: Auth0Strategy
+    }, config.auth0)));
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (config.google) {</span>
+<span class="cstat-no" title="statement not covered" >    app.configure(oauth2(Object.assign({</span>
+      name: 'google',
+      Strategy: GoogleStrategy
+    }, config.google)));
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (config.facebook) {</span>
+<span class="cstat-no" title="statement not covered" >    app.configure(oauth2(Object.assign({</span>
+      name: 'facebook',
+      Strategy: FacebookStrategy
+    }, config.facebook)));
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (config.github) {</span>
+<span class="cstat-no" title="statement not covered" >    app.configure(oauth2(Object.assign({</span>
+      name: 'github',
+      Strategy: GithubStrategy
+    }, config.github)));
+  }
+&nbsp;
+  // The `authentication` service is used to create a JWT.
+  // The before `create` hook registers strategies that can be used
+  // to create a new valid JWT (e.g. local or oauth2)
+<span class="cstat-no" title="statement not covered" >  app.service('authentication').hooks({</span>
+    before: {
+      create: [
+        authentication.hooks.authenticate(config.strategies),
+        applyIsVerifiedEmail ? verifyHooks.isVerified() : () =&gt; {}
+      ],
+      remove: [
+        authentication.hooks.authenticate(config.strategies)
+      ]
+    },
+    after: {
+      create: [
+        returnUserOnLogin()
+      ]
+    }
+  });
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 03 2019 13:56:16 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

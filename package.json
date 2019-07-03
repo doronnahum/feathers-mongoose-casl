@@ -34,7 +34,8 @@
     "lint": "semistandard --fix",
     "mocha": "mocha --opts mocha.opts",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
-    "test": "npm run lint && npm run coverage",
+    "test": "npm run lint && npm run mocha && cd ./example/ && npm run test",
+    "test-with-coverage": "npm run lint && npm run coverage",
     "start": "npm run compile && node example/simple/app"
   },
   "semistandard": {
@@ -96,6 +97,9 @@
   "devDependencies": {
     "istanbul": "^0.4.5",
     "mocha": "^6.1.4",
-    "semistandard": "*"
+    "semistandard": "*",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   }
 }

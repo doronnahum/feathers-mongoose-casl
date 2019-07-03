@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/src/utils/filterPopulateByAbilities.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">lib/src/utils/</a> filterPopulateByAbilities.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.54% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>6/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+/* filterPopulateByAbilities.js
+  ------------------------------------------------------------------------------
+   When request include $populate we need to remove populate that not allowed
+   we get the [populateWhitelist] from the rules
+&nbsp;
+   $populate can be:
+   -----------------------------
+   $populate: 'user,post'
+   $populate: 'user post'
+   $populate: ['user','post']
+   $populate: ['user', {path: 'post', populate: 'categories'}]
+&nbsp;
+   populateWhitelist can be:
+   -----------------------------
+   ['user','post']
+   ['user','post', 'post.categories']
+   ['user','post', {path: 'post.categories', select: 'name'}]
+&nbsp;
+   filterPopulateByAbilities() was return only the populate
+   inside [$populate] that allowed by the [populateWhitelist]
+*/
+&nbsp;
+/**
+ * @function getSelectAsArray
+ * @description return string/array as array of string
+ * string can be split by ',' or ' '
+ * @param {array or string} select
+ */
+const getSelectAsArray = <span class="fstat-no" title="function not covered" >function (select) {</span>
+<span class="cstat-no" title="statement not covered" >  let selectAsArr;</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof select === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    if (select.includes(',')) {</span>
+<span class="cstat-no" title="statement not covered" >      selectAsArr = select.split(',');</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      selectAsArr = select.split(' ');</span>
+    }
+  } else {
+<span class="cstat-no" title="statement not covered" >    selectAsArr = select;</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return selectAsArr;</span>
+};
+&nbsp;
+/**
+   * @function getPopulateAsArray
+   * @description convert populate to a array
+   * populate can be:
+         * 1 - '$populate': 'user address'
+         * 2 - '$populate': ['user','address']
+         * 3 - '$populate': 'user,address'
+         * 4 - '$populate': [{path: user}, 'address']
+         * 5 - '$populate': {path: address}
+   * @param {*} populate
+   * @returns array
+   */
+const getPopulateAsArray = <span class="fstat-no" title="function not covered" >function (populate) {</span>
+<span class="cstat-no" title="statement not covered" >  let populateArr;</span>
+  /**
+         * parse populate to array
+         */
+<span class="cstat-no" title="statement not covered" >  if (typeof populate === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    const splitBy = populate.includes(',') ? ',' : ' ';</span>
+<span class="cstat-no" title="statement not covered" >    populateArr = populate.split(splitBy);</span>
+  } else <span class="cstat-no" title="statement not covered" >if (Array.isArray(populate)) {</span>
+<span class="cstat-no" title="statement not covered" >    populateArr = [...populate];</span>
+  } else <span class="cstat-no" title="statement not covered" >if (typeof populate === 'object') {</span>
+<span class="cstat-no" title="statement not covered" >    populateArr = [Object.assign({}, populate)];</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return populateArr;</span>
+};
+&nbsp;
+/**
+   * @function findPopulateAbilityItem
+   * @description find the item in the [populateWhitelist] that equal to [populate] or
+   * when the item in the [populateWhitelist] is object then if his path equal to [populate]
+   * @param {string} populate
+   * @param {array} populateWhitelist
+   * @example
+   * findPopulateAbilityItem('user',[{path: 'users'}]) === {path: 'users'};
+   * findPopulateAbilityItem('user', ['users']) === 'users';
+   */
+const findPopulateAbilityItem = <span class="fstat-no" title="function not covered" >function (populate, populateWhitelist) {</span>
+<span class="cstat-no" title="statement not covered" >  return populateWhitelist.find(item =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof item === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >      return item === populate;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return item.path === populate;</span>
+    }
+  });
+};
+&nbsp;
+/**
+   * @function checkInsidePopulate
+   * @description used by [filterPopulateByAbilities] to call itself with prefix
+   * to check deep populate
+   * @param {string} populateArr
+   * @param {array} populateWhitelist
+   * @param {string} prefix
+   * @example
+   * checkInsidePopulate('post', ['user', 'user.post'], 'user')
+   */
+const checkInsidePopulate = <span class="fstat-no" title="function not covered" >function (populate, populateWhitelist, prefix) {</span>
+<span class="cstat-no" title="statement not covered" >  const _prefix = (prefix &amp;&amp; prefix.length) ? `${prefix}.` : '';</span>
+<span class="cstat-no" title="statement not covered" >  return filterPopulateByAbilities(populate, populateWhitelist, _prefix);</span>
+};
+&nbsp;
+/**
+   * @function filterPopulateByAbilities
+   * @description filter from [populateArray] the populates that not allowed by the [populateWhitelist]
+   * @param {*} populate
+   * @param {array} populateWhitelist
+   * @param {string} prefix only when [checkInsidePopulate] is call this method
+   * @example
+   * const populateArray = ['users', {path: 'office', populate: 'organizations'}]
+   * const populateWhitelist = ['users', 'office', 'office.banks']
+   * const populate = filterPopulateByAbilities(populate, populateWhitelist) === ['users', {path: 'office'}];
+   * @returns {array}
+   */
+const filterPopulateByAbilities = <span class="fstat-no" title="function not covered" >function (populate, populateWhitelist, prefix = '') {</span>
+<span class="cstat-no" title="statement not covered" >  let populateArray = getPopulateAsArray(populate);</span>
+<span class="cstat-no" title="statement not covered" >  return populateArray.map(populateItem =&gt; {</span>
+    /**
+       * populateItem is string
+       */
+<span class="cstat-no" title="statement not covered" >    if (typeof populateItem === 'string') {</span>
+      /**
+         * find populateItem inside [populateWhitelist]
+         */
+<span class="cstat-no" title="statement not covered" >      const ability = findPopulateAbilityItem(prefix + populateItem, populateWhitelist);</span>
+&nbsp;
+      /**
+         * ability not found
+         * -----------------------------------------------------------------
+         * remove the populateItem from populateArray
+         * -----------------------------------------------------------------
+         */
+<span class="cstat-no" title="statement not covered" >      if (!ability) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+&nbsp;
+      /**
+         * ability found
+         * -----------------------------------------------------------------
+         * ability found and includes select
+         * populate allowed with select specific fields
+         * -----------------------------------------------------------------
+         */
+<span class="cstat-no" title="statement not covered" >      if (ability.select) {</span>
+<span class="cstat-no" title="statement not covered" >        return Object.assign({}, ability, { path: populateItem });</span>
+      }
+&nbsp;
+      /**
+         * ability found
+         * -----------------------------------------------------------------
+         * populate allowed
+         * -----------------------------------------------------------------
+         */
+<span class="cstat-no" title="statement not covered" >      return populateItem;</span>
+    } else {
+    /**
+       * populateItem is object
+       * -----------------------------------------------------------------
+       * example
+       * populateItem = {path: 'user', populate: {path: 'posts', select: 'title'}}
+       * -----------------------------------------------------------------
+       */
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      const { path, populate, select } = populateItem;</span>
+&nbsp;
+      /**
+         * Check deep populate
+         */
+<span class="cstat-no" title="statement not covered" >      if (populate) {</span>
+        /**
+           * Filter deep populate base of the populateWhitelist
+           */
+<span class="cstat-no" title="statement not covered" >        const _populate = checkInsidePopulate(populate, populateWhitelist, prefix + path);</span>
+&nbsp;
+        /**
+           * allow Deep Populate when [_populate] was include items
+           */
+<span class="cstat-no" title="statement not covered" >        const allowDeepPopulate = _populate.length &gt; 0;</span>
+&nbsp;
+        /**
+           * override deep populate
+           * -----------------------------------------------------------------
+           * override the current deep populate with the [_populate] that include
+           * only populate by the abilities
+           * -----------------------------------------------------------------
+           */
+<span class="cstat-no" title="statement not covered" >        if (allowDeepPopulate) {</span>
+<span class="cstat-no" title="statement not covered" >          populateItem.populate = _populate;</span>
+        } else {
+          /**
+           * remove deep populate when not allowed
+           */
+<span class="cstat-no" title="statement not covered" >          delete populateItem.populate;</span>
+        }
+      }
+&nbsp;
+      /**
+         * check populate path
+         */
+<span class="cstat-no" title="statement not covered" >      const ability = findPopulateAbilityItem(prefix + path, populateWhitelist);</span>
+&nbsp;
+      /**
+         * ability not found
+         * -----------------------------------------------------------------
+         * remove the populateItem from populateArray
+         * -----------------------------------------------------------------
+         */
+<span class="cstat-no" title="statement not covered" >      if (!ability) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+&nbsp;
+      /**
+         * ability found
+         * -----------------------------------------------------------------
+         * ability found and includes select
+         * populate allowed with select specific fields
+         * -----------------------------------------------------------------
+         */
+<span class="cstat-no" title="statement not covered" >      if (ability &amp;&amp; ability.select) {</span>
+<span class="cstat-no" title="statement not covered" >        populateItem.select = select</span>
+          ? getSelectAsArray(select).filter(item =&gt; <span class="cstat-no" title="statement not covered" >ability.select.includes(item))</span> // request include select, filter only select that allowed by the ability
+          : ability.select; // request not include select, select fields by the ability.select
+      }
+<span class="cstat-no" title="statement not covered" >      return populateItem;</span>
+    }
+  }).filter(item =&gt; <span class="cstat-no" title="statement not covered" >!!item)</span>;
+};
+&nbsp;
+module.exports = filterPopulateByAbilities;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 03 2019 13:56:16 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

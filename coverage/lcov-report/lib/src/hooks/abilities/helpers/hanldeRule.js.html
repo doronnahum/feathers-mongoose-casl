@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/src/hooks/abilities/helpers/hanldeRule.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">lib/src/hooks/abilities/helpers/</a> hanldeRule.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.39% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { defineAbilitiesHelpers } = require('../../../utils/helpers');
+const { findRoleMatch, checkUserContext } = defineAbilitiesHelpers;
+const debug = require('debug')('feathers-mongoose-casl');
+&nbsp;
+module.exports = <span class="fstat-no" title="function not covered" >function ({ hasUser, can, hook, user, testMode }) {</span>
+  /**
+  * @function handleRule
+  * This function will add can rule to casl ability when the rule is relevant to user
+  * @param {object} rule
+  * @param {string[]} rule.actions one or more relevant methods ['read','update','delete','create','manage']
+  * @param {string[]} rule.subject collection of relevant services name ['posts' ,'users']
+  * @param {object} rule.conditions query object mongoose style, see sift.js, example - { "_id": "{{ user._id }}" } , { "active": true }
+  * @param {[]} rule.fields select/remove fields from req/res,
+                            examples:
+                             1- allow only title and body - ['title', 'body']
+                             2- remove price from req/res - ['-price'],
+                             3- allow all, select specific fields from author base user context-  ["*",{
+                               "path": "author",
+                               "when": {"author._id" : "{{ user._id}}"} ,
+                               "then" : ["*"] ,
+                               "otherwise": ["email"]
+                               }
+                             ]
+                             4- expose only email from author object - ["*", {"path": "author", "select": ["email", "-updatedAt"] }]
+  * @param {string[]} rule.roles apply this rule only on user with one or more of this roles ['admin','sysadmin']
+  * @param {boolean} rule.anonymousUser apply the rule on anonymous User when true
+  * @param {string[]} rule.populateWhitelist allow user to populate one or more, example ['categories']
+  * @param {object} rule.userContext query object base user Context,  mongoose style, see sift.js, example - {"email":{"$eq":"doron+1@committed.co.il"}}
+  *
+  */
+<span class="cstat-no" title="statement not covered" >  const handleRule = <span class="fstat-no" title="function not covered" >function (rule) {</span></span>
+<span class="cstat-no" title="statement not covered" >    const { actions, subject, conditions, fields, userContext, roles, anonymousUser, populateWhitelist } = rule;</span>
+&nbsp;
+    // ----------------------------- Check if rule is relevant to this specific client --------------------------------------- //
+&nbsp;
+    /**
+    * When anonymousUser is not allowed when skip the rule when user is not found
+    */
+<span class="cstat-no" title="statement not covered" >    if (!anonymousUser &amp;&amp; !hasUser) <span class="cstat-no" title="statement not covered" >return; </span></span>// this rule relevant only for logged in user
+&nbsp;
+    /**
+    * When rule.roles is not empty then skip the rule if user not match at least one role
+    */
+<span class="cstat-no" title="statement not covered" >    if (roles &amp;&amp; roles.length &amp;&amp; (!hasUser || !findRoleMatch({ roles, userRoles: user.roles }))) <span class="cstat-no" title="statement not covered" >return;</span></span>
+&nbsp;
+    /**
+    * When userContext is found then skip the rule if checkUserContext is failed
+    * checkUserContext used sift to test user context base client request or server response,
+    */
+<span class="cstat-no" title="statement not covered" >    if (userContext &amp;&amp; (!hasUser || !checkUserContext({ hook, user, userContext }))) <span class="cstat-no" title="statement not covered" >return;</span></span>
+&nbsp;
+    // ----------------------------- Rule is relevant to this specific client --------------------------------------- //
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    hook.params = hook.params || {};</span>
+&nbsp;
+    /**
+    * When fields found on the rule we want to set hook.params.ability-fields to true
+    * with this flag we know to add fields to mongoose select or remove fields from request\response
+    */
+<span class="cstat-no" title="statement not covered" >    if (fields &amp;&amp; fields.length) {</span>
+<span class="cstat-no" title="statement not covered" >      hook.params[defineAbilitiesHelpers.ENABLE_ABILITY_FIELDS_KEY] = true;</span>
+    }
+&nbsp;
+    /**
+    * When rule include populateWhitelist
+    * we want to add the values to hook.parsms.populate-whitelist
+    * then sanitizedData/beforeRead.js will keep value in the $populate query
+    * only if it found inside the hook.parsms.populate-whitelist
+    */
+<span class="cstat-no" title="statement not covered" >    if (['find', 'get'].includes(hook.method) &amp;&amp; populateWhitelist &amp;&amp; populateWhitelist.length) {</span>
+<span class="cstat-no" title="statement not covered" >      debug('sanitizedData update populateWhitelist');</span>
+<span class="cstat-no" title="statement not covered" >      const currentPopulateWhitelist = hook.params[defineAbilitiesHelpers.WHITELIST_POPULATE_KEY] || [];</span>
+<span class="cstat-no" title="statement not covered" >      hook.params[defineAbilitiesHelpers.POPULATE_WHITELIST_KEY] = [...currentPopulateWhitelist, ...populateWhitelist];</span>
+    }
+&nbsp;
+    /**
+    * Define Abilities with AbilityBuilder.can
+    * User can do [actions] on [subject] [fields] with [conditions]
+    * for example - user can [read] [post] [title]
+    */
+<span class="cstat-no" title="statement not covered" >    if (testMode) {</span>
+<span class="cstat-no" title="statement not covered" >      can(actions, subject, fields); </span>// in test mode , conditions is not relevant, we need something more general
+    } else {
+<span class="cstat-no" title="statement not covered" >      can(actions, subject, fields, conditions);</span>
+    }
+  };
+<span class="cstat-no" title="statement not covered" >  return handleRule;</span>
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 03 2019 13:56:16 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/src/utils/createModelFromJoi.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">lib/src/utils/</a> createModelFromJoi.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>6/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+var timestamps = require('mongoose-timestamp');
+const Joigoose = require('joigoose');
+const { setJoiInstance, getJoiInstance } = require('../utils/helpers');
+const { accessibleFieldsPlugin } = require('@casl/mongoose');
+&nbsp;
+/**
+  * @function createModelFromJoi
+  * @description This function receive getJoiSchema() function
+  * getJoiSchema is function that return JOI schema;
+  * ------------------------------------------------------------------
+  * The function do 3 things:
+  * ------------------------------------------------------------------
+  * 1 - Save a reference to getJoiSchema inside the app, using [setJoiInstance]
+  * 2 - Convert JOI to mongoose schema
+  * 3 - Return mongoose model
+  *
+  * We used this function inside feathers someService.model.js file
+  *
+  * createModelFromJoi params:
+  * ------------------------------------------------------------------
+  * @param {object} app Feather app
+  * @param {string} name  name of the service
+  * @param {function} getJoiSchema pass function that will return a JOI schema
+  * @param {object} [mongooseSchema] (optional) - pass mongooseSchema if you want to use  mongoose schema and not to convert JOI to mongoose schema
+  * @return mongoose model
+  *
+  * @example
+  * const postsValidators = require('../validators/posts.validators.js');
+  * const {createModelFromJoi} = require('feathers-mongoose-casl');
+  *
+  * module.exports = function (app) {
+  *   return createModelFromJoi(app, 'posts', postsValidators);
+  * }
+  */
+const createModelFromJoi = <span class="fstat-no" title="function not covered" >function (app, name, getJoiSchema, mongooseSchema) {</span>
+<span class="cstat-no" title="statement not covered" >  const mongooseClient = app.get('mongooseClient');</span>
+&nbsp;
+  /**
+   *  This is here because we want to allow override the built in services
+   *  validator without copt the service to local service folder, use like that:
+   *  const {services, setJoiInstance} = require('feathers-mongoose-casl');
+   *  setJoiInstance(app, 'users', getJoiSchema)
+   *  app.configure(services.users);
+   */
+<span class="cstat-no" title="statement not covered" >  const _getJoiSchema = getJoiInstance(app, name);</span>
+&nbsp;
+  /**
+   * Get joi schema
+   * we pass false because we didn't want mongoose to validate for us the
+   * required fields, JOI do this for us
+   */
+<span class="cstat-no" title="statement not covered" >  const joiSchema = _getJoiSchema ? _getJoiSchema(false) : getJoiSchema(false);</span>
+&nbsp;
+  /**
+   * Convert to mongoose schema or used mongooseSchema from attributes
+   */
+<span class="cstat-no" title="statement not covered" >  const _mongooseSchema = mongooseSchema || Joigoose(mongooseClient, null, { _id: false, timestamps: false }).convert(joiSchema);</span>
+&nbsp;
+  /**
+   * save a reference to getJoiSchema
+   * ----------------------------------------------------------------------------
+   * save a reference to getJoiSchema  inside the app, using [setJoiInstance]
+   * with this reference we can validate client request and convert JOI to JSON schema for the dashboard
+   */
+<span class="cstat-no" title="statement not covered" >  if (!_getJoiSchema) {</span>
+<span class="cstat-no" title="statement not covered" >    setJoiInstance(app, name, getJoiSchema); </span>// Set getJoi reference to help us validate user requests
+  }
+&nbsp;
+  /**
+   * Create new mongooseClient schema
+   * ------------------------------------------------------------------
+   * We turn off the mongoose validateBeforeSave, JOI make the validation
+   * ------------------------------------------------------------------
+   *
+   */
+<span class="cstat-no" title="statement not covered" >  const schema = new mongooseClient.Schema(_mongooseSchema, { validateBeforeSave: false });</span>
+&nbsp;
+  /**
+   * Add createdAt an updatedAt fields to all collections
+   */
+<span class="cstat-no" title="statement not covered" >  schema.plugin(timestamps);</span>
+&nbsp;
+  /**
+   * @casl/mongoose
+   * ------------------------------------------------------------------
+   * field permissions -
+   * this will help us sanitized data
+   * ------------------------------------------------------------------
+   */
+<span class="cstat-no" title="statement not covered" >  schema.plugin(accessibleFieldsPlugin);</span>
+&nbsp;
+  /**
+   * Add updateMany - this was missing in mongoose-timestamp
+   */
+<span class="cstat-no" title="statement not covered" >  schema.pre('updateMany', <span class="fstat-no" title="function not covered" >function (next) {</span></span>
+<span class="cstat-no" title="statement not covered" >    const self = this;</span>
+<span class="cstat-no" title="statement not covered" >    self._update.updatedAt = new Date();</span>
+<span class="cstat-no" title="statement not covered" >    next();</span>
+  });
+&nbsp;
+  /**
+   * Return mongoose model
+   */
+<span class="cstat-no" title="statement not covered" >  return mongooseClient.model(name, schema);</span>
+};
+&nbsp;
+module.exports = createModelFromJoi;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 03 2019 13:56:16 GMT+0300 (Israel Daylight Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
