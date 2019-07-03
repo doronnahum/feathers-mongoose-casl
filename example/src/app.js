@@ -10,13 +10,33 @@ const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
 
+const {authentication} = require('../../lib/index').services; //require('feathers-mongoose-casl').services; // ADD THIS LINE
+const bodyParser = require('body-parser');
+const swagger = require('feathers-swagger');
+const feathersLogger = require('feathers-logger');
 
 const middleware = require('./middleware');
 const services = require('./services');
 const appHooks = require('./app.hooks');
 const channels = require('./channels');
 
+const mongoose = require('./mongoose');
+
 const app = express(feathers());
+app.configure(feathersLogger(logger));
+app.use(bodyParser.json({limit: '10mb'}));
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true }));
+// Swagger
+if(process.env.NODE_ENV !== 'production'){
+  app.configure(swagger({
+    docsPath: '/docs',
+    uiIndex: true, //path.join(__dirname, 'docs.html'),
+    info: {
+      title: 'feathersjs-server docs',
+      description: 'feathersjs-server api'
+    }
+  }));
+}
 
 // Load app configuration
 app.configure(configuration());
@@ -34,8 +54,11 @@ app.use('/', express.static(app.get('public')));
 app.configure(express.rest());
 app.configure(socketio());
 
+app.configure(mongoose);
+
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
+app.configure(authentication);
 // Set up our services (see `services/index.js`)
 app.configure(services);
 // Set up event channels (see channels.js)
