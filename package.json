@@ -67,10 +67,12 @@
     "feathers-mongoose": "^7.3.2",
     "feathers-twilio": "^0.2.0",
     "fs-blob-store": "^5.2.1",
+    "google-libphonenumber": "^3.2.3",
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
     "joigoose": "^4.0.8",
     "lodash.clonedeep": "^4.5.0",
+    "lodash.forown": "^4.4.0",
     "lodash.isequal": "^4.5.0",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
@@ -89,8 +91,7 @@
     "passport-google-oauth20": "^2.0.0",
     "pug": "^2.0.3",
     "s3-blob-store": "^3.2.0",
-    "sift": "^8.5.0",
-    "google-libphonenumber": "^3.2.3"
+    "sift": "^8.5.0"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
