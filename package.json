@@ -36,7 +36,9 @@
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
     "test": "npm run lint && npm run mocha && cd ./example/ && npm run test",
     "test-with-coverage": "npm run lint && npm run coverage",
-    "start": "npm run compile && node example/simple/app"
+    "start": "npm run compile && node example/simple/app",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "semistandard": {
     "sourceType": "module",
@@ -92,7 +94,8 @@
     "passport-google-oauth20": "^2.0.0",
     "pug": "^2.0.3",
     "s3-blob-store": "^3.2.0",
-    "sift": "^8.5.0"
+    "sift": "^8.5.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
@@ -101,5 +104,6 @@
     "nodemon": "^1.19.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
-  }
+  },
+  "snyk": true
 }
