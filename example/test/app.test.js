@@ -52,4 +52,12 @@ describe('Feathers application tests', () => {
       });
     });
   });
+
+  describe('clean db', function () {
+    it('reset mongodb', async () => {
+      const mongoose = app.get('mongooseClient');
+      await mongoose.connection.dropDatabase();
+    });
+
+  });
 });
