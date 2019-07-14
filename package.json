@@ -92,7 +92,9 @@
     "passport-google-oauth20": "^2.0.0",
     "pug": "^2.0.3",
     "s3-blob-store": "^3.2.0",
-    "sift": "^8.5.0"
+    "sift": "^8.5.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
