@@ -1,7 +1,7 @@
 {
   "name": "feathers-mongoose-casl",
   "description": "Easily Integrate Casl&mongoose your to Feathersjs add.",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "homepage": "https://github.com/doronnahum/feathers-mongoose-casl.git",
   "main": "lib/",
   "keywords": [
@@ -94,7 +94,11 @@
     "s3-blob-store": "^3.2.0",
     "sift": "^8.5.0",
     "lodash.get": "^4.4.2",
-    "lodash.set": "^4.3.2"
+    "lodash.set": "^4.3.2",
+    "graphql": "^14.4.2",
+    "graphql-compose": "^7.2.0",
+    "graphql-compose-mongoose": "^7.1.0",
+    "graphql-tools": "^4.0.5"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
