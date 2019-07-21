@@ -1,5 +1,5 @@
 
-## "versions": "2.0.0"
+## "versions": "1.9.1"
 
 ### fix upload files issues
 from now the configuration of the middleware and hook is:
