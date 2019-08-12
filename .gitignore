@@ -5,3 +5,4 @@ node_modules
 example/config/default.json
 config/
 public/
+.vscode/settings.json
