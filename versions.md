@@ -1,4 +1,48 @@
 
+
+## "versions": "2.0.0"
+
+### fix upload files issues
+from now the configuration of the middleware and hook is:
+
+1- middleware config example
+```
+const { STORAGE_TYPES, uploadMiddleware} = require('feathers-mongoose-casl');
+  app.use('/my-service-files',
+    uploadMiddleware({
+      app,
+      fileKeyName: 'file',
+      serviceName: 'my-service-files',
+      storageService: STORAGE_TYPES['google-cloud'],
+      public: true,
+      mimetypes: ['image/png','image/jpeg'] // optional - array of mimetypes to allow
+    }),
+    createService(options)
+  );
+```
+2 - hook config example
+```
+const {hooks} = require('feathers-mongoose-casl');
+const {uploadsHooks} = hooks;
+
+const uploadHookConfig = {
+  fileKeyName: 'file',
+  userKeyName: 'user',
+  public: true,
+  singUrlKeyName: 'file'
+};
+
+
+module.exports = {
+  before: {
+    all: [uploadsHooks(uploadHookConfig)],
+  },
+  after: {
+    all: [uploadsHooks(uploadHookConfig)],
+  },
+};
+```
+
 ## "versions": "1.9.1"
 
 ### fix upload files issues
