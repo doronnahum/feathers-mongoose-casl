@@ -1,5 +1,5 @@
 const enums = {
-  firstUser :{
+  firstUser: {
     email: 'doron.nahum@gmail.com',
     password: 'password'
   }

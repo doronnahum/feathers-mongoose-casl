@@ -6,7 +6,6 @@ const app = require('../../src/app');
 // const isEqualDeep = require('../../../lib/test/utils/isDeepEqualNotReference');
 
 describe('\'authentication\' service', () => {
-
   it('1 - registered the authentication service', () => {
     const service = app.service('authentication');
     assert.ok(service, 'Registered the service');
@@ -18,7 +17,7 @@ describe('\'authentication\' service', () => {
       const response = await service.create({
         strategy: 'local',
         email: firstUser.email,
-        password: firstUser.password,
+        password: firstUser.password
       });
       // eslint-disable-next-line no-console
       console.log('----------');
@@ -39,5 +38,4 @@ describe('\'authentication\' service', () => {
   //     assert.strictEqual(users.total, 1);
   //   });
   // });
-
 });
