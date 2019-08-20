@@ -1,6 +1,8 @@
 require('./users.test');
 
-const { firstUser } = require('../enums');
+const { TEST_USERS } = require('../enums');
+
+const { ADMIN } = TEST_USERS;
 const assert = require('assert');
 const app = require('../../src/app');
 // const isEqualDeep = require('../../../lib/test/utils/isDeepEqualNotReference');
@@ -11,13 +13,13 @@ describe('\'authentication\' service', () => {
     assert.ok(service, 'Registered the service');
   });
 
-  context('2 - try to login the first user', () => {
+  context('2 - try to login the first user(admiin)', () => {
     it('should get user and token', async function () {
       const service = app.service('authentication');
       const response = await service.create({
         strategy: 'local',
-        email: firstUser.email,
-        password: firstUser.password
+        email: ADMIN.email,
+        password: ADMIN.password
       });
       // eslint-disable-next-line no-console
       console.log('----------');
