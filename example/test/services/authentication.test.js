@@ -2,42 +2,41 @@ require('./users.test');
 
 const { TEST_USERS } = require('../enums');
 
-const { ADMIN } = TEST_USERS;
+const { ADMIN, WRITER } = TEST_USERS;
 const assert = require('assert');
+const { expect } = require('chai');
 const app = require('../../src/app');
-// const isEqualDeep = require('../../../lib/test/utils/isDeepEqualNotReference');
 
 describe('\'authentication\' service', () => {
-  it('1 - registered the authentication service', () => {
-    const service = app.service('authentication');
-    assert.ok(service, 'Registered the service');
+  const authenticationService = app.service('authentication');
+  it('Registered the authentication service', () => {
+    assert.ok(authenticationService, 'Registered the service');
   });
 
-  context('2 - try to login the first user(admiin)', () => {
-    it('should get user and token', async function () {
-      const service = app.service('authentication');
-      const response = await service.create({
+  it('Try to login with admin user - should get user and token', async function () {
+    const response = await authenticationService.create({
+      strategy: 'local',
+      email: ADMIN.email,
+      password: ADMIN.password
+    }, { provider: 'rest' });
+    expect(response).to.be.instanceof(Object);
+    expect(response).to.have.property('accessToken');
+    expect(response).to.have.property('user');
+    expect(response.user).to.be.instanceof(Object);
+    expect(response.user).to.have.property('_id');
+    expect(response.user).to.not.have.property('password');
+  });
+
+  it('Try to login with writer user - wrong password - should failed', async function () {
+    try {
+      await authenticationService.create({
         strategy: 'local',
-        email: ADMIN.email,
-        password: ADMIN.password
-      });
-      // eslint-disable-next-line no-console
-      console.log('----------');
-      // eslint-disable-next-line no-console
-      console.log({ response });
-      const users = await app.service('users').find();
-      // eslint-disable-next-line no-console
-      console.log({ users });
-      assert.ok(response.accessToken && response.user && response.user._id, 'login pass');
-    });
+        email: WRITER.email,
+        password: 'some-wrong-password'
+      }, { provider: 'rest' });
+      assert.ok(false, 'login not failed as except');
+    } catch (error) {
+      assert.ok(error.code === 401, 'login failed as except');
+    }
   });
-
-  // context('2 - create the first user', () => {
-  //   it('should be one user', async function () {
-  //     const service = app.service('users');
-  //     await service.create({email: 'doron.nahum@gmail.com', password: 'password'});
-  //     const users = await service.find();
-  //     assert.strictEqual(users.total, 1);
-  //   });
-  // });
 });
