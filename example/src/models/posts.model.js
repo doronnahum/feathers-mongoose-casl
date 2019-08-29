@@ -1,15 +1,11 @@
 // posts-model.js - A mongoose model
-//
+// 
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-module.exports = function (app) {
-  const mongooseClient = app.get('mongooseClient');
-  const { Schema } = mongooseClient;
-  const posts = new Schema({
-    text: { type: String, required: true }
-  }, {
-    timestamps: true
-  });
 
-  return mongooseClient.model('posts', posts);
+const postsValidators = require('../validators/posts.validators.js');
+const { createModelFromJoi } = require('../../../lib/index');
+
+module.exports = function (app) {
+  return createModelFromJoi(app, 'posts', postsValidators);
 };

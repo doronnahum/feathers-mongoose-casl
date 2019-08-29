@@ -1,4 +1,4 @@
-require('./authentication.test');
+require('./authManagement.test');
 
 const assert = require('assert');
 const app = require('../../src/app');
