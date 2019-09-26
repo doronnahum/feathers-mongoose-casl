@@ -13,7 +13,7 @@ const { STORAGE_TYPES, uploadMiddleware} = require('feathers-mongoose-casl');
       fileKeyName: 'file',
       serviceName: 'my-service-files',
       storageService: STORAGE_TYPES['google-cloud'],
-      public: true,
+      publicRead: true,
       mimetypes: ['image/png','image/jpeg'] // optional - array of mimetypes to allow
     }),
     createService(options)
@@ -27,7 +27,7 @@ const {uploadsHooks} = hooks;
 const uploadHookConfig = {
   fileKeyName: 'file',
   userKeyName: 'user',
-  public: true,
+  publicRead: true,
   singUrlKeyName: 'file'
 };
 
@@ -145,7 +145,7 @@ uploadMiddleware({
       fileKeyName: FILE_KEY_NAME,
       serviceName: 'files',
       storageService: app.get('feathers-mongoose-casl').uploads.defaultFileService || STORAGE_TYPES['local-private'],
-      publicAcl: false,
+      publicRead: false,
       mimetypes: ['image/png','image/jpeg', 'application/pdf']
     })
 ```

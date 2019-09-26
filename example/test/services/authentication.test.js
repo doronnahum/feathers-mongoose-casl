@@ -18,7 +18,7 @@ describe('\'authentication\' service', () => {
         strategy: 'local',
         email: firstUser.email,
         password: firstUser.password
-      });
+      }, { provider: 'rest' });
       assert.ok(token.accessToken && token.user && token.user._id, 'login pass');
     });
   });
