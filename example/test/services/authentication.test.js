@@ -1,12 +1,11 @@
 require('./users.test');
 
-const {firstUser} = require('../enums');
+const { firstUser } = require('../enums');
 const assert = require('assert');
 const app = require('../../src/app');
 // const isEqualDeep = require('../../../lib/test/utils/isDeepEqualNotReference');
 
-describe('\'authentication\' service',  () => {
-  
+describe('\'authentication\' service', () => {
   it('1 - registered the authentication service', () => {
     const service = app.service('authentication');
     assert.ok(service, 'Registered the service');
@@ -18,7 +17,7 @@ describe('\'authentication\' service',  () => {
       const token = await service.create({
         strategy: 'local',
         email: firstUser.email,
-        password: firstUser.password,
+        password: firstUser.password
       });
       assert.ok(token.accessToken && token.user && token.user._id, 'login pass');
     });
@@ -32,5 +31,4 @@ describe('\'authentication\' service',  () => {
   //     assert.strictEqual(users.total, 1);
   //   });
   // });
-
 });

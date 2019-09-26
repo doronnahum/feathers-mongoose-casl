@@ -58,6 +58,5 @@ describe('Feathers application tests', () => {
       const mongoose = app.get('mongooseClient');
       await mongoose.connection.dropDatabase();
     });
-
   });
 });
