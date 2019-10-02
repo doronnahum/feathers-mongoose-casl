@@ -2,7 +2,6 @@
 
 * [feathers-mongoose-casl](README.md)
 * [Docs](docs/README.md)
-  * [Migrating](docs/migrating.md)
   * [START A NEW PROJECT](docs/start-new-project-1/README.md)
     * [Generate a new project.](docs/start-new-project-1/generate-a-new-project..md)
     * [install feathers-mongoose-casl](docs/start-new-project-1/install-feathers-mongoose-casl.md)
@@ -21,7 +20,7 @@
     * [vs code snippet extension](docs/start-new-project-1/vs-code-snippet-extension.md)
     * [Test Login](docs/start-new-project-1/test-login.md)
     * [Dashboard](docs/start-new-project-1/dashboard.md)
-    * [Create a new Service with casl&Dashboard](docs/start-new-project-1/update-posts-model.md)
+    * [Update posts service](docs/start-new-project-1/update-posts-model.md)
     * [Posts Postman snippet](docs/start-new-project-1/read-posts.md)
     * [Add Admin role](docs/start-new-project-1/add-admin-role.md)
     * [Done!](docs/start-new-project-1/done.md)

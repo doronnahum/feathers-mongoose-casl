@@ -1,11 +1,10 @@
 # Test Login
 
-### In this step we are going to login your first user
+## In this step we are going to login your first user
 
 You can You can login from  
-dashboard  [https://feathersjs-mongoose-casl-admin.herokuapp.com/](https://feathersjs-mongoose-casl-admin.herokuapp.com/)  swagger [http://localhost:3030/docs](http://localhost:3030/docs)  
-postman [feathers-mongoose-casl postman documentation](https://documenter.getpostman.com/view/1210930/S11RJv5r)   
-
+dashboard [https://feathersjs-mongoose-casl-admin.herokuapp.com/](https://feathersjs-mongoose-casl-admin.herokuapp.com/) swagger [http://localhost:3030/docs](http://localhost:3030/docs)  
+postman [feathers-mongoose-casl postman documentation](https://documenter.getpostman.com/view/1210930/S11RJv5r)
 
 {% api-method method="post" host="http://localhost:3030/authentication \\" path="" %}
 {% api-method-summary %}
@@ -39,7 +38,7 @@ local
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1YzVhY2MzNzZmMzJhZTNiMDhlNTBhN2EiLCJpYXQiOjE1NDk0NTQ4MzcsImV4cCI6MTU0OTU0MTIzNywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiYW5vbnltb3VzIiwianRpIjoiZTI4NTcyNDUtZWMzZi00YzhlLWFiZmUtNzhiMzJhYjlhOGRmIn0.LfSttwrbpjD15bmf9xFtBkid2FcpRJM2YFO6yvosuXI",
     "user": {
@@ -58,7 +57,7 @@ local
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "name": "BadRequest",
     "message": "User's email is not yet verified.",
@@ -72,7 +71,7 @@ local
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Postman snippet
+## Postman snippet
 
 ```text
 curl -X POST \
@@ -81,13 +80,12 @@ curl -X POST \
   -H 'Postman-Token: eccaf293-a50e-48ec-a53e-aebc241defba' \
   -H 'cache-control: no-cache' \
   -d 'email=doron.nahum%2B11%40gmail.com&password=password&strategy=local&undefined='
-
 ```
 
 {% hint style="danger" %}
 If you didn't verify your email, the login will fail
 
-### Verify email:
+## Verify email:
 
 In your inbox you can find mail to verify the email.
 
@@ -96,6 +94,4 @@ you can edit this email from config file, and you can custom the email from src/
 
 ![](../../.gitbook/assets/screen-shot-2019-03-09-at-22.28.59.png)
 {% endhint %}
-
-
 

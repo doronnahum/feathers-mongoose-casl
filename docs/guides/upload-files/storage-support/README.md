@@ -10,8 +10,6 @@
 
 #### google-cloud
 
-{% page-ref page="google-cloud.md" %}
-
 ### aws
 
 aws guid in progress

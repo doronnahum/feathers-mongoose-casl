@@ -4,7 +4,7 @@ description: 'Copy html files email  - verify.html, change-password.html'
 
 # public HTML
 
-**We need 2 screens to let the user the ability to verify is email and to reset-password-**
+\*\*We need 2 screens to let the user the ability to verify is email and to reset-password
 
 * **verify.html**
 
@@ -27,10 +27,10 @@ git commit -m "create verify and change-password public html"
 ```
 
 {% hint style="info" %}
-By default we use  change-password.html route to change password,
+By default we use change-password.html route to change password,
 
 If you want to change password from other address, add this line to config file-
 
-"changePasswordClientUrl": "http://localhost:8080/change-password"
+"changePasswordClientUrl": "[http://localhost:8080/change-password](http://localhost:8080/change-password)"
 {% endhint %}
 
