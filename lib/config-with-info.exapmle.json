@@ -1,165 +1,77 @@
 {
   // Add this to your config file
-  "authentication": {
-    "secret": Run "feathers generate secret" in the command line and past here the result,
-    "strategies": ["jwt", "local"],
-    "path": "/authentication",
-    "service": "users",
-    "jwt": {
-      "header": {
-        "typ": "access"
-      },
-      "audience": "https://yourdomain.com",
-      "subject": "anonymous",
-      "issuer": "feathers",
-      "algorithm": "HS256",
-      "expiresIn": "1d"
-    },
-    "local": {
-      "entity": "user",
-      "usernameField": "email",
-      "passwordField": "password"
-    },
-    "auth0": {
-      "clientID": "your auth0 client id",
-      "clientSecret": "your auth0 client secret",
-      "successRedirect": "/",
-      "domain": "mydomain.auth0.com",
-      "scopes": ["profile"]
-    },
-    "google": {
-      "clientID": "your google client id",
-      "clientSecret": "your google client secret",
-      "successRedirect": "/",
-      "scope": ["profile openid email"]
-    },
-    "facebook": {
-      "clientID": "your facebook client id",
-      "clientSecret": "your facebook client secret",
-      "successRedirect": "/",
-      "scope": ["public_profile", "email"],
-      "profileFields": [
-        "id",
-        "displayName",
-        "first_name",
-        "last_name",
-        "email",
-        "gender",
-        "profileUrl",
-        "birthday",
-        "picture",
-        "permissions"
-      ]
-    },
-    "github": {
-      "clientID": "your github client id",
-      "clientSecret": "your github client secret",
-      "successRedirect": "/"
-    },
-    "cookie": {
-      "enabled": false, // before you enable- https://github.com/feathersjs/docs/blob/master/SECURITY.md
-      "name": "feathers-jwt",
-      "httpOnly": false,
-      "secure": false
-    }
-  },
   "serverUrl": "http://localhost:3030",
   "public": "../public/",
-  "s3": { // Optional - only if you want to use s3
-    "bucket": "bucket....",
-    "accessKeyId": "accessKeyId....",
-    "secretAccessKey": "secretAccessKey....",
-    "signedUrlExpires" : 900
-  },
-  "google-cloud": { // Optional - only if you want to use google-cloud
-    "projectId": "agora-real",
-    "bucket": "MyCompany-dev",
-    "keyFilename": "../src/secret-files/google-key.json", /* The place you save your google json file*/
-    "signedUrlExpires" : 900
-  },
-  "mailgun": { // Optional - only if you want to use gmailgun
-    "apiKey": "apiKey",
-    "domain": "mg.MyCompany.com"
-  },
-  "sendgrid": { // Optional - only if you want to use sendgrid
-    "apiKey": "apiKey"
-  },
-  "twilio": {
-    "sid": "XXXXXXXX",
-    "token": "XXXXXXXX",
-    "number": "XXXXXXXX"
-  },
   "feathers-mongoose-casl": {
-    "pickMeReadFields": [], /* Array of field that user can see ['email'] or can't see ['-verifyEmail']*/
-    "pickMeUpdateFields": [] /* Array of field that user can update ['email'] or can't update ['-verifyEmail']*/,
+    "pickMeReadFields": [],
+    /* Array of field that user can see ['email'] or can't see ['-verifyEmail']*/
+    "pickMeUpdateFields": [] /* Array of field that user can update ['email'] or can't update ['-verifyEmail']*/ ,
     "fetchMeOnLogin": false, // by default we send user on login from params.user, set true to fetch data from me service
     "usersServiceOptions": null, //optional, to allow {whitelist: '$populate'} for example
-    "mailer": {
-      "service": "", /* The service through which he was sent was emails, can be 'sendgrid' or 'mailgun'*/
-      "sendgrid-authentication-emails-templates": {  /* Relevant only to send grid, set templates id's */
-        "reset-password": null,
-        "Identity-change": null,
-        "password-change": null,
-        "verify-email": null,
-        "password-was-reset": null,
-        "email-verified": null
-      }
-    },
-    "defaultRules": [ /* Array of default rules to your app */
-      {
-        "userContext": {"email": "doron.nahum+2@gmail.com"},
+    "defaultRules": [ /* Array of default rules to your app */ {
+        "userContext": {
+          "email": "YOUR_EMAIL_HERE"
+        },
         "actions": ["manage"],
-        "subject": ["dashboard","users","user-abilities","rules","files"]
+        "subject": ["dashboard", "users", "user-abilities", "rules", "files"]
       },
       {
         "name": "allow-admin-dashboard",
         "description": "allowed admin users access dashboard, and manage rules and users",
         "actions": ["manage"],
-        "subject": ["dashboard","users","get-file"],
+        "subject": ["dashboard", "users", "get-file"],
         "roles": ["admin"]
       },
       {
         "name": "allow-sys-admin-rules",
         "description": "allowed admin users access dashboard, and manage rules and users",
         "actions": ["manage"],
-        "subject": ["rules","user-abilities"],
+        "subject": ["rules", "user-abilities"],
         "roles": ["sys-admin"]
       }
     ],
     "uploads": {
-      "services": { /* Uploads services to allow */
+      "services": {
+        /* Uploads services to allow */
         "s3": false,
         "local-private": true,
         "local-public": true,
         "google-cloud": false
       },
-      "defaultFileService": "local-private", /* The service to use in the built in File service*/
-      "blockDeleteDocumentWhenDeleteFileFailed": false, /* Set true if you want to block DB document delete if assign file deleting is failed */
+      "defaultFileService": "local-private",
+      /* The service to use in the built in File service*/
+      "blockDeleteDocumentWhenDeleteFileFailed": false,
+      /* Set true if you want to block DB document delete if assign file deleting is failed */
       "blockUpdateDocumentWhenReplaceFileFailed": false /* Set true if you want to block DB document updating if assign file deleting is failed */
     },
     "verifyEmail": {
-      "enabled": true, /* Set to false if you want to let the user login withot validate is emails */
+      "enabled": true,
+      /* Set to false if you want to let the user login withot validate is emails */
       "fromEmail": "info@MyCompany.com",
       "helpEmail": "help@MyCompany.com"
     },
-    "clientUrl" : "http://localhost:8080",
+    "clientUrl": "http://localhost:8080",
     "changePasswordClientUrl": null,
-    "clientSigninUrl" : "http://localhost:8080/signin", /* The url to redirect after email is verified*/
+    "clientSigninUrl": "http://localhost:8080/signin",
+    /* The url to redirect after email is verified*/
     "srcFolder": "../src/",
-    "privateFolder": "../private-files", /* The place to save private-files when you use upload local-private*/
+    "privateFolder": "../private-files",
+    /* The place to save private-files when you use upload local-private*/
     "rulesCache": {
-      "enabled": true, /* true is recommended, we save rules in the cache and we refresh the cache when DB rules are updating */
+      "enabled": true,
+      /* true is recommended, we save rules in the cache and we refresh the cache when DB rules are updating */
       "local-config": {
         "max": 400,
         "maxAge": 3600000
       }
     },
     "privateFilesAbilityCache": {
-    "enabled": true,  /* true is recommended, we save user abilities to see the private file in the cache */
-    "local-config": {
-      "max": 100,
-      "maxAge": 3600000
-    }
+      "enabled": true,
+      /* true is recommended, we save user abilities to see the private file in the cache */
+      "local-config": {
+        "max": 100,
+        "maxAge": 3600000
+      }
     }
   }
 }
