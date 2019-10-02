@@ -1,4 +1,9 @@
 
+## "version "2.0.0"
+- Support feathers > 4.3.3
+- Remove authenticate, validateAbilities, validateSchema, sanitizedData from app.hook,
+  Each service is add this hooks to his hooks file
+  
 ## "versions": "1.9.1"
 
 ### fix upload files issues
