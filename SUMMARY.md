@@ -1,6 +1,7 @@
 # Table of contents
 
 * [feathers-mongoose-casl](README.md)
+* [Migrating](migrating.md)
 * [START A NEW PROJECT](start-new-project-1/README.md)
   * [Generate a new project.](start-new-project-1/generate-a-new-project..md)
   * [install feathers-mongoose-casl](start-new-project-1/install-feathers-mongoose-casl.md)
@@ -8,7 +9,7 @@
   * [Update config](start-new-project-1/update-config.md)
   * [Add mongoose](start-new-project-1/generate-posts-service.md)
   * [Email service](start-new-project-1/open-mailgun-accunt.md)
-  * [error Handler](start-new-project-1/update-app.hook.md)
+  * [App hooks](start-new-project-1/update-app.hook.md)
   * [Import required services](start-new-project-1/create-required-services.md)
   * [Verify user](start-new-project-1/use-feathers-mongoose-casl-authentication.md)
   * [Swagger, Logger, BodyParser](start-new-project-1/install-dependency.md)
