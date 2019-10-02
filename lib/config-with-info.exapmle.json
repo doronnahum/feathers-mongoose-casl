@@ -6,7 +6,6 @@
     "pickMeReadFields": [],
     /* Array of field that user can see ['email'] or can't see ['-verifyEmail']*/
     "pickMeUpdateFields": [] /* Array of field that user can update ['email'] or can't update ['-verifyEmail']*/ ,
-    "fetchMeOnLogin": false, // by default we send user on login from params.user, set true to fetch data from me service
     "usersServiceOptions": null, //optional, to allow {whitelist: '$populate'} for example
     "defaultRules": [ /* Array of default rules to your app */ {
         "userContext": {

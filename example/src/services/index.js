@@ -1,5 +1,4 @@
-const posts = require('./posts/posts.service.js');
-const { services } = require('../../../lib/index'); // require('feathers-mongoose-casl');
+const { services } = require('../../../lib');
 
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
@@ -14,6 +13,5 @@ module.exports = function (app) {
   app.configure(services.files); // mongoose service to manage files collection, uploads files with upload service
   app.configure(services.dashboard); // A dashboard for managing your app
   app.configure(services.userAbilities); // Provides user permissions information
-  // Specific project services
-  app.configure(posts);
+
 };
