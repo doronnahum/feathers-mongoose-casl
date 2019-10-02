@@ -41,7 +41,7 @@ add serverUrl to url query:
 
 This work with your local server then keep your server running
 
-![](../.gitbook/assets/uwe1s3ghtn.gif)
+![](../../.gitbook/assets/uwe1s3ghtn.gif)
 
-![](../.gitbook/assets/1.JPG)
+![](../../.gitbook/assets/1.JPG)
 

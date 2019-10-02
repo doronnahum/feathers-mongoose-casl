@@ -20,7 +20,7 @@
 
 * [Swaager](https://swagger.io/) documentation UI for you api
 
-![](.gitbook/assets/5.jpg)
+![](../.gitbook/assets/5.jpg)
 
 ### **Dashboard**
 
@@ -28,7 +28,7 @@
 
 Screenshot from dashboard  screen:
 
-![](.gitbook/assets/2.jpg)
+![](../.gitbook/assets/2.jpg)
 
 ### Files
 

@@ -94,7 +94,7 @@ In your inbox you can find mail to verify the email.
 the mail come from yourCompanyEmail@gmail.com  
 you can edit this email from config file, and you can custom the email from src/email-templates/account/verify-email.pug
 
-![](../.gitbook/assets/screen-shot-2019-03-09-at-22.28.59.png)
+![](../../.gitbook/assets/screen-shot-2019-03-09-at-22.28.59.png)
 {% endhint %}
 
 

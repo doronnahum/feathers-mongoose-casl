@@ -12,7 +12,7 @@ We use [PUG ](https://pugjs.org/api/getting-started.html)template engine to buil
 
 3- **Copy** the ****account folder to your new ****email-templates folder
 
-![](../.gitbook/assets/capture%20%281%29.JPG)
+![](../../.gitbook/assets/capture%20%281%29.JPG)
 
 3 - **Git commit**
 
