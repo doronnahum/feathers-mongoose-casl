@@ -8,19 +8,19 @@ This step is optional but you need a MongoDB server to continue
 
 ### **1 - Create a new app** [https://dashboard.heroku.com](https://dashboard.heroku.com/new-app)
 
-![](../.gitbook/assets/ovgmuuya6r.gif)
+![](../../.gitbook/assets/ovgmuuya6r.gif)
 
 ### **2 - Add Mlab Add-ons**
 
 inside heroku, go to resources tab and add a new Add-ons, look for mLab MongoDB
 
-![](../.gitbook/assets/screen-shot-2019-01-18-at-9.46.51.png)
+![](../../.gitbook/assets/screen-shot-2019-01-18-at-9.46.51.png)
 
 ### **3 - Create a new DB user**
 
 open mlab from heroku and create a new DB user
 
-![](../.gitbook/assets/screen-shot-2019-01-18-at-9.49.28.png)
+![](../../.gitbook/assets/screen-shot-2019-01-18-at-9.49.28.png)
 
 ### **4 -Update "mongodb" url inside config file**
 

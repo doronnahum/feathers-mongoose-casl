@@ -20,11 +20,11 @@ for example
 
 Before
 
-![](../.gitbook/assets/before.jpg)
+![](../../.gitbook/assets/before.jpg)
 
 after
 
-![](../.gitbook/assets/after%20%281%29.jpg)
+![](../../.gitbook/assets/after%20%281%29.jpg)
 
 ### 4- Open src\services\index.js and require the service from is new location 
 

@@ -17,7 +17,7 @@ description: 'Copy html files email  - verify.html, change-password.html'
 
 2- **Copy the files to** my-new-app\public
 
-![](../.gitbook/assets/capture.JPG)
+![](../../.gitbook/assets/capture.JPG)
 
 3- **Git commit**
 

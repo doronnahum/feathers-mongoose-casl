@@ -1,6 +1,6 @@
-# error Handler
+# App hooks
 
-* **hook.errorHandler** to make sure that errors get cleaned up before they go back to the client
+* Add **hook.errorHandler** to make sure that errors get cleaned up before they go back to the client
 
 ###  Open src\app.hooks.js and paste this
 

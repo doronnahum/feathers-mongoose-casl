@@ -35,19 +35,19 @@ Each rule is an object
     **1.Service options**  
        Add serviceRules to options
 
-![](../.gitbook/assets/screen-shot-2019-05-19-at-8.48.20.png)
+![](../../.gitbook/assets/screen-shot-2019-05-19-at-8.48.20.png)
 
         **skipAbilitiesCheck**  
         Inside service.options you can set the skipAbilitiesCheck = true.      
         and handle the Authorization by your self
 
-![](../.gitbook/assets/screen-shot-2019-05-27-at-12.21.08.png)
+![](../../.gitbook/assets/screen-shot-2019-05-27-at-12.21.08.png)
 
 **2.Config file**  
         Add rules to defaultRules at the config.feathers-mongoose-casl   
 
 
-![](../.gitbook/assets/2%20%281%29.jpg)
+![](../../.gitbook/assets/2%20%281%29.jpg)
 
     **3. DB rules collection**
 

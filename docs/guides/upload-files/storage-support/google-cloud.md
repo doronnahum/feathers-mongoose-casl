@@ -21,7 +21,7 @@
 1.  Create new bucket  
 
 
-   ![](../../../.gitbook/assets/google-cloud-bucket%20%281%29.jpg)
+   ![](../../../../.gitbook/assets/google-cloud-bucket%20%281%29.jpg)
 
 ### 
 

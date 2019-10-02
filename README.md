@@ -28,7 +28,7 @@ description: 'feathers-mongoose-casl is a set of services,hook,utils to your fea
   
 
 
-{% page-ref page="start-new-project-1/" %}
+{% page-ref page="docs/start-new-project-1/" %}
 
-{% page-ref page="guides/" %}
+{% page-ref page="docs/guides/" %}
 

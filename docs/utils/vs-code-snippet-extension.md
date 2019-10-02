@@ -8,5 +8,5 @@ Then in you vscode type fmc-
 and you get list of snippets  
 
 
-![](../.gitbook/assets/screen-shot-2019-07-02-at-14.48.06.png)
+![](../../.gitbook/assets/screen-shot-2019-07-02-at-14.48.06.png)
 

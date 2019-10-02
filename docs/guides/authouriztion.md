@@ -35,15 +35,15 @@ curl -X POST \
 
 set false at verifyEmail.enable in the config file
 
-![](../.gitbook/assets/annotation-2019-02-08-104259.jpg)
+![](../../.gitbook/assets/annotation-2019-02-08-104259.jpg)
 
 ### How to customize the verify and the reset view?
 
 replace this html files in your public folder
 
-![](../.gitbook/assets/annotation-2019-02-08-104514.jpg)
+![](../../.gitbook/assets/annotation-2019-02-08-104514.jpg)
 
-![](../.gitbook/assets/screen-shot-2019-05-19-at-7.56.31.png)
+![](../../.gitbook/assets/screen-shot-2019-05-19-at-7.56.31.png)
 
 ## [**authentication-management**](https://github.com/feathers-plus/feathers-authentication-management) **end points**
 
