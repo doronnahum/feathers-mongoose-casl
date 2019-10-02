@@ -9,35 +9,12 @@
 ```javascript
 {
   // Add this to your config file
-  "authentication": {
-    "entity": "user",
-    "service": "users",
-    "secret": "kdER4t6X+G9PGyYiJwTbmohiaIk=",
-    "authStrategies": [
-      "jwt",
-      "local"
-    ],
-    "jwtOptions": {
-      "header": {
-        "typ": "access"
-      },
-      "audience": "https://yourdomain.com",
-      "issuer": "feathers",
-      "algorithm": "HS256",
-      "expiresIn": "1d"
-    },
-    "local": {
-      "usernameField": "email",
-      "passwordField": "password"
-    }
-  },
   "serverUrl": "http://localhost:3030",
   "public": "../public/",
   "feathers-mongoose-casl": {
     "pickMeReadFields": [],
     /* Array of field that user can see ['email'] or can't see ['-verifyEmail']*/
     "pickMeUpdateFields": [] /* Array of field that user can update ['email'] or can't update ['-verifyEmail']*/ ,
-    "fetchMeOnLogin": false, // by default we send user on login from params.user, set true to fetch data from me service
     "usersServiceOptions": null, //optional, to allow {whitelist: '$populate'} for example
     "defaultRules": [ /* Array of default rules to your app */ {
         "userContext": {
@@ -118,7 +95,6 @@
   "feathers-mongoose-casl": {
     "pickMeReadFields": ["-roles", "-verifyExpires", "-resetExpires", "-verifyToken", "-isVerified", "-resetToken", "-verifyChanges", "-password"],
     "pickMeUpdateFields": ["firstName", "lastName"],
-    "fetchMeOnLogin": false,
     "usersServiceOptions": null,
     "defaultRules": [{
         "userContext": {

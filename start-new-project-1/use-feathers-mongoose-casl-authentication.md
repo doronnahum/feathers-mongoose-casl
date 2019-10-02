@@ -10,14 +10,13 @@ Open src/authentication.js and update file
 const { AuthenticationService, JWTStrategy } = require('@feathersjs/authentication');
 const { LocalStrategy } = require('@feathersjs/authentication-local');
 const { expressOauth } = require('@feathersjs/authentication-oauth');
-
+const { NotAuthenticated } = require('@feathersjs/errors');
 // Add this
-const { verifyHooks, returnUserOnLogin } = require('feathers-authentication-management').hooks;
+const { pick } = require('feathers-mongoose-casl');
 //
 
 module.exports = app => {
   // Add this
-  const config = app.get('authentication');
   const verifyEmailConfig = app.get('feathers-mongoose-casl').verifyEmail;
   const applyIsVerifiedEmail = verifyEmailConfig && verifyEmailConfig.enabled;
   //
@@ -28,25 +27,34 @@ module.exports = app => {
 
   app.use('/authentication', authentication);
   app.configure(expressOauth());
-  
+
   // Add this hooks
-    app.service('authentication').hooks({
+  app.service('authentication').hooks({
     before: {
       create: [
-        authentication.hooks.authenticate(config.strategies),
-        applyIsVerifiedEmail ? verifyHooks.isVerified() : () => {}
-      ],
-      remove: [
-        authentication.hooks.authenticate(config.strategies)
+        (context) => {
+          context.params.skipAbilitiesCheckFromAuthentication = true;
+          return context;
+        },
       ]
     },
     after: {
       create: [
-        returnUserOnLogin()
+        (context) => {
+          const { user } = context.result;
+          if (applyIsVerifiedEmail && !user.isVerified) {
+            throw new NotAuthenticated('User Email is not yet verified.');
+          }
+          const pickMeReadFields = app.get('feathers-mongoose-casl').pickMeReadFields;
+          context.result.user = pick(context.result.user, pickMeReadFields);
+          return context;
+        },
       ]
     }
   });
 };
 
 ```
+
+* If you can't found this file then run  `feathers g authentication`  
 

@@ -56,14 +56,16 @@ If you are using **mailgun without domain** you need to verify the emails you wa
    "feathers-mongoose-casl": {
        "mailer": {
          "service": "sendgrid",
-          "sendgrid-authentication-emails-templates": {
-           "reset-password": "d-e3565301c97748e199cf07987cfac6bd",
-           "Identity-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
-           "password-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
-           "verify-email": "d-2b7c56d513cc4401adfd6475cbc9352e",
-           "password-was-reset": "d-e89c652f1b6a41b4b65ffd8f81a89506",
-           "email-verified": "d-67c7921e8bcc4447a7ae593878a6f0ab"
-         }
+          //Optional - un comment to use template
+          //"sendgrid-authentication-emails-templates": {
+           //"reset-password": "d-e3565301c97748e199cf07987cfac6bd",
+           //"Identity-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
+           //"password-change": "d-e89c652f1b6a41b4b65ffd8f81a89506",
+           //"verify-email": "d-2b7c56d513cc4401adfd6475cbc9352e",
+           //"password-was-reset": "d-e89c652f1b6a41b4b65ffd8f81a89506",
+           //"email-verified": "d-67c7921e8bcc4447a7ae593878a6f0ab"
+         //}
+       }
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}

@@ -4,11 +4,11 @@ Install and add feathers-logger
 
 
 
-Install the module with: `npm install feathers-logger --save`
+1 - Install the module with: 
 
-\`\`
+`npm install feathers-logger --save`
 
-`Add to` src/app.js
+`2 - Add feathers-logger to`src/app.js
 
 ```javascript
 var appLogger = require('feathers-logger');
