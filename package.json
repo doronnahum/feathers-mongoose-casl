@@ -1,7 +1,7 @@
 {
   "name": "feathers-mongoose-casl",
   "description": "Easily Integrate Casl&mongoose your to Feathersjs add.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/doronnahum/feathers-mongoose-casl.git",
   "main": "lib/",
   "keywords": [
@@ -50,6 +50,7 @@
   "dependencies": {
     "@casl/ability": "3.2.0",
     "@casl/mongoose": "^2.3.2",
+    "@feathers-plus/cache": "^1.4.0",
     "@google-cloud/storage": "^3.3.1",
     "@sendgrid/mail": "^6.4.0",
     "aws-sdk": "^2.540.0",
