@@ -24,6 +24,16 @@
     someField:  Joi.number()
   ```
 
+* **Pointer**
+
+  ```jsx
+  someField: Joi.objectId().meta({
+              type: 'ObjectId',
+              ref: 'users',
+              displayKey: 'email'
+            }),
+  ```
+
 * **Date**
 
   ```jsx
@@ -58,7 +68,11 @@
 
   ```jsx
     someField:  Joi.object({
-       user: Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'email' }),
+       user: Joi.objectId().meta({
+        type: 'ObjectId',
+        ref: 'users',
+        displayKey: 'email'
+      }),
        rules: Joi.array().items(Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'name'})),
        blockAll: Joi.boolean()
        })
