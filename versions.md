@@ -1,4 +1,33 @@
 
+## "version "2.1.0"
+
+- create registerNewModel and registerValidator
+Example of model
+```
+const validator = require('./posts.validators');
+const { registerNewModel } = require('feathers-mongoose-casl');
+
+module.exports = function (app) {
+  const mongooseClient = app.get('mongooseClient');
+  // Register the validator
+  const { Schema } = mongooseClient;
+  const posts = new Schema(registerNewModel.getModelFromJoi(app, validator), {
+    timestamps: true
+  });
+  registerNewModel.setModel(posts);
+
+  // This is necessary to avoid model compilation errors in watch mode
+  // see https://github.com/Automattic/mongoose/issues/1251
+  try {
+    return mongooseClient.model('posts');
+  } catch (e) {
+    return mongooseClient.model('posts', posts);
+  }
+};
+
+```
+  
+
 ## "version "2.0.0"
 - Support feathers > 4.3.3
 - Remove authenticate, validateAbilities, validateSchema, sanitizedData from app.hook,

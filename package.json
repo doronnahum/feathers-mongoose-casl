@@ -1,7 +1,7 @@
 {
   "name": "feathers-mongoose-casl",
   "description": "Easily Integrate Casl&mongoose your to Feathersjs add.",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "homepage": "https://github.com/doronnahum/feathers-mongoose-casl.git",
   "main": "lib/",
   "keywords": [
@@ -89,14 +89,6 @@
     "sift": "^8.5.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "mocha": "^6.2.1",
-    "semistandard": "*",
-    "nodemon": "^1.19.3",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "eslint-utils": ">=1.4.2",
-    "handlebars": ">=4.4.0",
     "@feathersjs/authentication": "^4.3.3",
     "@feathersjs/authentication-local": "^4.3.3",
     "@feathersjs/authentication-oauth": "^4.3.3",
@@ -107,12 +99,19 @@
     "@feathersjs/socketio": "^4.3.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
+    "eslint-utils": ">=1.4.2",
     "feathers-logger": "^0.3.2",
     "feathers-mongoose": "^8.0.3",
-    "feathers-mongoose-casl": "^1.10.1",
+    "handlebars": ">=4.4.0",
     "helmet": "^3.21.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.1",
     "mongodb-core": "^3.2.7",
     "mongoose": "^5.7.3",
+    "nodemon": "^1.19.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "semistandard": "*",
     "serve-favicon": "^2.5.0",
     "winston": "^3.2.1"
   }
