@@ -51,7 +51,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
              inputType:  'boxSelect',
              options:  [
                  {value:  BUILDINGS_TYPE['stadium'], label:  'Stadium'},
-                 {value:  BUILDINGS_TYPE['gym'], label:  'Gym'},
+                 {value:  BUILDINGS_TYPE['gym'], label:  'Gym', i18nLabels: { heIL: 'חדר כושר' }},
              ]
          }
      }

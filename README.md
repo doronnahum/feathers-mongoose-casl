@@ -15,7 +15,7 @@ description: 'feathers-mongoose-casl is a set of services,hook,utils to your fea
 * **Validation**
   * Validate params from client
 * **Docs**
-  * A _swagger_ documentation UI for you api.
+  *  A _swagger_ documentation UI for you api.
 * **Dashboard**
   * Admin GUI to your Database
 * **Email service**
@@ -23,6 +23,10 @@ description: 'feathers-mongoose-casl is a set of services,hook,utils to your fea
 * **Files**
   * uploads files to you local server/s3/googl
 {% endhint %}
+
+  
+  
+
 
 {% page-ref page="docs/start-new-project-1/" %}
 
