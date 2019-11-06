@@ -2,7 +2,7 @@
 description: We need to add authentication to app.configure
 ---
 
-# Verify user
+# Verify user and filter user fields
 
 Open src/authentication.js and update file
 
@@ -46,7 +46,9 @@ module.exports = app => {
             throw new NotAuthenticated('User Email is not yet verified.');
           }
           const pickMeReadFields = app.get('feathers-mongoose-casl').pickMeReadFields;
-          context.result.user = pick(context.result.user, pickMeReadFields);
+
+          // context.dispatch = context.result;
+          context.dispatch = Object.assign({}, context.result, { user: pick(context.result.user, pickMeReadFields) })
           return context;
         },
       ]

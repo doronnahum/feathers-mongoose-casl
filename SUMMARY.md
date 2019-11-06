@@ -12,7 +12,7 @@
     * [Email service](docs/start-new-project-1/open-mailgun-accunt.md)
     * [App hooks](docs/start-new-project-1/update-app.hook.md)
     * [Import required services](docs/start-new-project-1/create-required-services.md)
-    * [Verify user](docs/start-new-project-1/use-feathers-mongoose-casl-authentication.md)
+    * [Verify user and filter user fields](docs/start-new-project-1/use-feathers-mongoose-casl-authentication.md)
     * [Swagger, Logger, BodyParser](docs/start-new-project-1/install-dependency.md)
     * [Email templates](docs/start-new-project-1/email-templates.md)
     * [public HTML](docs/start-new-project-1/verify-email-html.md)
