@@ -55,6 +55,7 @@
     * [Dashboard](docs/guides/dashboard/README.md)
       * [Dashboard Config](docs/guides/dashboard/service-configuration.md)
       * [Online dashboard](docs/guides/dashboard/online-dashboard.md)
+      * [customRenderField](docs/guides/dashboard/customrenderfield.md)
       * [Add to your react app](docs/guides/dashboard/add-to-your-react-app.md)
       * [Field configuration](docs/guides/dashboard/field-configuration.md)
     * [customized feathers-mongoose-casl/services](docs/guides/customized-feathers-mongoose-casl-services.md)

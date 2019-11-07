@@ -168,7 +168,7 @@ render
 {
   type: 'custom',
   customFieldType: 'customRenderField',
-  data: {name: 'anyUsefulData'}
+  fieldProps: {name: 'anyUsefulData'}
 }
 
 ```
@@ -178,6 +178,8 @@ render
   
   
 **related docs:**
+
+{% page-ref page="service-configuration.md" %}
 
 {% page-ref page="../populate.md" %}
 
