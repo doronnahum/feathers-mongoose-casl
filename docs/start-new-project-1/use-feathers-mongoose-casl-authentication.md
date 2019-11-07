@@ -4,16 +4,19 @@ description: We need to add authentication to app.configure
 
 # Verify user and filter user fields
 
-Open src/authentication.js and update file
+Open src/authentication.js and update file  
+  
+you can copy the file content from [here](https://github.com/doronnahum/feathers-mongoose-casl/blob/master/lib/src/authentication.js)  
 
-```javascript
+
+```text
 const { AuthenticationService, JWTStrategy } = require('@feathersjs/authentication');
 const { LocalStrategy } = require('@feathersjs/authentication-local');
 const { expressOauth } = require('@feathersjs/authentication-oauth');
 const { NotAuthenticated } = require('@feathersjs/errors');
+
 // Add this
 const { pick } = require('feathers-mongoose-casl');
-//
 
 module.exports = app => {
   // Add this
@@ -47,7 +50,6 @@ module.exports = app => {
           }
           const pickMeReadFields = app.get('feathers-mongoose-casl').pickMeReadFields;
 
-          // context.dispatch = context.result;
           context.dispatch = Object.assign({}, context.result, { user: pick(context.result.user, pickMeReadFields) })
           return context;
         },
@@ -58,5 +60,7 @@ module.exports = app => {
 
 ```
 
-* If you can't found this file then run  `feathers g authentication`  
+
+
+* If you can't found src/authentication.js  file then run  `$ feathers g authentication`  
 
