@@ -11,13 +11,22 @@ Add [eslint-plugin-security ](https://github.com/nodesecurity/eslint-plugin-secu
 Add the following to your `.eslintrc` file:
 
 ```text
-"plugins": [  "security"],"extends": [  "plugin:security/recommended"]
+"plugins": [
+  "security"
+],
+"extends": [
+  "plugin:security/recommended"
+]
 ```
 
 #### Add this to your scripts at the package.json
 
 ```javascript
-  "scripts": {    ...    "lint": "./node_modules/.bin/eslint .",    "cont-int": "npm test && npm run-script lint"  },
+  "scripts": {
+    ...
+    "lint": "./node_modules/.bin/eslint .",
+    "cont-int": "npm test && npm run-script lint"
+  },
 ```
 
 #### Run this command and fix your es-lint errors

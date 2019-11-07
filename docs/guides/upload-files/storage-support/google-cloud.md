@@ -25,13 +25,26 @@
 1. Update projectId _\*\*_and bucket name  
 
 ```javascript
-   "google-cloud": {       "projectId": "THIS IS THE PROJECT NAME",       "bucket": "THE BOCKET NAME",       "keyFilename": "../src/secret-files/google-key.json",       "signedUrlExpires" : 900     },
+   "google-cloud": {
+       "projectId": "THIS IS THE PROJECT NAME",
+       "bucket": "THE BOCKET NAME",
+       "keyFilename": "../src/secret-files/google-key.json",
+       "signedUrlExpires" : 900
+     },
 ```
 
 1. Allow google-cloud  
 
 ```javascript
-     "feathers-mongoose-casl": {       "uploads": {         "services": {           "s3": false,           "local-private": true,           "local-public": true,           "google-cloud": true // This need to be true         }         ....
+     "feathers-mongoose-casl": {
+       "uploads": {
+         "services": {
+           "s3": false,
+           "local-private": true,
+           "local-public": true,
+           "google-cloud": true // This need to be true
+         }
+         ....
 ```
 
 \*\*\*\*
@@ -41,7 +54,17 @@
 **path:** src &gt; services &gt; \[YOUR\_SERVICE\_NAME\] &gt; \[YOUR\_SERVICE\_NAME\].service.js
 
 ```javascript
-  app.use('/organizations-files',    uploadMiddleware({      app,      fileKeyName: 'file',      serviceName: 'YOUR_SERVICE_NAME',      storageService: STORAGE_TYPES['google-cloud'], // That's the change we made      publicAcl: false,      // mimetypes: ['image/png','image/jpeg'] // optional    }),    createService(options)  );
+  app.use('/organizations-files',
+    uploadMiddleware({
+      app,
+      fileKeyName: 'file',
+      serviceName: 'YOUR_SERVICE_NAME',
+      storageService: STORAGE_TYPES['google-cloud'], // That's the change we made
+      publicAcl: false,
+      // mimetypes: ['image/png','image/jpeg'] // optional
+    }),
+    createService(options)
+  );
 ```
 
 ## 6- Update service validators
@@ -49,7 +72,18 @@
 **path**: src &gt; validators &gt; \[YOUR\_SERVICE\_NAME\].validators.js
 
 ```javascript
-const {Joi, enums} = require('feathers-mongoose-casl');const getJoiObject = function(withRequired) {  const required = withRequired ? 'required' : 'optional';    return Joi.object({    storage: Joi.string().valid(      enums.STORAGE_TYPES['google-cloud'], //We need to add this line      enums.STORAGE_TYPES['others'], // When user pass link to file      ).meta({ dashboard: { hide: 1 }})    ...    })}
+const {Joi, enums} = require('feathers-mongoose-casl');
+
+const getJoiObject = function(withRequired) {
+  const required = withRequired ? 'required' : 'optional';
+    return Joi.object({
+    storage: Joi.string().valid(
+      enums.STORAGE_TYPES['google-cloud'], //We need to add this line
+      enums.STORAGE_TYPES['others'], // When user pass link to file
+      ).meta({ dashboard: { hide: 1 }})
+    ...
+    })
+}
 ```
 
 ## 7- Update service hooks
@@ -57,7 +91,40 @@ const {Joi, enums} = require('feathers-mongoose-casl');const getJoiObject = func
 **path:** src &gt; services &gt; \[YOUR\_SERVICE\_NAME\] &gt; \[YOUR\_SERVICE\_NAME\].hooks.js
 
 ```javascript
-const {hooks} = require('feathers-mongoose-casl');const {uploadsHooks} = hooks;const uploadHookConfig = {  serviceName: 'YOUR_SERVICE_NAME',  fileKeyName: 'file',  singUrlKeyName: 'file',  privateFile: true,  autoSignUrl: true,  userKeyName: 'user'};module.exports = {  before: {    all: [uploadsHooks(uploadHookConfig)],    find: [],    get: [],    create: [],    update: [],    patch: [],    remove: []  },  after: {    all: [uploadsHooks(uploadHookConfig)],    find: [],    get: [],    create: [],    update: [],    patch: [],    remove: []  },}
+const {hooks} = require('feathers-mongoose-casl');
+const {uploadsHooks} = hooks;
+
+const uploadHookConfig = {
+  serviceName: 'YOUR_SERVICE_NAME',
+  fileKeyName: 'file',
+  singUrlKeyName: 'file',
+  privateFile: true,
+  autoSignUrl: true,
+  userKeyName: 'user'
+};
+
+
+module.exports = {
+  before: {
+    all: [uploadsHooks(uploadHookConfig)],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  },
+
+  after: {
+    all: [uploadsHooks(uploadHookConfig)],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  },
+}
 ```
 
 ## 8 - Done!

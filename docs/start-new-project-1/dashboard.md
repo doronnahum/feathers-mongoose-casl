@@ -23,7 +23,13 @@ add serverUrl to url query:
 2- Add inside feathers-mongoose-casl.defaultRules this:
 
 ```text
-    "defaultRules": [    ....      {        "userContext": {"email": "<YOUR_EMAIL>@gmail.com"},        "actions": ["manage"],        "subject": ["dashboard","users","user-abilities","rules","files","posts"]      },
+    "defaultRules": [
+    ....
+      {
+        "userContext": {"email": "<YOUR_EMAIL>@gmail.com"},
+        "actions": ["manage"],
+        "subject": ["dashboard","users","user-abilities","rules","files","posts"]
+      },
 ```
 
 ## Now refresh dashboard screen

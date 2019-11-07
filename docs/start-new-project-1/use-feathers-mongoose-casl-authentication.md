@@ -15,6 +15,14 @@ We need to add authentication to app.configur
 2 - add app.configure\(authentication\)
 
 ```javascript
-const {authentication} = require('feathers-mongoose-casl').services; // ADD THIS LINE​// app.configure(middleware); // this line already there​app.configure(authentication); // 2 - Add this line (Before services)​//app.configure(services);git add .git commit -m "Use feathers-mongoose-casl authentication"
+const {authentication} = require('feathers-mongoose-casl').services; // ADD THIS LINE
+​
+// app.configure(middleware); // this line already there
+​
+app.configure(authentication); // 2 - Add this line (Before services)
+​
+//app.configure(services);
+git add .
+git commit -m "Use feathers-mongoose-casl authentication"
 ```
 

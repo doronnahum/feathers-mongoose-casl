@@ -57,7 +57,11 @@
 * **Object**
 
   ```jsx
-    someField:  Joi.object({     user: Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'email' }),     rules: Joi.array().items(Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'name'})),     blockAll: Joi.boolean()     })
+    someField:  Joi.object({
+       user: Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'email' }),
+       rules: Joi.array().items(Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'name'})),
+       blockAll: Joi.boolean()
+       })
   ```
 
 ### Allow null?
