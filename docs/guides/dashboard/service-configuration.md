@@ -13,7 +13,9 @@ all the configuration is optional
 
 
   ```javascript
-  dashboardConfig: {  sideBarIconName: 'user',}
+  dashboardConfig: {
+    sideBarIconName: 'user',
+  }
 
   ```
 
@@ -22,7 +24,10 @@ all the configuration is optional
 
 
   ```javascript
-  // Example - hide updatedAt fielddashboardConfig: {  defaultFieldsToDisplay: ['_id','createdAt'],}
+  // Example - hide updatedAt field
+  dashboardConfig: {
+    defaultFieldsToDisplay: ['_id','createdAt'],
+  }
   ```
 
 * **docLayout** -  array  
@@ -33,7 +38,22 @@ all the configuration is optional
 
 
   ```javascript
-  // Example - To hide updatedAtdashboardConfig: {  docLayout: [  ['name','color'] // render fields in the same row  'tags',  'type',  {    when: {      field: 'type',      equalTo: 'other',      then: ['otherType','info'], // render this fields only when       otherwise: ['info']    }  }  ],}
+  // Example - To hide updatedAt
+  dashboardConfig: {
+    docLayout: [
+    ['name','color'] // render fields in the same row
+    'tags',
+    'type',
+    {
+      when: {
+        field: 'type',
+        equalTo: 'other',
+        then: ['otherType','info'], // render this fields only when 
+        otherwise: ['info']
+      }
+    }
+    ],
+  }
   ```
 
 * **docTitleField -** string The field to display as page title when edit a document 
@@ -42,7 +62,12 @@ all the configuration is optional
 
 
   ```javascript
-  // Example - hide updatedAt fieldconst options = {  dashboardConfig: {    populate: ['users'],  }}
+  // Example - hide updatedAt field
+  const options = {
+    dashboardConfig: {
+      populate: ['users'],
+    }
+  }
   ```
 
   This property only adds the populate to client request,   

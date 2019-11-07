@@ -27,7 +27,11 @@
 * **Pointer**
 
   ```jsx
-  someField: Joi.objectId().meta({            type: 'ObjectId',            ref: 'users',            displayKey: 'email'          }),
+  someField: Joi.objectId().meta({
+              type: 'ObjectId',
+              ref: 'users',
+              displayKey: 'email'
+            }),
   ```
 
 * **Date**
@@ -63,7 +67,15 @@
 * **Object**
 
   ```jsx
-    someField:  Joi.object({     user: Joi.objectId().meta({      type: 'ObjectId',      ref: 'users',      displayKey: 'email'    }),     rules: Joi.array().items(Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'name'})),     blockAll: Joi.boolean()     })
+    someField:  Joi.object({
+       user: Joi.objectId().meta({
+        type: 'ObjectId',
+        ref: 'users',
+        displayKey: 'email'
+      }),
+       rules: Joi.array().items(Joi.string().meta({ type: 'ObjectId', ref: 'users', displayKey: 'name'})),
+       blockAll: Joi.boolean()
+       })
   ```
 
 ### Allow null?

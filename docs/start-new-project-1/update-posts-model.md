@@ -3,7 +3,11 @@
 ### 1 - Create new service
 
 ```bash
- feathers generate service   ? What kind of service is it? Mongoose   ? What is the name of the service? posts   ? Which path should the service be registered on? /posts   ? Does the service require authentication? Yes    
+ feathers generate service
+   ? What kind of service is it? Mongoose
+   ? What is the name of the service? posts
+   ? Which path should the service be registered on? /posts
+   ? Does the service require authentication? Yes    
 ```
 
 ### 2. Create Validator file
@@ -13,7 +17,38 @@ inside your new service folder create new file - \[YOUR\_SERVICE\_NAME\].validat
 {% tabs %}
 {% tab title="src\\validators\\posts.validators.js" %}
 ```javascript
-const {Joi} = require('feathers-mongoose-casl');const getJoiObject = function(withRequired){  const required = withRequired ? 'required' : 'optional';  return Joi.object({    author: Joi.objectId().meta({      type: 'ObjectId',      ref: 'users',      displayKey: 'email'    })[required](),    title: Joi.string().min(5)[required]().meta({      dashboard: {        label: 'Post title',        inputProps: JSON.stringify({style: {background: 'red'}})      }    }),    body: Joi.string()[required](),    rating: Joi.number().max(5).meta({      dashboard: {        hideOnUpdate: true,        hideOnCreate: true,      }    }),    image: Joi.objectId().meta({      type: 'ObjectId',      ref: 'files',      displayKey: 'name'    })  });};module.exports = getJoiObject;
+const {Joi} = require('feathers-mongoose-casl');
+
+const getJoiObject = function(withRequired){
+  const required = withRequired ? 'required' : 'optional';
+  return Joi.object({
+    author: Joi.objectId().meta({
+      type: 'ObjectId',
+      ref: 'users',
+      displayKey: 'email'
+    })[required](),
+    title: Joi.string().min(5)[required]().meta({
+      dashboard: {
+        label: 'Post title',
+        inputProps: JSON.stringify({style: {background: 'red'}})
+      }
+    }),
+    body: Joi.string()[required](),
+    rating: Joi.number().max(5).meta({
+      dashboard: {
+        hideOnUpdate: true,
+        hideOnCreate: true,
+      }
+    }),
+    image: Joi.objectId().meta({
+      type: 'ObjectId',
+      ref: 'files',
+      displayKey: 'name'
+    })
+  });
+};
+
+module.exports = getJoiObject;
 ```
 {% endtab %}
 
@@ -36,7 +71,18 @@ open src &gt; models &gt; posts.models.js
 {% tabs %}
 {% tab title="src\\models\\posts.model.js" %}
 ```javascript
-// posts-model.js - A mongoose model// // See http://mongoosejs.com/docs/models.html// for more of what you can do here.const validator = require('./posts.validators.js');const {createModelFromJoi} = require('feathers-mongoose-casl');module.exports = function (app) {  return createModelFromJoi(app, 'posts', validator);};
+// posts-model.js - A mongoose model
+// 
+// See http://mongoosejs.com/docs/models.html
+// for more of what you can do here.
+
+const validator = require('./posts.validators.js');
+const {createModelFromJoi} = require('feathers-mongoose-casl');
+
+module.exports = function (app) {
+  return createModelFromJoi(app, 'posts', validator);
+};
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -51,7 +97,29 @@ open src &gt; services &gt; posts &gt; posts.service.js
 
 
 ```javascript
-    const options = {    ...,    serviceRules: [      {'actions': ['read'], 'anonymousUser': true, fields: ['title']},      {'actions': ['create','read','update'], 'conditions': { 'author': '{{ user._id }}' }},      { 'actions': ['manage'], 'roles': ['admin']},    ],    dashboardConfig: {      sideBarIconName: 'table',      i18n: {        'heIL': {          serviceName: 'פוסטים',          serviceNameMany: 'פוסטים',          serviceNameOne: 'פוסט',          fields: {            '_id': 'מזהה',            'updatedAt': 'תאריך עדכון',            'createdAt': 'נוצר בתאריך',          }        }      }    }    }
+    const options = {
+    ...,
+    serviceRules: [
+      {'actions': ['read'], 'anonymousUser': true, fields: ['title']},
+      {'actions': ['create','read','update'], 'conditions': { 'author': '{{ user._id }}' }},
+      { 'actions': ['manage'], 'roles': ['admin']},
+    ],
+    dashboardConfig: {
+      sideBarIconName: 'table',
+      i18n: {
+        'heIL': {
+          serviceName: 'פוסטים',
+          serviceNameMany: 'פוסטים',
+          serviceNameOne: 'פוסט',
+          fields: {
+            '_id': 'מזהה',
+            'updatedAt': 'תאריך עדכון',
+            'createdAt': 'נוצר בתאריך',
+          }
+        }
+      }
+    }
+    }
 ```
 
 ### 6. Protect posts.hooks
@@ -59,7 +127,42 @@ open src &gt; services &gt; posts &gt; posts.service.js
 
 
 ```javascript
-const {hooks} = require('feathers-mongoose-casl');const {authenticate, validateAbilities, validateSchema, sanitizedData, } = hooks;module.exports = {  before: {    all: [authenticate, validateAbilities],    find: [],    get: [],    create: [validateSchema],    update: [validateSchema],    patch: [validateSchema],    remove: []  },  after: {    all: [sanitizedData],    find: [],    get: [],    create: [],    update: [],    patch: [],    remove: []  },  error: {    all: [],    find: [],    get: [],    create: [],    update: [],    patch: [],    remove: []  }};
+const {hooks} = require('feathers-mongoose-casl');
+const {authenticate, validateAbilities, validateSchema, sanitizedData, } = hooks;
+
+
+module.exports = {
+  before: {
+    all: [authenticate, validateAbilities],
+    find: [],
+    get: [],
+    create: [validateSchema],
+    update: [validateSchema],
+    patch: [validateSchema],
+    remove: []
+  },
+
+  after: {
+    all: [sanitizedData],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  },
+
+  error: {
+    all: [],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  }
+};
+
 ```
 
    
@@ -73,7 +176,8 @@ const {hooks} = require('feathers-mongoose-casl');const {authenticate, validateA
 ### 7. Commit changes
 
 ```text
-git add .git commit -m "Added joi validtors to posts serives"
+git add .
+git commit -m "Added joi validtors to posts serives"
 ```
 
 {% hint style="info" %}
