@@ -17,7 +17,6 @@ We use [PUG ](https://pugjs.org/api/getting-started.html)template engine to buil
 3 - **Git commit**
 
 ```text
-git add .
-git commit -m "create email-templates folder to verified user email"
+git add .git commit -m "create email-templates folder to verified user email"
 ```
 

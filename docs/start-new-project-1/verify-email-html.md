@@ -22,8 +22,7 @@ description: 'Copy html files email  - verify.html, change-password.html'
 3- **Git commit**
 
 ```text
-git add .
-git commit -m "create verify and change-password public html"
+git add .git commit -m "create verify and change-password public html"
 ```
 
 {% hint style="info" %}

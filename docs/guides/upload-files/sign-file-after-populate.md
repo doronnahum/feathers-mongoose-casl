@@ -14,45 +14,13 @@ the request :
 -----------------------------
 
 ```javascript
-app.service('posts').find({query:{
-  $populate: {
-    path: 'admin',
-    populate: {
-      path: 'user',
-      populate: {
-        path: 'profile',
-        populate: {
-          path: 'logo'
-        }
-      }
-    }
-  }
-}})
+app.service('posts').find({query:{  $populate: {    path: 'admin',    populate: {      path: 'user',      populate: {        path: 'profile',        populate: {          path: 'logo'        }      }    }  }}})
 ```
 
 ### in the posts.hooks.js:
 
 ```javascript
-const {hooks} = require('feathers-mongoose-casl');
-const {singFileAfterPopulate} = hooks;
-
-module.exports = {
-  after: {
-    find: [
-      singFileAfterPopulate({
-        path: 'admin.user.profile.logo',
-        fileKeyName: 'file',
-        singUrlKeyName:'file'
-      })
-    ],
-    get: [],
-    create: [],
-    update: [],
-    patch: [],
-    remove: []
-  }
-  ....
-  }
+const {hooks} = require('feathers-mongoose-casl');const {singFileAfterPopulate} = hooks;module.exports = {  after: {    find: [      singFileAfterPopulate({        path: 'admin.user.profile.logo',        fileKeyName: 'file',        singUrlKeyName:'file'      })    ],    get: [],    create: [],    update: [],    patch: [],    remove: []  }  ....  }
 ```
 
 

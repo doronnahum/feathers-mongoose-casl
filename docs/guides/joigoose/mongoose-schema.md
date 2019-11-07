@@ -7,25 +7,9 @@ Inside the model file, pass also a mongoose schema
 {% endhint %}
 
 {% hint style="warning" %}
-{% code-tabs %}
-{% code-tabs-item title="src\\models\\posts.model.js" %}
 ```javascript
-// posts-model.js - A mongoose model
-// 
-// See http://mongoosejs.com/docs/models.html
-// for more of what you can do here.
-
-const postsValidators = require('../validators/posts.validators.js');
-const {createModelFromJoi} = require('feathers-mongoose-casl');
-var mongoose = require('mongoose');
-
-const mongooseSchema = var sampleSchema = new mongoose.Schema({ name: { type: String, required: true } });
-module.exports = function (app) {
-  return createModelFromJoi(app, 'posts', postsValidators, mongooseSchema);
-};
+// posts-model.js - A mongoose model// // See http://mongoosejs.com/docs/models.html// for more of what you can do here.const postsValidators = require('../validators/posts.validators.js');const {createModelFromJoi} = require('feathers-mongoose-casl');var mongoose = require('mongoose');const mongooseSchema = var sampleSchema = new mongoose.Schema({ name: { type: String, required: true } });module.exports = function (app) {  return createModelFromJoi(app, 'posts', postsValidators, mongooseSchema);};
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 {% endhint %}
 
 Why we use JOI
