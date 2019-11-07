@@ -40,16 +40,7 @@ local
 {% endapi-method-response-example-description %}
 
 ```
-{
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1YzVhY2MzNzZmMzJhZTNiMDhlNTBhN2EiLCJpYXQiOjE1NDk0NTQ4MzcsImV4cCI6MTU0OTU0MTIzNywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiYW5vbnltb3VzIiwianRpIjoiZTI4NTcyNDUtZWMzZi00YzhlLWFiZmUtNzhiMzJhYjlhOGRmIn0.LfSttwrbpjD15bmf9xFtBkid2FcpRJM2YFO6yvosuXI",
-    "user": {
-        "_id": "5c5acc376f32ae3b08e50a7a",
-        "email": "MyEmail@gmail.com",
-        "updatedAt": "2019-02-06T12:00:18.441Z",
-        "createdAt": "2019-02-06T11:59:51.471Z",
-        "__v": 0
-    }
-}
+{    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1YzVhY2MzNzZmMzJhZTNiMDhlNTBhN2EiLCJpYXQiOjE1NDk0NTQ4MzcsImV4cCI6MTU0OTU0MTIzNywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiYW5vbnltb3VzIiwianRpIjoiZTI4NTcyNDUtZWMzZi00YzhlLWFiZmUtNzhiMzJhYjlhOGRmIn0.LfSttwrbpjD15bmf9xFtBkid2FcpRJM2YFO6yvosuXI",    "user": {        "_id": "5c5acc376f32ae3b08e50a7a",        "email": "MyEmail@gmail.com",        "updatedAt": "2019-02-06T12:00:18.441Z",        "createdAt": "2019-02-06T11:59:51.471Z",        "__v": 0    }}
 ```
 {% endapi-method-response-example %}
 
@@ -59,13 +50,7 @@ local
 {% endapi-method-response-example-description %}
 
 ```
-{
-    "name": "BadRequest",
-    "message": "User's email is not yet verified.",
-    "code": 400,
-    "className": "bad-request",
-    "errors": {}
-}
+{    "name": "BadRequest",    "message": "User's email is not yet verified.",    "code": 400,    "className": "bad-request",    "errors": {}}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -75,12 +60,7 @@ local
 ### Postman snippet
 
 ```text
-curl -X POST \
-  http://localhost:3030/authentication \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'Postman-Token: eccaf293-a50e-48ec-a53e-aebc241defba' \
-  -H 'cache-control: no-cache' \
-  -d 'email=doron.nahum%2B11%40gmail.com&password=password&strategy=local&undefined='
+curl -X POST \  http://localhost:3030/authentication \  -H 'Content-Type: application/x-www-form-urlencoded' \  -H 'Postman-Token: eccaf293-a50e-48ec-a53e-aebc241defba' \  -H 'cache-control: no-cache' \  -d 'email=doron.nahum%2B11%40gmail.com&password=password&strategy=local&undefined='
 
 ```
 

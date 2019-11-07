@@ -11,11 +11,7 @@ npm install feathers-profiler --save
 Add to app.js
 
 ```javascript
-const { profiler } = require('feathers-profiler');
-
-// app.configure(services); // This already there
-// Add this line under the services
-app.configure(profiler({ stats: 'detail' }));
+const { profiler } = require('feathers-profiler');// app.configure(services); // This already there// Add this line under the servicesapp.configure(profiler({ stats: 'detail' }));
 ```
 
 ### 2 - Add log service

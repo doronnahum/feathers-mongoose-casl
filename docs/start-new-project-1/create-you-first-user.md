@@ -47,16 +47,7 @@ MyEmail@gmail.com
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-createdAt: "2019-03-07T08:52:32.429Z"
-email: "MyEmail@gmail.com"
-isVerified: false
-roles: []
-updatedAt: "2019-03-07T08:52:32.429Z"
-verifiedRequired: true
-__v: 0
-_id: "5c80dbd0e3c6b10ad0375457"
-}
+{createdAt: "2019-03-07T08:52:32.429Z"email: "MyEmail@gmail.com"isVerified: falseroles: []updatedAt: "2019-03-07T08:52:32.429Z"verifiedRequired: true__v: 0_id: "5c80dbd0e3c6b10ad0375457"}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -66,30 +57,13 @@ _id: "5c80dbd0e3c6b10ad0375457"
 ### Postman snippet
 
 ```text
-curl -X POST \
-  http://localhost:3030/users \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 5ad6571f-e2dd-4737-b0e5-73d2fe8986fe' \
-  -H 'cache-control: no-cache' \
-  -d '{
-	"email": "yourEmail@gmail.com",
-	"password": "password"
-}'
+curl -X POST \  http://localhost:3030/users \  -H 'Content-Type: application/json' \  -H 'Postman-Token: 5ad6571f-e2dd-4737-b0e5-73d2fe8986fe' \  -H 'cache-control: no-cache' \  -d '{	"email": "yourEmail@gmail.com",	"password": "password"}'
 ```
 
 ### Response
 
 ```text
-{
-    "roles": [],
-    "_id": "5c84204c1fa2991670286a70",
-    "email": "doron.nahum@gmail.com",
-    "isVerified": false,
-    "updatedAt": "2019-03-09T20:21:32.784Z",
-    "createdAt": "2019-03-09T20:21:32.784Z",
-    "__v": 0,
-    "verifiedRequired": true
-}
+{    "roles": [],    "_id": "5c84204c1fa2991670286a70",    "email": "doron.nahum@gmail.com",    "isVerified": false,    "updatedAt": "2019-03-09T20:21:32.784Z",    "createdAt": "2019-03-09T20:21:32.784Z",    "__v": 0,    "verifiedRequired": true}
 ```
 
 ### verifiedRequired is true, you can't login to app yet, if you try to login the server will return error with message: "User's email is not yet verified."
@@ -121,14 +95,6 @@ if you use a free **mailgun** account then you need to verify the emails you wan
 #### Postman snippet
 
 ```text
-curl -X POST \
-  http://localhost:3030/authManagement \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 6f647968-5e41-45a1-8b82-d8ad42dabcda' \
-  -H 'cache-control: no-cache' \
-  -d '{
-   "action": "resendVerifySignup",
-   "value": {"email": "YOUR_EMAIL@Gmail.com"}
-}'
+curl -X POST \  http://localhost:3030/authManagement \  -H 'Content-Type: application/json' \  -H 'Postman-Token: 6f647968-5e41-45a1-8b82-d8ad42dabcda' \  -H 'cache-control: no-cache' \  -d '{   "action": "resendVerifySignup",   "value": {"email": "YOUR_EMAIL@Gmail.com"}}'
 ```
 
