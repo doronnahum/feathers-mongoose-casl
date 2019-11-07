@@ -167,7 +167,8 @@ render
 -------------------------
 {
   type: 'custom',
-  customFieldType: 'customRenderProps'
+  customFieldType: 'customRenderField',
+  data: {name: 'anyUsefulData'}
 }
 
 ```

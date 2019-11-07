@@ -8,7 +8,14 @@ if you create a new custom service and don't use createModelFromJoi\(\)
 then use setJoiInstance\(app, serviceName, joiSchema\)
 
 ```javascript
-const commentsValidators = require('../validators/comments.validators.js');const {setJoiInstance} = require('feathers-mongoose-casl');module.exports = function (app) {  // your custom 'comments' service   setJoiInstance(app, 'comments', commentsValidators);  services.configureServices(app);};
+const commentsValidators = require('../validators/comments.validators.js');
+const {setJoiInstance} = require('feathers-mongoose-casl');
+
+module.exports = function (app) {
+  // your custom 'comments' service 
+  setJoiInstance(app, 'comments', commentsValidators);
+  services.configureServices(app);
+};
 ```
 
 {% hint style="warning" %}
@@ -19,6 +26,19 @@ services.configureServices\(app\);
 joiSchema example
 
 ```javascript
-const Joi = require('joi');Joi.objectId = require('joi-objectid')(Joi);const getJoiObject = function(withRequired){  const required = withRequired ? 'required' : 'optional';  return Joi.object({    author: Joi.objectId().meta({ type: 'ObjectId', ref: 'roles' })[required](),    title: Joi.string()[required](),    body: Joi.string()[required](),    rating: Joi.number().max(5),  });};module.exports = getJoiObject;
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
+
+const getJoiObject = function(withRequired){
+  const required = withRequired ? 'required' : 'optional';
+  return Joi.object({
+    author: Joi.objectId().meta({ type: 'ObjectId', ref: 'roles' })[required](),
+    title: Joi.string()[required](),
+    body: Joi.string()[required](),
+    rating: Joi.number().max(5),
+  });
+};
+
+module.exports = getJoiObject;
 ```
 

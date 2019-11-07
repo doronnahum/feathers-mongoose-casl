@@ -7,7 +7,26 @@ add mongoose.set\('debug', true\);
 {% tabs %}
 {% tab title="src > mongoose.js" %}
 ```javascript
-const mongoose = require('mongoose');module.exports = function (app) {  mongoose.connect(    app.get('mongodb'),    { useCreateIndex: true, useNewUrlParser: true }  );  mongoose.Promise = global.Promise;  mongoose.set('debug', true); // ADD THIS  app.set('mongooseClient', mongoose);};/*or  const isProduction = process.env.NODE_ENV === 'production';  if(!isProduction){    mongoose.set('debug', true);  }*/
+const mongoose = require('mongoose');
+
+module.exports = function (app) {
+  mongoose.connect(
+    app.get('mongodb'),
+    { useCreateIndex: true, useNewUrlParser: true }
+  );
+  mongoose.Promise = global.Promise;
+  mongoose.set('debug', true); // ADD THIS
+  app.set('mongooseClient', mongoose);
+};
+
+/*
+or
+  const isProduction = process.env.NODE_ENV === 'production';
+  if(!isProduction){
+    mongoose.set('debug', true);
+  }
+*/
+
 ```
 {% endtab %}
 {% endtabs %}
