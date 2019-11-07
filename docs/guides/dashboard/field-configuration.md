@@ -31,10 +31,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
   * **inputProps** - stringify object - JSON.stringify\({}\) Props to pass the input
 
     ```jsx
-    //  Example
-    Joi.string().meta({ 
-      dashboard:  {inputProps:  JSON.stringify({style:  {background:  'red'}})
-     )}
+    //  ExampleJoi.string().meta({   dashboard:  {inputProps:  JSON.stringify({style:  {background:  'red'}}) )}
     ```
 
   * **inputType** - enum can be one of: \['file','boxSelect','textArea'\]
@@ -44,18 +41,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
   * **options** - array Use on array of string fields, to render multi select drop down
 
     ```jsx
-    // Exmpale
-    type: Joi.string().valid(Object.values(BUILDINGS_TYPE)).meta({
-     dashboard:  {
-         doc:  {
-             inputType:  'boxSelect',
-             options:  [
-                 {value:  BUILDINGS_TYPE['stadium'], label:  'Stadium'},
-                 {value:  BUILDINGS_TYPE['gym'], label:  'Gym'},
-             ]
-         }
-     }
-    })
+    // Exmpaletype: Joi.string().valid(Object.values(BUILDINGS_TYPE)).meta({ dashboard:  {     doc:  {         inputType:  'boxSelect',         options:  [             {value:  BUILDINGS_TYPE['stadium'], label:  'Stadium'},             {value:  BUILDINGS_TYPE['gym'], label:  'Gym'},         ]     } }})
     ```
 
   * **initialValue -** any  The input initial value on creating a new document
@@ -64,32 +50,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
 All the options:
 
 ```jsx
- // all the options are optional
-Joi.string().meta({
-  dashboard: {
-    label: 'FieldName',
-    hide: 0,
-    allowNull: 0,
-    list: {
-      hide: 0,
-      label: null,
-      width: 100,
-      type: 'link'
-    },
-    doc: {
-      hide: 0,
-      hideOnCreate: 0,
-      hideOnUpdate: 0,
-      inputProps: JSON.stringify({ ...}),
-      inputType: 'file',
-      options: array
-      initialValue: 'David',
-      readOnly: false,
-      displayKey: string,
-      optionKey: string,
-    }
-  }
-})
+ // all the options are optionalJoi.string().meta({  dashboard: {    label: 'FieldName',    hide: 0,    allowNull: 0,    list: {      hide: 0,      label: null,      width: 100,      type: 'link'    },    doc: {      hide: 0,      hideOnCreate: 0,      hideOnUpdate: 0,      inputProps: JSON.stringify({ ...}),      inputType: 'file',      options: array      initialValue: 'David',      readOnly: false,      displayKey: string,      optionKey: string,    }  }})
 ```
 
 **Meta on object**
@@ -97,35 +58,13 @@ Joi.string().meta({
 We can't pass dashboard in the meta of an object, this is wrong:
 
 ```jsx
-const getJoiObject = function (withRequired) {
-  const required = withRequired ? 'required' : 'optional';
-  return Joi.object({
-    someField: Joi.object().keys({
-      name: Joi.number(),
-      age: Joi.number()
-    }).meta({
-      dashboard: { list: { hide: 1 } }
-    })
-  })
-}
+const getJoiObject = function (withRequired) {  const required = withRequired ? 'required' : 'optional';  return Joi.object({    someField: Joi.object().keys({      name: Joi.number(),      age: Joi.number()    }).meta({      dashboard: { list: { hide: 1 } }    })  })}
 ```
 
 The solution is to pass a meta by the child, like this:
 
 ```jsx
-const getJoiObject = function (withRequired) {
-  const required = withRequired ? 'required' : 'optional';
-  return Joi.object({
-    someField: Joi.object().keys({
-      name: Joi.number().meta({
-        parentDashboard: {
-          list: { hide: 1 }
-        }
-      }),
-      age: Joi.number(),
-    })
-  })
-}
+const getJoiObject = function (withRequired) {  const required = withRequired ? 'required' : 'optional';  return Joi.object({    someField: Joi.object().keys({      name: Joi.number().meta({        parentDashboard: {          list: { hide: 1 }        }      }),      age: Joi.number(),    })  })}
 ```
 
 ### 
@@ -133,27 +72,7 @@ const getJoiObject = function (withRequired) {
 Example of use:
 
 ```jsx
-const { BUILDINGS_TYPE } = require('../enums');
-
-
-
-const getJoiObject = function (withRequired) {
-  const required = withRequired ? 'required' : 'optional';
-  return Joi.object({
-    name: Joi.string()[required](),
-    type: Joi.string().valid(Object.values(BUILDINGS_TYPE)).meta({
-      dashboard: {
-        doc: {
-          inputType: 'boxSelect',
-          options: [
-            { value: BUILDINGS_TYPE['stadium'], label: 'Stadium' },
-            { value: BUILDINGS_TYPE['gym'], label: 'Gym' },
-          ]
-        }
-      }
-    })
-  })
-}
+const { BUILDINGS_TYPE } = require('../enums');const getJoiObject = function (withRequired) {  const required = withRequired ? 'required' : 'optional';  return Joi.object({    name: Joi.string()[required](),    type: Joi.string().valid(Object.values(BUILDINGS_TYPE)).meta({      dashboard: {        doc: {          inputType: 'boxSelect',          options: [            { value: BUILDINGS_TYPE['stadium'], label: 'Stadium' },            { value: BUILDINGS_TYPE['gym'], label: 'Gym' },          ]        }      }    })  })}
 ```
 
 

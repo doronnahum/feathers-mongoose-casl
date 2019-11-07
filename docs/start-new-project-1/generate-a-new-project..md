@@ -15,16 +15,7 @@ Generate a new project. [https://docs.feathersjs.com/guides/basics/generator.htm
 * feathers cli will ask you some question, you can confirm all.
 
 ```text
-mkdir my-new-app
-cd my-new-app/
-feathers generate app
-    ? Project name my-new-app
-    ? Description
-    ? What folder should the source files live in? src
-    ? Which package manager are you using (has to be installed globally)? npm
-    ? What type of API are you making? (Press <space> to select, <a> to toggle all, <i> to invert selection)REST,
-    Realtime via Socket.io
-    ? Which testing framework do you prefer? Mocha + assert
+mkdir my-new-appcd my-new-app/feathers generate app    ? Project name my-new-app    ? Description    ? What folder should the source files live in? src    ? Which package manager are you using (has to be installed globally)? npm    ? What type of API are you making? (Press <space> to select, <a> to toggle all, <i> to invert selection)REST,    Realtime via Socket.io    ? Which testing framework do you prefer? Mocha + assert
 ```
 
 ### Update port from env
@@ -34,12 +25,7 @@ feathers generate app
 Open src/index.js
 
 ```text
-
-replace
-const port =  app.get('port');
-with
-const port = process.env.PORT || app.get('port');
-
+replaceconst port =  app.get('port');withconst port = process.env.PORT || app.get('port');
 ```
 
 

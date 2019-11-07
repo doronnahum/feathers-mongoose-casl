@@ -13,36 +13,19 @@ with rules you can manage how can access the services.
 Each rule is an object
 
 ```javascript
-{
-    "name": string,
-    "description": string,
-    "actions": array,
-    "subject": array,
-    "roles": array,
-    "fields" : array,
-    "conditions": object when hardcoded \ stringify on DB,
-    "userContext" :  object when hardcoded \ stringify on DB,
-    "populateWhitelist" : array,
-    "anonymousUser" : bollean,
-    "active" : bollean,
-    "from" : date,
-    "to": date
-}
+{    "name": string,    "description": string,    "actions": array,    "subject": array,    "roles": array,    "fields" : array,    "conditions": object when hardcoded \ stringify on DB,    "userContext" :  object when hardcoded \ stringify on DB,    "populateWhitelist" : array,    "anonymousUser" : bollean,    "active" : bollean,    "from" : date,    "to": date}
 ```
 
 ## You can define rules in 3 places:
 
 ```text
-**1.Service options**  
-   Add serviceRules to options
+**1.Service options**     Add serviceRules to options
 ```
 
 ![](../../.gitbook/assets/screen-shot-2019-05-19-at-8.48.20.png)
 
 ```text
-    **skipAbilitiesCheck**  
-    Inside service.options you can set the skipAbilitiesCheck = true.      
-    and handle the Authorization by your self
+    **skipAbilitiesCheck**      Inside service.options you can set the skipAbilitiesCheck = true.          and handle the Authorization by your self
 ```
 
 ![](../../.gitbook/assets/screen-shot-2019-05-27-at-12.21.08.png)
@@ -57,17 +40,7 @@ Add rules to defaultRules at the config.feathers-mongoose-casl
 ```
 
 ```javascript
-curl -X POST \
-  http://localhost:3030/rules \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 0d67b647-49b1-4ce4-baed-cbc109d043b1' \
-  -H 'cache-control: no-cache' \
-  -d '{
-  "name": "allowAll",
-  "actions": ["mangae"],
-  "subject": ["all"],
-  "active": true
-}'
+curl -X POST \  http://localhost:3030/rules \  -H 'Content-Type: application/json' \  -H 'Postman-Token: 0d67b647-49b1-4ce4-baed-cbc109d043b1' \  -H 'cache-control: no-cache' \  -d '{  "name": "allowAll",  "actions": ["mangae"],  "subject": ["all"],  "active": true}'
 ```
 
 ## Service default rules
@@ -158,81 +131,13 @@ to user.roles
 rules JOI schema
 
 ```javascript
-    name: Joi.string(),
-    description: Joi.string(),
-    actions: Joi.array().items(Joi.string().valid('create', 'read', 'update', 'delete', 'manage'))[required](),
-    subject: Joi.array().items(Joi.string())[required](),
-    fields: Joi.array(),
-    populateWhitelist: Joi.array(),
-    active: Joi.boolean().meta({ dashboard: { initialValue: true } }),
-    from: Joi.date(),
-    to: Joi.date(),
-    conditions: Joi.string().stringify(),
-    anonymousUser: Joi.boolean().meta({dashboard: { initialValue: false }}),
-    userContext: Joi.string().stringify(),
-    roles: Joi.array(),
+    name: Joi.string(),    description: Joi.string(),    actions: Joi.array().items(Joi.string().valid('create', 'read', 'update', 'delete', 'manage'))[required](),    subject: Joi.array().items(Joi.string())[required](),    fields: Joi.array(),    populateWhitelist: Joi.array(),    active: Joi.boolean().meta({ dashboard: { initialValue: true } }),    from: Joi.date(),    to: Joi.date(),    conditions: Joi.string().stringify(),    anonymousUser: Joi.boolean().meta({dashboard: { initialValue: false }}),    userContext: Joi.string().stringify(),    roles: Joi.array(),
 ```
 
 ## Example of rules:
 
 ```javascript
-      {
-        "description": "allow all to read posts",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "anonymousUser": true
-      },
-      {
-        "description": "allow only logged in users to read posts",
-        "actions": ["read"],
-        "subject": ["posts"]
-      },
-      {
-        "description": "allow only logged in users to read posts, and allow to populate the author",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "populateWhitelist": ["author"]
-      },
-      {
-        "description": "allow only logged in users to read posts, and allow to populate the author, allow only author.email inside author data",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "fields": ["*", {"path": "author", "select": ["email", "-updatedAt"] }],
-        "populateWhitelist": ["author"]
-      },
-      {
-        "description": "allow only logged in users to read posts, and get only the title from the comments array",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "fields": ["*", {"path": "comments", "select": ["title"], "type": "array" }],
-        "populateWhitelist": ["author"]
-      },
-      {
-        "description": "allow only logged in users to read posts, and allow to populate the author, allow only author.email if user is not the author",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "fields": ["*", {"path": "author", "when": {"author._id" : "{{ user._id}}"} , "then" : ["*"] , "otherwise": ["email"]  }],
-        "populateWhitelist": ["author"]
-      },
-      {
-        "description": "allow only writer to read posts",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "roles": ["writer"]
-      },
-      {
-        "description": "allow only user with specific email",
-        "actions": ["read"],
-        "subject": ["posts"],
-        "userContext": {"email":{"$eq":"doron+1@committed.co.il"}}
-      },
-      {
-        "description": "allow user to update is age and address",
-        "actions": ["update"],
-        "subject": ["users"],
-        "fields:": ["age", "address"],
-        "conditions": {"_id": "{{ user._id }}"}
-      }
+      {        "description": "allow all to read posts",        "actions": ["read"],        "subject": ["posts"],        "anonymousUser": true      },      {        "description": "allow only logged in users to read posts",        "actions": ["read"],        "subject": ["posts"]      },      {        "description": "allow only logged in users to read posts, and allow to populate the author",        "actions": ["read"],        "subject": ["posts"],        "populateWhitelist": ["author"]      },      {        "description": "allow only logged in users to read posts, and allow to populate the author, allow only author.email inside author data",        "actions": ["read"],        "subject": ["posts"],        "fields": ["*", {"path": "author", "select": ["email", "-updatedAt"] }],        "populateWhitelist": ["author"]      },      {        "description": "allow only logged in users to read posts, and get only the title from the comments array",        "actions": ["read"],        "subject": ["posts"],        "fields": ["*", {"path": "comments", "select": ["title"], "type": "array" }],        "populateWhitelist": ["author"]      },      {        "description": "allow only logged in users to read posts, and allow to populate the author, allow only author.email if user is not the author",        "actions": ["read"],        "subject": ["posts"],        "fields": ["*", {"path": "author", "when": {"author._id" : "{{ user._id}}"} , "then" : ["*"] , "otherwise": ["email"]  }],        "populateWhitelist": ["author"]      },      {        "description": "allow only writer to read posts",        "actions": ["read"],        "subject": ["posts"],        "roles": ["writer"]      },      {        "description": "allow only user with specific email",        "actions": ["read"],        "subject": ["posts"],        "userContext": {"email":{"$eq":"doron+1@committed.co.il"}}      },      {        "description": "allow user to update is age and address",        "actions": ["update"],        "subject": ["users"],        "fields:": ["age", "address"],        "conditions": {"_id": "{{ user._id }}"}      }
 ```
 
 ### When user make request to one service and from this service you make another request to other service, you need to persist user and provider to get response from the other service base is user abilities, read this:

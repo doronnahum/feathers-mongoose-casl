@@ -29,8 +29,7 @@ update "mongodb": "[mongodb://&lt;dbuser&gt;:&lt;dbpassword&gt;@ds223685.mlab.co
 \* don't forget to replace &lt;dbuser&gt; and &lt;dbpassword"
 
 ```text
-git add .
-git commit -m "Update mongodb url"
+git add .git commit -m "Update mongodb url"
 ```
 
 ​​
