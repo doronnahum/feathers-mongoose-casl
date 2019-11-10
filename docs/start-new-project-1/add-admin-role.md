@@ -6,3 +6,5 @@ You can to add role 'admin' to your user document from DB GUI
 
 ![](../../.gitbook/assets/wlaerfwexn.gif)
 
+
+

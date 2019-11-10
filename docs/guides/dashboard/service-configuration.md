@@ -1,78 +1,164 @@
-# Service Configuration
+# Dashboard Config
 
-### dashboardConfig - Inside you service options:
+### Example of dashboardConfig
 
-all the configuration is optional
-
-
-
-* **sideBarIconName -** string  
-  allow you to change the default icon on the dashboard sidebar
-
-  [ant.design](https://ant.design/components/icon/) icon name  
-
-
-  ```javascript
-  dashboardConfig: {
-    sideBarIconName: 'user',
-  }
-
-  ```
-
-* **defaultFieldsToDisplay** - array  
-  default value is \['\_id','createdAt','updatedAt'\]  
-
-
-  ```javascript
-  // Example - hide updatedAt field
-  dashboardConfig: {
-    defaultFieldsToDisplay: ['_id','createdAt'],
-  }
-  ```
-
-* **docLayout** -  array  
-  to change the layout of the document  
-  by default the input will be render one under the other  
-  with docLayout you can force other layout  
-  if you are passing a docLayout, only fields inside the docLayout will be render to the screen  
-
-
-  ```javascript
-  // Example - To hide updatedAt
-  dashboardConfig: {
-    docLayout: [
-    ['name','color'] // render fields in the same row
-    'tags',
-    'type',
-    {
-      when: {
-        field: 'type',
-        equalTo: 'other',
-        then: ['otherType','info'], // render this fields only when 
-        otherwise: ['info']
+```text
+     dashboardConfig: {
+      sideBarIconName: 'SettingsInputComponent',
+      docLayout: [
+        '_id',
+        'updatedAt',
+        'createdAt',
+        ['title',
+          'description'],
+        ['room',
+          'controller'],
+        'type',
+        ['controllerType',
+          'switchingType'],
+        'schedules',
+        'status',
+        {
+          type: 'custom',
+          customFieldType: 'link',
+          style: 'button',
+          linkTemplate: 'dashboard/floor-plan?floorId={{ _id }}',
+          label: 'Plan',
+          itemKey: 'linkToPlan',
+          hideOnCreate: true,
+          hideOnUpdate: false,
+        }
+      ],
+      i18n: {
+        'heIL': {
+          serviceName: 'רכיבים',
+          serviceNameMany: 'רכיבים',
+          serviceNameOne: 'רכיב',
+          fields: {
+            '_id': 'מזהה',
+            'updatedAt': 'עודכן',
+            'createdAt': 'נוצר',
+            title: 'כותרת',
+            description: 'תיאור',
+            room: 'חדש',
+            controller: 'בקר',
+            type: 'סוג',
+            controllerType: 'סוג בקר',
+            switchingType: 'סוג המתג',
+            schedules: 'לוח זמנים',
+            status: 'סטאטוס',
+            floorPlan: 'תכנון קומה',
+          }
+        }
       }
     }
-    ],
-  }
-  ```
+```
 
-* **docTitleField -** string The field to display as page title when edit a document 
-* **populate** - array  
-  Use populate When you want the table to populate fields  
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">key</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">info</th>
+      <th style="text-align:left">example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">sideBarIconName</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>allow you to change the default icon on the dashboard sidebar</p>
+        <p>can be of of the <a href="https://material-ui.com/components/material-icons/">https://material-ui.com/components/material-icons/</a>
+        </p>
+      </td>
+      <td style="text-align:left">&apos;user&apos;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">defaultFieldsToDisplay</td>
+      <td style="text-align:left">array</td>
+      <td style="text-align:left">to hide default fields without using the layout</td>
+      <td style="text-align:left">[&apos;_id&apos;,&apos;createdAt&apos;,&apos;updatedAt&apos;]</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">docLayout</td>
+      <td style="text-align:left">array</td>
+      <td style="text-align:left">
+        <p>controll the layout of the document</p>
+        <p></p>
+        <p>add custom fields</p>
+      </td>
+      <td style="text-align:left">
+        <p><code>[</code>
+        </p>
+        <p><code>        [&apos;_id&apos;, &apos;updatedAt&apos;, &apos;createdAt&apos;],</code>
+        </p>
+        <p><code>        [&apos;title&apos;, &apos;description&apos;],</code>
+        </p>
+        <p><code>        &apos;building&apos;,</code>
+        </p>
+        <p><code>        &apos;level&apos;,</code>
+        </p>
+        <p><code>        &apos;numberOfRooms&apos;,</code>
+        </p>
+        <p><code>        {</code>
+        </p>
+        <p><code>          type: &apos;custom&apos;,</code>
+        </p>
+        <p><code>          customFieldType: &apos;link&apos;,</code>
+        </p>
+        <p><code>          style: &apos;button&apos;,</code>
+        </p>
+        <p><code>          linkTemplate: &apos;dashboard/floor-plan?floorId={{ _id }}&apos;,</code>
+        </p>
+        <p><code>          label: &apos;Plan&apos;,</code>
+        </p>
+        <p><code>          itemKey: &apos;linkToPlan&apos;,</code>
+        </p>
+        <p><code>          hideOnCreate: true,</code>
+        </p>
+        <p><code>          hideOnUpdate: false,</code>
+        </p>
+        <p><code>        },</code>
+        </p>
+        <p><code>      ]</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">docTitleField</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">The field to display as page title when edit a document</td>
+      <td style="text-align:left">
+        <p></p>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">populate</td>
+      <td style="text-align:left">array</td>
+      <td style="text-align:left">
+        <p>Use populate When you want the table to populate fields</p>
+        <p>
+          <br />This property only adds the populate to client request,</p>
+        <p>you still need to handle the ability, read this</p>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>
+
+\*\*\*\*
+
+  
+  
+**related docs:**
+
+{% page-ref page="service-configuration.md" %}
+
+{% page-ref page="../populate.md" %}
+
+{% page-ref page="custom-fields/customelements.md" %}
 
 
-  ```javascript
-  // Example - hide updatedAt field
-  const options = {
-    dashboardConfig: {
-      populate: ['users'],
-    }
-  }
-  ```
-
-  This property only adds the populate to client request,   
-  you still need to handle the ability, read this  
-
-
-  {% page-ref page="../populate.md" %}
 

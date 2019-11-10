@@ -1,41 +1,51 @@
 # Google-cloud
 
-## Upload file to google-cloud
+### Upload file to google-cloud 
 
-## 1- Finish this guide
+###  1- Finish this guide
 
 {% page-ref page="../create-upload-service.md" %}
 
-## 2- Create google-cloud account
+### 
 
-1. Follow this 3 first steps of this [guide](https://github.com/doronnahum/feathers-mongoose-casl/tree/c1b2e8e28118b12bc9d659b74923b17460230b26/@iwozzy/easily-host-images-with-node-and-google-cloud-storage-29fb14e2cdb8/README.md)
+### 2- Create google-cloud account
+
+1. Follow this 3 first steps of this [guide](%20https://medium.com/@iwozzy/easily-host-images-with-node-and-google-cloud-storage-29fb14e2cdb8)
 2. Create secret-files folder  in the src folder
 3. copy the JSON key  file from google-cloud to src &gt; secret-files and rename the file to secret-files.json
 
-## 3 - new bucket
+### 
 
-1. Create new bucket  
+### 3 - new bucket
 
-![](../../../../.gitbook/assets/google-cloud-bucket%20%281%29.jpg)
+1.  Create new bucket  
 
-## 4- Update config json
 
-**path**: config &gt; default.json
+   ![](../../../../.gitbook/assets/google-cloud-bucket%20%281%29.jpg)
 
-1. Update projectId _\*\*_and bucket name  
+### 
 
-```javascript
+### 4- Update config json
+
+**path**: config &gt; default.json  
+
+
+1. Update projectId ****and bucket name  
+
+
+   ```javascript
    "google-cloud": {
        "projectId": "THIS IS THE PROJECT NAME",
        "bucket": "THE BOCKET NAME",
        "keyFilename": "../src/secret-files/google-key.json",
        "signedUrlExpires" : 900
      },
-```
+   ```
 
-1. Allow google-cloud  
+2. Allow google-cloud  
 
-```javascript
+
+   ```javascript
      "feathers-mongoose-casl": {
        "uploads": {
          "services": {
@@ -45,11 +55,11 @@
            "google-cloud": true // This need to be true
          }
          ....
-```
+   ```
 
 \*\*\*\*
 
-## **5- Update upload middleware configuration**
+### **5- Update upload middleware configuration**
 
 **path:** src &gt; services &gt; \[YOUR\_SERVICE\_NAME\] &gt; \[YOUR\_SERVICE\_NAME\].service.js
 
@@ -67,9 +77,11 @@
   );
 ```
 
-## 6- Update service validators
 
-**path**: src &gt; validators &gt; \[YOUR\_SERVICE\_NAME\].validators.js
+
+### 6- Update service validators
+
+**path**: src &gt; validators &gt;  \[YOUR\_SERVICE\_NAME\].validators.js
 
 ```javascript
 const {Joi, enums} = require('feathers-mongoose-casl');
@@ -86,7 +98,9 @@ const getJoiObject = function(withRequired) {
 }
 ```
 
-## 7- Update service hooks
+#### 
+
+### 7- Update service hooks
 
 **path:** src &gt; services &gt; \[YOUR\_SERVICE\_NAME\] &gt; \[YOUR\_SERVICE\_NAME\].hooks.js
 
@@ -127,7 +141,7 @@ module.exports = {
 }
 ```
 
-## 8 - Done!
+### 8 - Done!
 
 test the service
 

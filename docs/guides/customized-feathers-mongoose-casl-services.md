@@ -6,16 +6,16 @@ description: Want to customized
 
 If you need to customized feathers-mongoose-casl/services you can copt the files from node\_modules to your folder
 
-## 1 - open node\_modules\feathers-mongoose-casl\lib
+### 1 - open node\_modules\feathers-mongoose-casl\lib
 
-## 2- copy the service folder to your src/services
+### 2- copy the service folder to your src/services
 
-## 3- fix on top of the files the dependence
+### 3- fix on top of the files the dependence
 
 pass over the files and find where you need to change the import path,  
 you can see it is ready to you with comments in the files  
-you can just search for " require\('feathers-mongoose-casl'\)" and find all the place to change
-
+you can just search for " require\('feathers-mongoose-casl'\)" and find all the place to change  
+  
 for example
 
 Before
@@ -26,7 +26,7 @@ after
 
 ![](../../.gitbook/assets/after%20%281%29.jpg)
 
-## 4- Open src\services\index.js and require the service from is new location
+### 4- Open src\services\index.js and require the service from is new location 
 
 ```javascript
 const users= require('./users/users.service.js');
@@ -54,5 +54,6 @@ module.exports = function (app) {
   app.configure(dashboard);
   app.configure(userAbilities);
 };
+
 ```
 

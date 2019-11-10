@@ -1,26 +1,187 @@
-# Update posts service
+# Create a new Service with casl&Dashboard
 
-### 
+You can create new service with a cli or manual:
 
-Update posts service Now we want to add JOI and CASL to posts service.
+{% tabs %}
+{% tab title="generetor" %}
+we use [hygen](http://hygen.io) to generate new service
 
-with JOI we going to: 
+### **Add hygen**
 
-1- validate user request  
-2- generate a mongoose schema  
-3- generate a dashboard screen  
-4- generate a swaager doc
+  
+1 - download this [repo](https://github.com/doronnahum/hygen-FMC/archive/master.zip)  
+2 - copy this \_templates folder to your app  
+3 - install hygen  
+`npm i hygen --save-dev`  
+4 - inside your src/service/index.js  
+after the last app.configure\(..\) add comment  
+// services  
+`module.exports = function (app) {  
+....  
+app.configure(services.userAbilities);   
+// services  
+}`  
+5- add this script to your package.json  
+`"create-service": "hygen generator service"`  
+**Done!**
 
-with CASL we going to handle user abilities
+### **Create new service run**
 
-We do this by create a validators file and by replace the createService from feathers-mongoose with .createService from feathers-mongoose-casl
+`npm run create-service`
 
-### 1 - Inside the src/validators folder create this file posts.validators.js
+> ✔ Name of your service · posts
+>
+> inject: src/services/index.js added: src/services/posts/posts.class.js added: src/services/posts/posts.hooks.js added: src/services/posts/posts.model.js added: src/services/posts/posts.service.js added: src/services/posts/posts.validators.js
+{% endtab %}
+
+{% tab title="manual" %}
+We going to create posts service  
+  
+1- Create posts folder in the src/service folder with this files
+
+* src/services/posts/
+  * posts.class.js 
+  * posts.hooks.js 
+  * posts.model.js 
+  * posts.service.js 
+  * posts.validators.js 
+
+4 - inside your src/service/index.js  
+`const posts = require('./posts/posts.service.js');  
+module.exports = function (app) {  
+...  
+// services  
+app.configure(posts);  
+}`   
+3 - Copy and past each file content from this snippet
 
 ```javascript
-const {Joi} = require('feathers-mongoose-casl');
-​
-const getJoiObject = function(withRequired){
+const { Service } = require('feathers-mongoose');
+
+exports.Posts = class Posts extends Service {
+  
+};
+```
+
+```javascript
+const { authenticate } = require('@feathersjs/authentication').hooks;
+const { hooks } = require('feathers-mongoose-casl');
+const { validateAbilities, validateSchema, sanitizedData } = hooks;
+
+module.exports = {
+  before: {
+    all: [
+      function (hook) {
+        if (!hook.params.user && hook.params.headers && hook.params.headers.authorization) {
+          return authenticate('jwt')(hook);
+        }
+        else return hook;
+      }, validateAbilities],
+    find: [],
+    get: [],
+    create: [validateSchema],
+    update: [validateSchema],
+    patch: [validateSchema],
+    remove: []
+  },
+
+  after: {
+    all: [sanitizedData],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  },
+
+  error: {
+    all: [],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  }
+};
+
+```
+
+```javascript
+const validator = require('./posts.validators');
+const { registerNewModel } = require('feathers-mongoose-casl');
+
+module.exports = function (app) {
+  const mongooseClient = app.get('mongooseClient');
+  // Register the validator
+  const { Schema } = mongooseClient;
+  const posts = new Schema(registerNewModel.getModelFromJoi(app, validator), {
+    timestamps: true
+  });
+  registerNewModel.setModel(posts);
+
+  // This is necessary to avoid model compilation errors in watch mode
+  // see https://github.com/Automattic/mongoose/issues/1251
+  try {
+    return mongooseClient.model('posts');
+  } catch (e) {
+    return mongooseClient.model('posts', posts);
+  }
+};
+```
+
+```javascript
+// Initializes the `posts` service on path `/posts`
+const {  Posts } = require('./posts.class');
+const createModel = require('./posts.model');
+const hooks = require('./posts.hooks');
+const { registerValidator } = require('feathers-mongoose-casl');
+const validator = require('./posts.validators');
+
+module.exports = function (app) {
+  const Model = createModel(app);
+  // Register the validator
+  registerValidator(app, 'posts', validator);
+  const paginate = app.get('paginate');
+
+  const options = {
+    Model,
+    paginate,
+    serviceRules: [
+      { 'actions': ['manage'], 'roles': ['admin'] },
+    ],
+    dashboardConfig: {
+      sideBarIconName: 'table',
+      i18n: {
+        'heIL': {
+          serviceName: 'posts',
+          serviceNameMany: 'posts',
+          serviceNameOne: 'posts',
+          fields: {
+            '_id': 'מזהה',
+            'updatedAt': 'תאריך עדכון',
+            'createdAt': 'נוצר בתאריך',
+          }
+        }
+      }
+    }
+  };
+
+  // Initialize our service with any options it requires
+  app.use('/posts', new  Posts(options, app));
+
+  // Get our initialized service so that we can register hooks
+  const service = app.service('posts');
+
+  service.hooks(hooks);
+};
+const { Joi } = require('feathers-mongoose-casl');
+```
+
+```javascript
+
+const getJoiObject = function (withRequired) {
   const required = withRequired ? 'required' : 'optional';
   return Joi.object({
     author: Joi.objectId().meta({
@@ -31,7 +192,7 @@ const getJoiObject = function(withRequired){
     title: Joi.string().min(5)[required]().meta({
       dashboard: {
         label: 'Post title',
-        inputProps: JSON.stringify({style: {background: 'red'}})
+        inputProps: JSON.stringify({ style: { background: 'red' } })
       }
     }),
     body: Joi.string()[required](),
@@ -48,67 +209,39 @@ const getJoiObject = function(withRequired){
     })
   });
 };
+
 module.exports = getJoiObject;
 ```
 
-### 2 - Update Posts model
-
-open src &gt; models &gt; posts.models.js
-
-```text
-// posts-model.js - A mongoose model
-// 
-// See http://mongoosejs.com/docs/models.html
-// for more of what you can do here.
-​
-const postsValidators = require('../validators/posts.validators.js');
-const {createModelFromJoi} = require('feathers-mongoose-casl');
-​
-module.exports = function (app) {
-  return createModelFromJoi(app, 'posts', postsValidators);
-};
 ```
 
-### 3 - Update posts.service
-
-open src &gt; services &gt; posts &gt; posts.service.js and replace createService from feathers-mongoose with createService from feathers-mongoose-casl
-
-Before
-
- `const createService = require('feathers-mongoose')`
-
-After
-
- `const {createService} = require('feathers-mongoose-casl');`
-
-###  Add serviceRules to service options
-
-```text
-const options = {  
-      serviceRules: [
-      {'actions': ['read'], 'anonymousUser': true, fields: ['title']}, // anonymousUser can read posts
-      {'actions': ['create','read','update'], 'conditions': { 'author': '{{ user._id }}' }}, // user can CRUD only his own posts
-      { 'actions': ['manage'], 'roles': ['admin']}, // admin can manage all posts
-      ],
 ```
 
+Done.
+{% endtab %}
+{% endtabs %}
 
+Hooks in the service:
 
-### Remove authenticate from posts.hooks
+* **hook.authenticate** [@feathersjs/authentication](https://github.com/feathersjs/authentication) - Feathers local, token, and OAuth authentication over REST and Websockets using JSON Web Tokens \(JWT\) with PassportJS.
+* **validateAbilities** This is a wrapper of Casl, in this hook, we will define abilities and block client without the ability to run this request Casl will add to mongoose query object a relevant key value before making the request, and validate Abilities will remove fields from user request by id abilities
+* **validateSchema** This hook will use JOI to validate request data follow the scheme
+* **sanitizedData** This hook will remove data from response follow the user abilities
+
+### 7. Commit changes
 
 ```text
-// before
-module.exports = {
-  before: {
-    all: [ authenticate('jwt') ],
-​
-// after
-module.exports = {
-  before: {
-    all: [],
+git add .
+git commit -m "create posts service"
 ```
 
-we use a global authenticate then we didn't need this hook,
+{% hint style="info" %}
+## dashboard: 
 
-src\services\posts\posts.hooks.js
+#### Now you can see the posts service inside the dashboard [https://feathersjs-mongoose-casl-admin.herokuapp.com/ ](install-feathers-mongoose-casl.md)Anyone can read the posts title User can create/update only if he the author Only admin user can delete posts
+
+#### Try to create a new posts from the dashboard
+{% endhint %}
+
+
 

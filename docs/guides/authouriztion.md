@@ -1,9 +1,10 @@
 # Authentication
 
-### We use 2 libraries to handle user authentication  **\*\*\[**@feathersjs/authentication**\]\(**[https://github.com/feathersjs/authentication](https://github.com/feathersjs/authentication)**\) \*\*** Feathers local, token, _and_ OAuth authentication over REST and Websockets using JSON Web Tokens \(JWT\) with PassportJS.
+### We use 2 libraries to handle user authentication  ****[**@feathersjs/authentication**](https://github.com/feathersjs/authentication) **** Feathers local, token, _and_ OAuth authentication over REST and Websockets using JSON Web Tokens \(JWT\) with PassportJS.
 
-**\*\*\[**feathers-authentication-management**\]\(**[https://github.com/feathers-plus/feathers-authentication-management](https://github.com/feathers-plus/feathers-authentication-management)**\)  
-\*\***Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication
+  
+****[**feathers-authentication-management**](https://github.com/feathers-plus/feathers-authentication-management)  
+****Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication
 
 #### How to Create a new user?
 
@@ -14,8 +15,8 @@ curl -X POST \
   -H 'Postman-Token: 5ad6571f-e2dd-4737-b0e5-73d2fe8986fe' \
   -H 'cache-control: no-cache' \
   -d '{
-    "email": "yourEmail@gmail.com",
-    "password": "password"
+	"email": "yourEmail@gmail.com",
+	"password": "password"
 }'
 ```
 

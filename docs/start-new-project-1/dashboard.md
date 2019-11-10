@@ -6,6 +6,8 @@ description: A dashboard for managing your app
 
 ### [feathersjs-mongoose-casl-admin](https://feathersjs-mongoose-casl-admin.herokuapp.com/) is a dashboard to your local server, with this dashboard you can see any collection in your app and create/edit/delete documents.
 
+### 
+
 {% hint style="warning" %}
 #### network error ?     Keep you local server run, the app look for   localhost:3030
 {% endhint %}
@@ -21,6 +23,8 @@ add serverUrl to url query:
 
 1- Open config/default.json  
 2- Add inside feathers-mongoose-casl.defaultRules this:
+
+
 
 ```text
     "defaultRules": [
