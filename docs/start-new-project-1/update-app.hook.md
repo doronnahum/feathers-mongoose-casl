@@ -4,8 +4,7 @@
 
 ###  Open src\app.hooks.js and paste this
 
-{% tabs %}
-{% tab title="src\\app.hooks.js" %}
+{% code title="src\\app.hooks.js" %}
 ```javascript
 const {hooks} = require('feathers-mongoose-casl');
 
@@ -41,8 +40,7 @@ module.exports = {
   }
 };
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ```text
 git add .

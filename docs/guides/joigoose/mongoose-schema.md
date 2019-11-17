@@ -7,6 +7,7 @@ Inside the model file, pass also a mongoose schema
 {% endhint %}
 
 {% hint style="warning" %}
+{% code title="src\\models\\posts.model.js" %}
 ```javascript
 // posts-model.js - A mongoose model
 // 
@@ -22,6 +23,7 @@ module.exports = function (app) {
   return createModelFromJoi(app, 'posts', postsValidators, mongooseSchema);
 };
 ```
+{% endcode %}
 {% endhint %}
 
 Why we use JOI

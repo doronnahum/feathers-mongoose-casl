@@ -68,8 +68,7 @@ in this way we can validation the Mongoose models without the hassle of maintain
 
 open src &gt; models &gt; posts.models.js
 
-{% tabs %}
-{% tab title="src\\models\\posts.model.js" %}
+{% code title="src\\models\\posts.model.js" %}
 ```javascript
 // posts-model.js - A mongoose model
 // 
@@ -84,8 +83,7 @@ module.exports = function (app) {
 };
 
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 You can still use a Mongoose schema 
 

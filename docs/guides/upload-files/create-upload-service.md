@@ -64,8 +64,7 @@ path :** src &gt; services &gt; organizations-files &gt; organizations-files.ser
 
 * We have set in the example _sys\_admin_ ability - change it to your needs
 
-{% tabs %}
-{% tab title="uploadMiddleware" %}
+{% code title="uploadMiddleware" %}
 ```javascript
 // Initializes the `organizations-files` service on path `/organizations-files`
 const createModel = require('../../models/organizations-files.model');
@@ -105,8 +104,7 @@ module.exports = function (app) {
 };
 
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ### 4 - Update service model
 
