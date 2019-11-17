@@ -6,7 +6,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
 
 ### How to add fields with specific type ?
 
-{% page-ref page="../joigoose/" %}
+{% page-ref page="../../joigoose/" %}
 
 ## How to configuration field in dashboard screen ?
 

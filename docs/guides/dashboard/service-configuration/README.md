@@ -19,6 +19,13 @@
         'schedules',
         'status',
         {
+          when: {
+            field: 'type',
+            equalTo: OFFICES_TYPE.other,
+            then: 'other_type'
+          }
+        },  
+        {
           type: 'custom',
           customFieldType: 'link',
           style: 'button',
@@ -88,42 +95,7 @@
         <p></p>
         <p>add custom fields</p>
       </td>
-      <td style="text-align:left">
-        <p><code>[</code>
-        </p>
-        <p><code>        [&apos;_id&apos;, &apos;updatedAt&apos;, &apos;createdAt&apos;],</code>
-        </p>
-        <p><code>        [&apos;title&apos;, &apos;description&apos;],</code>
-        </p>
-        <p><code>        &apos;building&apos;,</code>
-        </p>
-        <p><code>        &apos;level&apos;,</code>
-        </p>
-        <p><code>        &apos;numberOfRooms&apos;,</code>
-        </p>
-        <p><code>        {</code>
-        </p>
-        <p><code>          type: &apos;custom&apos;,</code>
-        </p>
-        <p><code>          customFieldType: &apos;link&apos;,</code>
-        </p>
-        <p><code>          style: &apos;button&apos;,</code>
-        </p>
-        <p><code>          linkTemplate: &apos;dashboard/floor-plan?floorId={{ _id }}&apos;,</code>
-        </p>
-        <p><code>          label: &apos;Plan&apos;,</code>
-        </p>
-        <p><code>          itemKey: &apos;linkToPlan&apos;,</code>
-        </p>
-        <p><code>          hideOnCreate: true,</code>
-        </p>
-        <p><code>          hideOnUpdate: false,</code>
-        </p>
-        <p><code>        },</code>
-        </p>
-        <p><code>      ]</code>
-        </p>
-      </td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">docTitleField</td>
@@ -154,9 +126,9 @@
   
 **related docs:**
 
-{% page-ref page="service-configuration.md" %}
+{% page-ref page="./" %}
 
-{% page-ref page="../populate.md" %}
+{% page-ref page="../../populate.md" %}
 
 {% page-ref page="custom-fields/customelements.md" %}
 

@@ -10,7 +10,7 @@ description: >-
 
 {% page-ref page="add-to-your-react-app.md" %}
 
-{% page-ref page="service-configuration.md" %}
+{% page-ref page="service-configuration/" %}
 
-{% page-ref page="field-configuration.md" %}
+{% page-ref page="service-configuration/field-configuration.md" %}
 

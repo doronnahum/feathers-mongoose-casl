@@ -12,7 +12,7 @@ description: feathers-mongoose-casl - validators
 
 ### How to customize the feathers-mongoose-casl dashboard ?
 
-{% page-ref page="../dashboard/field-configuration.md" %}
+{% page-ref page="../dashboard/service-configuration/field-configuration.md" %}
 
 ## 
 
