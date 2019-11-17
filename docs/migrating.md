@@ -17,6 +17,8 @@ like in this guide:
 
 {% page-ref page="start-new-project-1/update-posts-model.md" %}
 
+
+
 3 - Update you src/authentication.js  
 like in this guide
 

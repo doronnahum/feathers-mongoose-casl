@@ -55,6 +55,7 @@ app.configure(posts);
 }`   
 3 - Copy and past each file content from this snippet
 
+{% code title="posts.class.js " %}
 ```javascript
 const { Service } = require('feathers-mongoose');
 
@@ -62,7 +63,9 @@ exports.Posts = class Posts extends Service {
   
 };
 ```
+{% endcode %}
 
+{% code title="posts.hooks.js" %}
 ```javascript
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const { hooks } = require('feathers-mongoose-casl');
@@ -107,7 +110,9 @@ module.exports = {
 };
 
 ```
+{% endcode %}
 
+{% code title="posts.model.js" %}
 ```javascript
 const validator = require('./posts.validators');
 const { registerNewModel } = require('feathers-mongoose-casl');
@@ -130,7 +135,9 @@ module.exports = function (app) {
   }
 };
 ```
+{% endcode %}
 
+{% code title="posts.service.js " %}
 ```javascript
 // Initializes the `posts` service on path `/posts`
 const {  Posts } = require('./posts.class');
@@ -178,7 +185,9 @@ module.exports = function (app) {
 };
 const { Joi } = require('feathers-mongoose-casl');
 ```
+{% endcode %}
 
+{% code title="posts.validators.js " %}
 ```javascript
 
 const getJoiObject = function (withRequired) {
@@ -212,10 +221,13 @@ const getJoiObject = function (withRequired) {
 
 module.exports = getJoiObject;
 ```
+{% endcode %}
 
+{% code title="" %}
 ```
 
 ```
+{% endcode %}
 
 Done.
 {% endtab %}
