@@ -4,8 +4,7 @@
 
 add mongoose.set\('debug', true\); 
 
-{% tabs %}
-{% tab title="src > mongoose.js" %}
+{% code title="src > mongoose.js" %}
 ```javascript
 const mongoose = require('mongoose');
 
@@ -28,8 +27,7 @@ or
 */
 
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ### debug  feathers-mongoose-casl
 

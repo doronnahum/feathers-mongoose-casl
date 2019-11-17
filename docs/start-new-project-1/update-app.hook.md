@@ -14,8 +14,7 @@ these hooks will run before and after each query hook.authenticate This is wrapp
 
 ## Open src\app.hooks.js and paste this
 
-{% tabs %}
-{% tab title="src\\app.hooks.js" %}
+{% code title="src\\app.hooks.js" %}
 ```javascript
 Open src\app.hooks.js and paste this
 const log = require('./hooks/log');
@@ -59,8 +58,7 @@ module.exports = {
   }
 };
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ```text
 git add .

@@ -19,8 +19,7 @@ We authentication all the services from app.hook
 
 inside validators create  comments.validators.js with this contnet
 
-{% tabs %}
-{% tab title="comments.validators.js" %}
+{% code title="comments.validators.js" %}
 ```javascript
 const {Joi} = require('feathers-mongoose-casl');
 
@@ -34,13 +33,11 @@ const getJoiObject = function(withRequired){
 
 module.exports = getJoiObject;
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ### 3- Update comments.model.js
 
-{% tabs %}
-{% tab title="src/models/comments.model.js" %}
+{% code title="src/models/comments.model.js" %}
 ```javascript
 // comments-model.js - A mongoose model
 // 
@@ -55,8 +52,7 @@ module.exports = function (app) {
 };
 
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 {% hint style="info" %}
 Need to create a native mongos schema?
@@ -96,8 +92,7 @@ serviceRules: [
 ```
 {% endhint %}
 
-{% tabs %}
-{% tab title="src\\services\\comments\\comments.service.js" %}
+{% code title="src\\services\\comments\\comments.service.js" %}
 ```javascript
 // Initializes the `comments` service on path `/comments`
 const {createService} = require('feathers-mongoose-casl');
@@ -127,8 +122,7 @@ module.exports = function (app) {
 };
 
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 ### 
 
