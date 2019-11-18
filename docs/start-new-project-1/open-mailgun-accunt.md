@@ -23,6 +23,7 @@ If you are using **mailgun without domain** you need to verify the emails you wa
 1. **Create** [**mailgun**](https://app.mailgun.com/sessions/new) **account**
 2. **Update config file**
 
+   {% code title="/config/default.json" %}
    ```javascript
    // Add this lines
      "mailgun": {
@@ -35,12 +36,14 @@ If you are using **mailgun without domain** you need to verify the emails you wa
          "service": "mailgun",
        },
    ```
+   {% endcode %}
 
 ### Send emails using sendgrid
 
 1. **Create** [**s**engrid ](https://signup.sendgrid.com/)**account**
 2. **Update config file**
 
+   {% code title="/config/default.json" %}
    ```javascript
    // Update add this lines
      "sendgrid": {
@@ -61,6 +64,7 @@ If you are using **mailgun without domain** you need to verify the emails you wa
          //}
        }
    ```
+   {% endcode %}
 
 ```text
 git add .

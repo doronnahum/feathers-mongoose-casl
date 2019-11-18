@@ -24,8 +24,7 @@ Open src &gt; services &gt;index.js
   
 Copy the content from the code snippet 
 
-{% tabs %}
-{% tab title="src\\services\\index.js" %}
+{% code title="src\\services\\index.js" %}
 ```javascript
 const {services} = require('feathers-mongoose-casl');
 // eslint-disable-next-line no-unused-vars
@@ -45,8 +44,7 @@ module.exports = function (app) {
   app.configure(posts);
 };
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 
 
