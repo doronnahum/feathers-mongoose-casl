@@ -21,6 +21,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
   * **type** - enums can be one of: \['link'\]
     * link -when equal to link, the field will be render inside [{value}](%7Bvalue%7D)
   * **options** - same as doc options, use it when you want to display a human text
+  * **dateFormat** - pass a moment formatter to your date field
 * **doc** - object configuration that relevant only to the document
   * **hide** - boolean When is true the field won't be display in the document
   * hideOnCreate - boolean When is true the field won't be display when you create a new document
