@@ -72,6 +72,12 @@
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:left">hide</td>
+      <td style="text-align:left">boolean</td>
+      <td style="text-align:left">set true to hide this service from dashboard</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
       <td style="text-align:left">sideBarIconName</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">
