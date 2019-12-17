@@ -123,6 +123,21 @@
       </td>
       <td style="text-align:left"></td>
     </tr>
+    <tr>
+      <td style="text-align:left">hideNewButton</td>
+      <td style="text-align:left">boolean</td>
+      <td style="text-align:left">set true to hide the new button</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">actionButtonsPosition</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>enums: &apos;start&apos;, &apos;end&apos;</p>
+        <p>by default the action buttons render at the end of the row</p>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
   </tbody>
 </table>
 

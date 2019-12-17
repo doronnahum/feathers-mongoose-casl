@@ -40,6 +40,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
     * boxSelect - Use only on array fields to render boxes with multi select 
     * textArea - Use only on string field to render [TextArea](http://beta.ant.design/components/input/#components-input-demo-textarea) input
     * timePicker - unse on Date fields 
+    * imageView - To display image when the ref is to file collection with a file field
   * **options** - array Use on array of string fields, to render multi select drop down
 
     ```jsx
