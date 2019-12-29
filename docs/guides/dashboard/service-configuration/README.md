@@ -140,9 +140,12 @@
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">regex</td>
+      <td style="text-align:left">Boolean | array</td>
+      <td style="text-align:left">set true to apply regex search on all string fields
+        <br />
+        <br />or set specific fields
+        <br />regex: [&apos;email&apos;]</td>
       <td style="text-align:left"></td>
     </tr>
   </tbody>
