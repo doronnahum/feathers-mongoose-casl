@@ -1,5 +1,66 @@
 # Dashboard Config
 
+### Example of dashboardConfig
+
+```text
+     dashboardConfig: {
+      sideBarIconName: 'SettingsInputComponent',
+      docLayout: [
+        '_id',
+        'updatedAt',
+        'createdAt',
+        ['title',
+          'description'],
+        ['room',
+          'controller'],
+        'type',
+        ['controllerType',
+          'switchingType'],
+        'schedules',
+        'status',
+        {
+          when: {
+            field: 'type',
+            equalTo: OFFICES_TYPE.other,
+            then: 'other_type'
+          }
+        },  
+        {
+          type: 'custom',
+          customFieldType: 'link',
+          style: 'button',
+          linkTemplate: 'dashboard/floor-plan?floorId={{ _id }}',
+          label: 'Plan',
+          itemKey: 'linkToPlan',
+          hideOnCreate: true,
+          hideOnUpdate: false,
+        }
+      ],
+      i18n: {
+        'heIL': {
+          serviceName: 'רכיבים',
+          serviceNameMany: 'רכיבים',
+          serviceNameOne: 'רכיב',
+          fields: {
+            '_id': 'מזהה',
+            'updatedAt': 'עודכן',
+            'createdAt': 'נוצר',
+            title: 'כותרת',
+            description: 'תיאור',
+            room: 'חדש',
+            controller: 'בקר',
+            type: 'סוג',
+            controllerType: 'סוג בקר',
+            switchingType: 'סוג המתג',
+            schedules: 'לוח זמנים',
+            status: 'סטאטוס',
+            floorPlan: 'תכנון קומה',
+          }
+        }
+      }
+    }
+```
+
 <table>
   <thead>
     <tr>
@@ -77,140 +138,8 @@
       </td>
       <td style="text-align:left"></td>
     </tr>
-    <tr>
-      <td style="text-align:left">filterFields</td>
-      <td style="text-align:left">array</td>
-      <td style="text-align:left">optioanl - pass an array of fields to display in the filters. when it
-        is empty the all fields will display</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listFieldAlign</td>
-      <td style="text-align:left">&apos;left&apos; | &apos;right&apos; | &apos;center&apos;</td>
-      <td style="text-align:left">default &apos;right&apos;</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">errMessages</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">
-        <p>to translate the input validate errors</p>
-        <p>errMessages: {
-          <br />
-        </p>
-        <p>default: JSON.stringify({
-          <br />
-        </p>
-        <p>name: {
-          <br />
-        </p>
-        <p>required: &apos;name is required&apos;
-          <br />
-        </p>
-        <p>}
-          <br />
-        </p>
-        <p>}),
-          <br />
-        </p>
-        <p>i18n: {
-          <br />
-        </p>
-        <p>&apos;heIL&apos;: JSON.stringify({
-          <br />
-        </p>
-        <p>name: {
-          <br />
-        </p>
-        <p>required: &apos;&#x5E9;&#x5D3;&#x5D4; &#x5E9;&#x5DD; &#x5D4;&#x5D5;&#x5D0;
-          &#x5D7;&#x5D5;&#x5D1;&#x5D4;&apos;
-          <br />
-        </p>
-        <p>}
-          <br />
-        </p>
-        <p>})
-          <br />
-        </p>
-        <p>}
-          <br />
-        </p>
-        <p>}</p>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">regex</td>
-      <td style="text-align:left">Boolean | array</td>
-      <td style="text-align:left">set true to apply regex search on all string fields
-        <br />
-        <br />or set specific fields
-        <br />regex: [&apos;email&apos;]</td>
-      <td style="text-align:left"></td>
-    </tr>
   </tbody>
 </table>
-
-### Example of dashboardConfig
-
-```text
-     dashboardConfig: {
-      sideBarIconName: 'SettingsInputComponent',
-      docLayout: [
-        '_id',
-        'updatedAt',
-        'createdAt',
-        ['title',
-          'description'],
-        ['room',
-          'controller'],
-        'type',
-        ['controllerType',
-          'switchingType'],
-        'schedules',
-        'status',
-        {
-          when: {
-            field: 'type',
-            equalTo: OFFICES_TYPE.other,
-            then: 'other_type'
-          }
-        },  
-        {
-          type: 'custom',
-          customFieldType: 'link',
-          style: 'button',
-          linkTemplate: 'dashboard/floor-plan?floorId={{ _id }}',
-          label: 'Plan',
-          itemKey: 'linkToPlan',
-          hideOnCreate: true,
-          hideOnUpdate: false,
-        }
-      ],
-      i18n: {
-        'heIL': {
-          serviceName: 'רכיבים',
-          serviceNameMany: 'רכיבים',
-          serviceNameOne: 'רכיב',
-          fields: {
-            '_id': 'מזהה',
-            'updatedAt': 'עודכן',
-            'createdAt': 'נוצר',
-            title: 'כותרת',
-            description: 'תיאור',
-            room: 'חדש',
-            controller: 'בקר',
-            type: 'סוג',
-            controllerType: 'סוג בקר',
-            switchingType: 'סוג המתג',
-            schedules: 'לוח זמנים',
-            status: 'סטאטוס',
-            floorPlan: 'תכנון קומה',
-          }
-        }
-      }
-    }
-```
 
 \*\*\*\*
 
