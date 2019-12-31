@@ -20,6 +20,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
   * **width** - number Table column width
   * **type** - enums can be one of: \['link'\]
     * link -when equal to link, the field will be render inside [{value}](%7Bvalue%7D)
+    * imageView - to display value inside an &lt;img /&gt;
   * **options** - same as doc options, use it when you want to display a human text
   * **dateFormat** - pass a moment formatter to your date field
   * **forceLtr** - boolean - relevnat to mobile fields with + at first charter
@@ -41,7 +42,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
     * boxSelect - Use only on array fields to render boxes with multi select 
     * textArea - Use only on string field to render [TextArea](http://beta.ant.design/components/input/#components-input-demo-textarea) input
     * timePicker - unse on Date fields 
-    * imageView - To display image when the ref is to file collection with a file field
+    * imageView - To display image when the ref is to file collection with a file field or when field value is url string
   * **options** - array Use on array of string fields, to render multi select drop down
 
     ```jsx
