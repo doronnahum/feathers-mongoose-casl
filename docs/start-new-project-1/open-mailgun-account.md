@@ -33,7 +33,7 @@ If you are using **mailgun without domain** you need to verify the emails you wa
   
    "feathers-mongoose-casl": {
        "mailer": {
-         "service": "mailgun",
+         "service": "mailgun"
        },
    ```
    {% endcode %}
@@ -47,12 +47,12 @@ If you are using **mailgun without domain** you need to verify the emails you wa
    ```javascript
    // Update add this lines
      "sendgrid": {
-       "apiKey": "key-XXX",
+       "apiKey": "key-XXX"
      }
   
    "feathers-mongoose-casl": {
        "mailer": {
-         "service": "sendgrid",
+         "service": "sendgrid"
           //Optional - un comment to use template
           //"sendgrid-authentication-emails-templates": {
            //"reset-password": "d-e3565301c97748e199cf07987cfac6bd",

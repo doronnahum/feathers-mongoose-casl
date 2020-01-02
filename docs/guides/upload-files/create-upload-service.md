@@ -116,7 +116,7 @@ module.exports = function (app) {
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 const organizationFilesValidators = require('../validators/organizations-files.validators');
-const { createModelFromJoi } = require('../feathers-mongoose-casl');
+const { createModelFromJoi } = require('feathers-mongoose-casl');
 
 module.exports = function (app) {
   return createModelFromJoi(app, 'organizations-files',organizationFilesValidators);
