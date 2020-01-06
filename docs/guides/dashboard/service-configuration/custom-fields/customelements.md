@@ -37,12 +37,12 @@ return (
 ```
 
 ```text
-// MyComponent.js
+// CountriesSelect.js
 // --------------------------------
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-const MyComponent = ({
+const CountriesSelect = ({
   field,
   fieldKey,
   fieldLabel,
@@ -50,21 +50,17 @@ const MyComponent = ({
   rtl,
   form,
 }) => {
-  const { fieldProps } = field; // Data from server from docLayout
   const { values, setFieldValue, setValues } = form;
   // form is formik form, read this https://jaredpalmer.com/formik/docs/api/formik#setfieldvalue-field-string-value-any-shouldvalidate-boolean-void
-  if (fieldProps && fieldProps.name === 'someUsefulData') {
     return (
       <div>
-        name: {fieldProps.name}
         {JSON.stringify(values || {})};
         <button onClick={() => setFieldValue('title', 'newTitle')}>Update Title</button>
         <button onClick={() => setValues({ fields: { title: 'newTitle', description: '54545' } })}> Update Title and description</button>
       </div>
     );
-  }
 };
 
-export default MyComponent
+export default CountriesSelect
 ```
 

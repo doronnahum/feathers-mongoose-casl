@@ -18,13 +18,6 @@ link
   hideOnUpdate: false,
 }
 
-customRenderField
--------------------------
-{
-  type: 'custom',
-  customFieldType: 'customRenderField',
-  fieldProps: {name: 'anyUsefulData'}
-}
 
 customElements
 -------------------------
@@ -38,8 +31,6 @@ customElements
 ```
 
 {% page-ref page="customelements.md" %}
-
-{% page-ref page="customrenderfield.md" %}
 
 
 

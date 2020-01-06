@@ -57,7 +57,6 @@
         * [Field configuration](docs/guides/dashboard/service-configuration/field-configuration.md)
         * [doc Layout](docs/guides/dashboard/service-configuration/doc-layout.md)
         * [custom Fields](docs/guides/dashboard/service-configuration/custom-fields/README.md)
-          * [customRenderField](docs/guides/dashboard/service-configuration/custom-fields/customrenderfield.md)
           * [customElements](docs/guides/dashboard/service-configuration/custom-fields/customelements.md)
       * [Online dashboard](docs/guides/dashboard/online-dashboard.md)
       * [Add to your react app](docs/guides/dashboard/add-to-your-react-app.md)

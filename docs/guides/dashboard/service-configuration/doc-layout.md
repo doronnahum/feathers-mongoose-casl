@@ -77,8 +77,6 @@ docLayout : [
 ]
 ```
 
-{% page-ref page="custom-fields/customrenderfield.md" %}
-
 {% page-ref page="custom-fields/customelements.md" %}
 
 
