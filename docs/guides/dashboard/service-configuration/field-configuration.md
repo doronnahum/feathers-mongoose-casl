@@ -32,6 +32,7 @@ description: 'Inside your validators files, each field can get a dashboard confi
     When is true the field won't be display when you edit a document
 
   * **inputProps** - stringify object - JSON.stringify\({}\) Props to pass the input
+  * helpText: input help text
 
     ```jsx
     //  ExampleJoi.string().meta({   dashboard:  {inputProps:  JSON.stringify({style:  {background:  'red'}}) )}
