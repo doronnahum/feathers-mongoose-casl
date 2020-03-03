@@ -5,7 +5,7 @@ describe('authentication', () => {
   it('registered the authentication service', () => {
     assert.ok(app.service('authentication'));
   });
-  
+
   describe('local strategy', () => {
     const userInfo = {
       email: 'someone@example.com',
@@ -25,7 +25,7 @@ describe('authentication', () => {
         strategy: 'local',
         ...userInfo
       });
-      
+
       assert.ok(accessToken, 'Created access token for user');
       assert.ok(user, 'Includes user in authentication data');
     });

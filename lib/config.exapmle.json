@@ -1,24 +1,54 @@
 {
-  // Add this to your config file,
-  "serverUrl": "http://localhost:3030",
-  "mongodb": "mongodb+srv.....",
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 100,
+    "max": 200
+  },
+  "firstUsers": [
+    "doron@committed.co.il"
+  ],
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "kdER4t6X+G9PGyYiJwTbmohiaIk=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "60d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "sendgrid": {
+    "apiKey": "YOUR_API_KEY",
+    "fromEmail": "no-replay@test.com"
+  },
+  "mongodb": "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false",
   "feathers-mongoose-casl": {
+    "mailer": {
+      "service": "sendgrid"
+    },
     "pickMeReadFields": ["-roles", "-verifyExpires", "-resetExpires", "-verifyToken", "-isVerified", "-resetToken", "-verifyChanges", "-password"],
     "pickMeUpdateFields": ["firstName", "lastName"],
     "usersServiceOptions": null,
     "defaultRules": [{
-        "userContext": {
-          "email": "YOUR_EMAIL_HERE"
-        },
-        "actions": ["manage"],
-        "subject": ["dashboard", "users", "user-abilities", "rules", "files"]
-      },
-      {
         "name": "allow-admin-dashboard",
         "description": "allowed admin users access dashboard, and manage rules and users",
         "actions": ["manage"],
         "subject": ["dashboard", "users", "get-file"],
-        "roles": ["admin"]
+        "roles": ["sys-admin"]
       },
       {
         "name": "allow-sys-admin-rules",

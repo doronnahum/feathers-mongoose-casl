@@ -13,7 +13,7 @@ module.exports = {
 
   after: {
     all: [
-      hooks.sanitizedData, // Remove protected fields(CASL rules fields) from response
+      hooks.sanitizedData // Remove protected fields(CASL rules fields) from response
     ],
     find: [],
     get: [],
