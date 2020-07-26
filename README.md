@@ -1,5 +1,6 @@
 # feathers-mongoose-casl
 
+# This package is no longer maintained, you can use the code base as a cookbook reference for some common uses like upload files
 ## feathers-mongoose-casl is a set of services,hook,utils to your feathers server
 
 Please read the [Docs](https://feathersjs-mongoose.gitbook.io/feathers-mongoose-casl)
